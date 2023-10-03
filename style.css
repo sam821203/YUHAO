@@ -46,9 +46,9 @@ html,
         line-height: 1;
         letter-spacing: 0.4px;
         color: rgb(64, 64, 64);
-        background-image: url('./bg.png');
+        /* background-image: url('./bg.png'); */
         background-color: #fff;
-        background-size: 100% auto;
+        /* background-size: 100% auto; */
         font-family: "Open Sans", sans-serif;
       }
 
@@ -316,5 +316,6 @@ html,
 
       .tools {
         height: 40px;
+        line-height: 150%;
         color: #919191;
       }
