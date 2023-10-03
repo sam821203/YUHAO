@@ -1,0 +1,262 @@
+body {
+  background-color: #0c0d12;
+}
+
+body:before {
+  background: url(bg-m.jpg) center 0 no-repeat;
+  background-size: 100%;
+}
+
+@media screen and (min-width: 960px) {
+  body:before {
+    background: url(bg.jpg) center 0 no-repeat;
+    background-size: auto;
+  }
+}
+
+.animate__wrap {
+  z-index: 0;
+  position: fixed;
+  transform: none;
+  width: 100%;
+}
+.animate__wrap2 {
+  z-index: 0;
+  position: relative;
+}
+
+.animate__wrap .animate__obj--01 {
+  position: fixed;
+  z-index: -1;
+  top: 60vw;
+  left: 84vw;
+  width: 10%;
+  animation: show01 1s;
+}
+
+.animate__wrap .animate__obj--02 {
+  position: fixed;
+  z-index: -1;
+  top: 90vw;
+  left: 5vw;
+  width: 10%;
+  animation: show02 1s;
+}
+
+.animate__wrap2 .animate__obj--03 {
+  position: absolute;
+  z-index: -1;
+  top: 28vw;
+  left: 16vw;
+  width: 70%;
+  animation: float 2s ease-in-out infinite alternate;
+}
+
+.animate__wrap2 .animate__obj--04 {
+  position: absolute;
+  z-index: -1;
+  top: 60vw;
+  left: 6vw;
+  width: 90%;
+}
+
+.animate__wrap .animate__obj--05 {
+  position: fixed;
+  z-index: -1;
+  top: 45vw;
+  left: -6vw;
+  width: 30%;
+  animation: show01 2s;
+}
+
+.animate__wrap .animate__obj--06 {
+  position: fixed;
+  z-index: -1;
+  top: 10vw;
+  left: 80vw;
+  width: 10%;
+  animation: show02 2s;
+}
+
+@keyframes show01 {
+  0% {
+    transform: translate(50%, 50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-10%, -10%) scale(1);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@keyframes show02 {
+  0% {
+    transform: translate(-50%, 50%) scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(10%, -10%) scale(1);
+  }
+  100% {
+    transform: translate(0%);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .animate__wrap .animate__obj--01 {
+    top: 200px;
+    left: calc(50% - -500px);
+    width: auto;
+  }
+  .animate__wrap .animate__obj--02 {
+    top: 200px;
+    left: calc(50% - 700px);
+    width: auto;
+  }
+  .animate__wrap2 .animate__obj--03 {
+    top: 280px;
+    left: calc(50% - 340px);
+    width: auto;
+  }
+  .animate__wrap2 .animate__obj--04 {
+    top: 580px;
+    left: calc(50% - 420px);
+    width: auto;
+  }
+  .animate__wrap .animate__obj--05 {
+    top: 547px;
+    left: calc(50% - 850px);
+    width: auto;
+  }
+  .animate__wrap .animate__obj--06 {
+    top: 600px;
+    left: calc(50% - -500px);
+    width: auto;
+  }
+}
+
+.brightness-play {
+  animation: brightness-play 1s infinite;
+}
+@keyframes brightness-play {
+  0% {
+    filter: brightness(100%);
+  }
+  75% {
+    filter: brightness(100%);
+  }
+  80% {
+    filter: brightness(150%);
+  }
+  90% {
+    filter: brightness(100%);
+  }
+  95% {
+    filter: brightness(150%);
+  }
+  100% {
+    filter: brightness(100%);
+  }
+}
+
+.float {
+  animation: float-image 1.5s alternate linear both infinite;
+}
+
+.float:last-child {
+  animation-delay: 0.8s;
+}
+
+@keyframes float-image {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -20px);
+  }
+}
+
+/* --- 背景動畫調整 --- */
+.bg__container .bg--first {
+  /* 1會在主視覺的上層 */
+  /* z-index: 1;  */
+}
+
+.bg__container .bg--second {
+  /* 1會在主視覺的上層 */
+  /* z-index: 1; */
+}
+
+.bg__container .bg--third {
+  /* 1會在主視覺的上層 */
+  /* z-index: 1;  */
+}
+
+/* --- 隨機飄落圖片 start--- */
+:root {
+  /* --- 圖片隨機飄落參數 --- */
+  --number: 20;
+  --size: 14;
+  --time: 10;
+}
+
+@media screen and (min-width: 960px) {
+  :root {
+    /* --- 圖片隨機飄落參數 --- */
+    --number: 24;
+    --size: 22;
+    --time: 1;
+  }
+}
+
+.bg__container.falling-random {
+  /* 1會在主視覺的上層 */
+  z-index: 0;
+}
+
+/* --- 隨機飄落圖片 end--- */
+
+/* --- 背景動畫圖片--- */
+.bg__container.falling .bg--first {
+  background: url(bg-animate-1.png) center 0;
+}
+
+.bg__container.falling .bg--second {
+  background: url(bg-animate-2.png) center 0;
+}
+
+.bg__container.falling .bg--third {
+  background: url(bg-animate-3.png) center 0;
+}
+
+.bg__container.falling-center .bg--first {
+  background: url(bg-animate-1.png) center 0;
+}
+
+.bg__container.rain .bg--first,
+.bg__container.rain .bg--second {
+  background-image: url(bg-rain.png);
+}
+
+.bg__container.snow .falling__block {
+  background-image: url(bg-snow.png);
+}
+
+.random__layer .falling-random-image {
+  background: url(falling-random-image.png) center 0 no-repeat;
+  background-size: 100%;
+}
+
+.sp__wallper {
+  overflow: hidden;
+}
+
+.sp__wallper {
+  overflow: hidden;
+}
+
+.build__wrap {
+  position: relative;
+}

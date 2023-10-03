@@ -1,0 +1,117 @@
+/* ===== card_7a7s1bn01-space item *6 ===== */
+/* 過渡期用，用來蓋過原本 build__wrap 的設定
+  並測試 item__wrap 的控制間距方式 */
+.card_7a7s1bn01-space.build__wrap {
+  justify-content: space-between !important;
+  padding: 0 !important;
+  margin-bottom: 96px;
+}
+
+.card_7a7s1bn01-space .build__item,
+.card_7a7s1bn01-space .item__img {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+
+.card_7a7s1bn01-space .item__info {
+  position: relative;
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+.card_7a7s1bn01-space .item__name {
+  height: 41px;
+  font-size: 15px;
+  line-height: 140%;
+}
+
+.card_7a7s1bn01-space .item__push span {
+  max-height: 21px;
+  margin: 0;
+  line-height: 170%;
+  letter-spacing: 0;
+  color: #cc1e05;
+  font-weight: 700;
+  text-align: left;
+}
+
+.card_7a7s1bn01-space .item__push--outerFrame {
+  width: 100%;
+  height: 21px;
+  font-size: 13px;
+  text-align: center;
+}
+
+.card_7a7s1bn01-space .item__push {
+  position: relative;
+  z-index: 1;
+  display: none;
+  height: auto;
+  line-height: 140%;
+}
+
+/* 在調整各宮格 mb 前，先透過權重更改 */
+.card_7a7s1bn01-space .item__name.margin-bottom-md {
+  margin-bottom: 6%;
+}
+
+.card_7a7s1bn01-space .build__item.black__bg {
+  padding: 5px;
+  background-color: #362e2b;
+  border-radius: 6px;
+}
+
+.card_7a7s1bn01-space .build__item.black__bg a,
+.card_7a7s1bn01-space .black__bg .item__push span {
+  color: #ddd;
+}
+
+.card_7a7s1bn01-space .build__item.black__bg .item__price span:last-child {
+  background-color: rgba(#ededed, 0.5);
+  color: #fff;
+  font-weight: 700;
+}
+
+.card_7a7s1bn01-space .item__pic--wrap {
+  padding: 6%;
+}
+
+.card_7a7s1bn01-space .item__img {
+  border-radius: 6px;
+}
+
+.card_7a7s1bn01-space .build__banner--2 .item__img {
+  border: none;
+}
+
+/* ===== RWD 768 ===== */
+@media screen and (min-width: 768px) {
+  .card_7a7s1bn01-space.item--8 .build__item {
+    width: calc(25% - 7.5px);
+  }
+
+  .card_7a7s1bn01-space .item__push--outerFrame {
+    height: 28px;
+    font-size: 14px;
+  }
+
+  .card_7a7s1bn01-space .item__push span {
+    max-height: 28px;
+    line-height: 200%;
+  }
+
+  .card_7a7s1bn01-space .item__name.margin-bottom-md {
+    margin-bottom: 4%;
+  }
+}
+
+/* ===== RWD 960 ===== */
+@media screen and (min-width: 960px) {
+  .card_7a7s1bn01-space .item__push {
+    display: block;
+  }
+
+  .card_7a7s1bn01-space .item__name {
+    line-height: 130%;
+  }
+}

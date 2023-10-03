@@ -1,0 +1,236 @@
+/* =============== API 共用樣式 Start =============== */
+.card--5api1s.build__wrap {
+  margin-top: 3%;
+  margin-bottom: 3%;
+}
+
+.card--5api1s .decor__top img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card--5api1s .decor__bg {
+  padding-left: 3%;
+  padding-right: 3%;
+  background-size: 100%;
+  text-decoration: none;
+}
+
+.card--5api1s .decor__bottom img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card--5api1s .build__item {
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #ffffff, #eee);
+}
+
+.card--5api1s .build__item:last-child {
+  display: none;
+  margin-bottom: 0px;
+}
+
+.card--5api1s .build__item:active,
+.card--5api1s .build__item:hover {
+  transform: translateY(-3px);
+}
+
+.card--5api1s .item__wrap {
+  width: 100%;
+}
+
+.card--5api1s .build__item:first-child {
+  width: 100%;
+}
+
+.card--5api1s .build__item:first-child .item__box {
+  display: flex;
+}
+
+.card--5api1s .build__item:first-child .item__pic {
+  width: 50%;
+  padding-top: 50%;
+}
+
+.card--5api1s .build__item .item__info {
+  position: relative;
+  padding: 2% 4%;
+}
+
+.card--5api1s .build__item:first-child .item__info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.card--5api1s .item__price {
+  color: #cc1e05;
+}
+
+.card--5api1s .item__price span {
+  display: inline-flex;
+  height: 20px;
+  line-height: 20px;
+}
+
+.card--5api1s .item__price span:first-child {
+  display: block;
+}
+
+.card--5api1s .build__item:first-child .margin-bottom-sm {
+  margin-bottom: 0;
+}
+
+.card--5api1s .build__item:first-child .margin-bottom-lg {
+  margin-bottom: 24%;
+}
+
+/* ===== RWD 425 ===== */
+@media screen and (min-width: 425px) {
+  .card--5api1s .build__item:first-child .margin-bottom-sm {
+    margin-bottom: 2%;
+  }
+}
+
+/* ===== RWD 641 ===== */
+@media screen and (min-width: 641px) {
+  .card--5api1s .build__item,
+  .card--5api1s .build__item:first-child {
+    width: calc(20% - 7.5px);
+  }
+
+  .card--5api1s .build__item:first-child .margin-bottom-lg {
+    margin-bottom: 8%;
+  }
+
+  .card--5api1s .build__item:first-child .item__box {
+    display: block;
+  }
+
+  .card--5api1s .build__item:first-child .item__pic {
+    width: 100%;
+    padding-top: 100%;
+  }
+
+  .card--5api1s .build__item:first-child .item__info {
+    display: block;
+    width: 100%;
+  }
+
+  .card--5api1s .build__item .item__name,
+  .card--5api1s .build__item:first-child .item__name {
+    -webkit-line-clamp: 2;
+    height: 41px;
+    font-size: 15px;
+    line-height: 130%;
+  }
+}
+
+/* ===== RWD 960 ===== */
+@media screen and (min-width: 960px) {
+  .card--5api1s .decor__bg {
+    padding-left: 5%;
+    padding-right: 4.7%;
+    background-size: auto;
+  }
+
+  .card--5api1s.build__wrap {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .card--5api1s .build__item {
+    margin-bottom: 3px;
+  }
+}
+/* =============== API 共用樣式 End =============== */
+.item__tag {
+  position: absolute;
+  bottom: 10%;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 48px;
+  height: 28px;
+  background: linear-gradient(to right, #ffc50c, #ff9c0c);
+  box-shadow: 0px 3px 4px rgb(255 185 14 / 60%);
+}
+
+.item__tag::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  left: -20.5%;
+  width: 0px;
+  height: 10px;
+  border-right: solid 10px #ffc50c;
+  border-bottom: solid 14px transparent;
+  border-top: solid 14px transparent;
+}
+
+.item__tag::after {
+  content: "";
+  position: absolute;
+  top: 64%;
+  left: -20.5%;
+  width: 15px;
+  height: 5px;
+  background-color: transparent;
+  transform: rotate(56deg);
+  box-shadow: 0px 3px 4px rgb(255 185 14 / 60%);
+}
+
+.item__tag--discount {
+  display: inline-block;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 100%;
+  white-space: nowrap;
+  transform: translate(-4%, 12%);
+}
+
+.item__tag--discount span:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  margin-right: -2px;
+}
+
+.item__tag--icon {
+  display: none;
+  overflow: hidden;
+}
+
+.item__tag--icon img {
+  transform: scale(1.2);
+}
+
+/* ===== RWD 960 ===== */
+@media screen and (min-width: 960px) {
+  .item__tag--icon {
+    display: inline-block;
+  }
+
+  .item__tag--icon img {
+    transform: scale(1.2);
+  }
+
+  .item__tag {
+    width: 64px;
+  }
+
+  .item__tag::before,
+  .item__tag::after {
+    left: -15%;
+  }
+}
+
+/* card--5api1s01 */
+.card--5api1s.card--5api1s01 .decor__bg {
+  background: url(decor-promo-bg-5api1s01.png) 0 0 repeat-y;
+  background-size: 100%;
+}

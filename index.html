@@ -2,8 +2,510 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>YU HAO</title>
+    <link rel="icon" type="image/x-icon" href="/img/logo-sm.png" />
+    <link
+      rel="stylesheet"
+      href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
-  <body></body>
+
+  <body>
+    <nav id="navMenu">
+      <div class="nav__wrap">
+        <div class="logo__wrap">
+          <img src="./img/logo-sm.png" alt="" />
+          <span style="color: black">fishing</span>
+        </div>
+        <ul class="works__wrap">
+          <li>
+            <a href="javascript:void(0)">Home</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">About</a>
+          </li>
+          <li>
+            <a href="#projects">Projects</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <p class="description">
+        Hi! My name is Sam Huang. I'm a Web Developer actively working to
+        enhance my knowledge in the field of Data Visualization.
+      </p>
+      <!-- <ul class="sort">
+        <li class="active">All</li>
+        <li>Front End</li>
+        <li>Web Design</li>
+        <li>Information Design</li>
+      </ul> -->
+      <section class="sp-page">
+        <ul id="projects" class="sp-page__wrap">
+          <li class="item">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./img/voice-verse.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>09</div>
+                <div class="title">VoiceVerse</div>
+                <p class="info">
+                  音樂串流平台。提供用戶註冊、上傳與管理音樂功能。能輕鬆在線上享受音樂庫裡的各種音頻
+                </p>
+                <div class="line"></div>
+                <p class="tools">
+                  Vue, Vite, Pinia, Firebase, HowlerJS, PWA, scss
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="Javascript:void(0)" class="evostake">
+              <div class="img-wrap">
+                <img src="./img/evostake.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>09</div>
+                <div class="title">Evostake</div>
+                <p class="info">客製化遊戲平台開發、後台系統建置</p>
+                <div class="line"></div>
+                <p class="tools">Vue, Vue CLI, Pinia, element UI, scss</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="https://quasagram-573f0.web.app/#/" target="_blank">
+              <div class="img-wrap">
+                <img src="./img/possimpible.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>08</div>
+                <div class="title">Possimpible</div>
+                <p class="info">
+                  使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web
+                </p>
+                <div class="line"></div>
+                <p class="tools">
+                  Vue, Quasar, axios, PWA, Node.js, Express.js
+                </p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://artsleuth-requests-4684a.web.app/artists"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/art-sleuth.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>06</div>
+                <div class="title">ArtSleuth</div>
+                <p class="info">
+                  藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家
+                </p>
+                <div class="line"></div>
+                <p class="tools">Vue, Vue CLI, Vuex, Firebase, ESLint</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://sam821203.github.io/ehsn-front-design/"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/etmall-front-design.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>06</div>
+                <div class="title">東森得易購</div>
+                <p class="info">
+                  東森購物網專案整理。負責活動專案製作與資料串接、組版系統宮格維護與優化、EDM
+                  模板製作
+                </p>
+                <div class="line"></div>
+                <p class="tools">Sass, Pug, Webpack, Swiper, Python, Wix</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://doterra-ivq4kqvbb-sam821203.vercel.app/"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/doTERRA.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>05</div>
+                <div class="title">dōTERRA</div>
+                <p class="info">
+                  dōTERRA
+                  電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計
+                </p>
+                <div class="line"></div>
+                <p class="tools">Vue, Vue CLI, Vuex, ESLint, Figma</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./following-touch-firecracker/index.html" target="_blank">
+              <div class="img-wrap">
+                <img src="./img/firetracker.png" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>01</div>
+                <div class="title">Touch Firecracker</div>
+                <p class="info">客製化手指與滑鼠滑動煙火特效</p>
+                <div class="line"></div>
+                <p class="tools">Vanilla JavaScript</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="https://www.ginza-shinno.tokyo/" target="_blank">
+              <div class="img-wrap">
+                <img src="./img/ginza-shinno.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>03</div>
+                <div class="title">銀座しんのう</div>
+                <p class="info">
+                  日本餐廳品牌網站。與 UI 和後端工程師合作，負責前端開發、Google
+                  Maps APIs 串接、動態效果製作
+                </p>
+                <div class="line"></div>
+                <p class="tools">Sass, Pug, Webpack, Swiper, AOS</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./falling-random/index.html" target="_blank">
+              <div class="img-wrap">
+                <img src="./img/falling-random.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>12</div>
+                <div class="title">Falling random images</div>
+                <p class="info">客製化以單張圖片來產生隨機飄落的動態特效</p>
+                <div class="line"></div>
+                <p class="tools">Vanilla JavaScript</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/HFI.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>03</div>
+                <div class="title">洪裕數位布料圖書館平台</div>
+                <p class="info">
+                  與設計師和後端工程師合作，負責前端開發與動態效果製作
+                </p>
+                <div class="line"></div>
+                <p class="tools">Tailwind CSS, Gulp, Swiper, AOS</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://dev.creatop.tw/dev/2022/tnet-digifab/assets/zh-TW/advanced-filter/advanced-filter.html"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/tnet-digifab.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>02</div>
+                <div class="title">Tnet Digifab</div>
+                <p class="info">與設計師合作，負責前端切版</p>
+                <div class="line"></div>
+                <p class="tools">Tailwind CSS, Gulp</p>
+              </div>
+            </a>
+          </li>
+
+          <li class="item">
+            <a
+              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/Movin-on.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>01</div>
+                <div class="title">Movin'on 電影售票網</div>
+                <p class="info">
+                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
+                  PHP 工程師合作，負責前端開發與使用者介面設計
+                </p>
+                <div class="line"></div>
+                <p class="tools">Bootstrap4, Figma, Miro</p>
+              </div>
+            </a>
+          </li>
+
+          <!-- Design -->
+          <!-- <li class="item">
+            <a
+              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/birds guide book36.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>01</div>
+                <div class="title">Movin'on 電影售票網</div>
+                <p class="info">
+                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
+                  PHP 工程師合作，負責前端開發與使用者介面設計
+                </p>
+                <div class="line"></div>
+                <p class="tools">Bootstrap4, Figma, Miro</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img
+                  src="./img/Perspective-presentation-Web-MockUp09-Mainfile.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>01</div>
+                <div class="title">Movin'on 電影售票網</div>
+                <p class="info">
+                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
+                  PHP 工程師合作，負責前端開發與使用者介面設計
+                </p>
+                <div class="line"></div>
+                <p class="tools">Bootstrap4, Figma, Miro</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/perspective_mockup.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>01</div>
+                <div class="title">Movin'on 電影售票網</div>
+                <p class="info">
+                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
+                  PHP 工程師合作，負責前端開發與使用者介面設計
+                </p>
+                <div class="line"></div>
+                <p class="tools">Bootstrap4, Figma, Miro</p>
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a
+              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
+              target="_blank"
+            >
+              <div class="img-wrap">
+                <img src="./img/image_114.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2022<span>/</span>01</div>
+                <div class="title">Dark Art</div>
+                <p class="info">
+                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
+                  PHP 工程師合作，負責前端開發與使用者介面設計
+                </p>
+                <div class="line"></div>
+                <p class="tools">Bootstrap4, Figma, Miro</p>
+              </div>
+            </a>
+          </li> -->
+        </ul>
+      </section>
+    </main>
+    <script>
+      const addActivateVideo = () => {
+        const videoIds = [
+          "graduation",
+          "mother2",
+          "goddess2",
+          "newYear2",
+          "double121st",
+          "double122nd",
+          "backToSchool",
+          "father",
+          "summer1",
+        ];
+
+        const activateVideo = (videoElement) => {
+          videoElement.addEventListener("mouseover", () => {
+            videoElement.pause();
+            videoElement.classList.add("active");
+          });
+
+          videoElement.addEventListener("mouseout", () => {
+            videoElement.play();
+            videoElement.classList.remove("active");
+          });
+        };
+
+        videoIds.forEach((id) => {
+          const videoElement = document.getElementById(id);
+          if (videoElement) {
+            activateVideo(videoElement);
+          }
+        });
+      };
+
+      const addGoTopBtn = () => {
+        const makeGoTopBtn = () => {
+          const svgNameSpace = "http://www.w3.org/2000/svg";
+          const goTopElement = document.createElement("button");
+          const svgElement = document.createElementNS(svgNameSpace, "svg");
+          const pathElement = document.createElementNS(svgNameSpace, "path");
+
+          svgElement.setAttribute("width", "24");
+          svgElement.setAttribute("height", "24");
+          svgElement.setAttribute("viewBox", "0 0 24 24");
+          pathElement.setAttribute("fill", "#fff");
+          pathElement.setAttribute(
+            "d",
+            "M12 4h.018c.31.004.618.102.875.296l.117.099 6.752 6.307a.75.75 0 0 1-.937 1.166l-.087-.07-5.988-5.594V19.25a.75.75 0 0 1-1.493.102l-.007-.102V6.204l-5.988 5.594a.75.75 0 0 1-.978.04l-.082-.076a.75.75 0 0 1-.04-.978l.076-.082 6.752-6.307c.277-.26.635-.391.993-.395H12z"
+          );
+
+          goTopElement.id = "goTop";
+          goTopElement.classList.add("go-top");
+
+          svgElement.appendChild(pathElement);
+          goTopElement.appendChild(svgElement);
+
+          return goTopElement;
+        };
+
+        const goTopBtn = makeGoTopBtn();
+
+        document.body.appendChild(goTopBtn);
+      };
+
+      const addScrollTop = () => {
+        const goTopBtn = document.getElementById("goTop");
+
+        // Reveal the button
+        const btnReveal = () => {
+          if (window.scrollY >= 300) {
+            goTopBtn.classList.add("is-visible");
+          } else {
+            goTopBtn.classList.remove("is-visible");
+          }
+        };
+
+        // Smooth scroll top
+        const smoothScrollTop = () => {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        };
+
+        goTopBtn.addEventListener("click", smoothScrollTop);
+        window.addEventListener("scroll", btnReveal);
+      };
+
+      const addCheckAnchors = () => {
+        const checkAnchors = () => {
+          const anchors = Array.from(document.querySelectorAll('a[href^="#"]'));
+
+          anchors.forEach((anchor) => {
+            anchor.addEventListener("click", (e) => {
+              const href = anchor.getAttribute("href");
+              const target = document.querySelector(href);
+
+              if (target) {
+                e.preventDefault();
+
+                // 修正位移值
+                const navMenuHeight =
+                  document.querySelector("#navMenu").offsetHeight + 4;
+                window.scrollTo({
+                  top: target.offsetTop + navMenuHeight,
+                  behavior: "smooth",
+                });
+              }
+            });
+          });
+        };
+
+        const updateCheckAnchors = () => {
+          document.addEventListener("DOMContentLoaded", checkAnchors);
+        };
+
+        updateCheckAnchors();
+      };
+
+      const addImgLazyLoad = () => {
+        const lazyImgTarget = document.querySelectorAll("img[data-src]");
+
+        const loadImg = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const img = entry.target;
+
+            img.src = img.dataset.src;
+            img.addEventListener("load", function () {
+              img.classList.remove("lazy-img");
+            });
+
+            observer.unobserve(img);
+          });
+        };
+
+        const imgObserver = new IntersectionObserver(loadImg, {
+          root: null,
+          threshold: 0,
+          rootMargin: "200px",
+        });
+
+        lazyImgTarget.forEach((img) => {
+          imgObserver.observe(img);
+        });
+      };
+
+      addGoTopBtn();
+      addScrollTop();
+      addCheckAnchors();
+      addImgLazyLoad();
+    </script>
+  </body>
 </html>

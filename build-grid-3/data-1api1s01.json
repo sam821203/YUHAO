@@ -1,0 +1,38 @@
+{
+  "CateId": 16462,
+  "CateName": "日用清潔",
+  "Link": null,
+  "Banners": [
+    {
+      "Title": "618年中食界盃★制霸全場5折UP",
+      "ImageURL": "https://media.etmall.com.tw/Promo/Image/Kanban/62/363968/da4046b1-d09a-40e1-b0a1-4373387d2708.jpg",
+      "URL": "https://media.etmall.com.tw/sp/23138/m/index.html"
+    },
+    {
+      "Title": "可口可樂 兌換東森幣",
+      "ImageURL": "https://media.etmall.com.tw/Promo/Image/Kanban/62/362016/2f5d52fc-1524-4e94-bce1-fdc48d8ac2f4.jpg",
+      "URL": "https://www.etmall.com.tw/Activity/dl/cokesummer2023"
+    },
+    {
+      "Title": "東森小食堂★登記送樂透金",
+      "ImageURL": "https://media.etmall.com.tw/Promo/Image/Kanban/62/349393/77cc3249-fd1a-4cc2-9601-43e7da4c8605.jpg",
+      "URL": "https://media.etmall.com.tw/sp/12960/m/index.html"
+    },
+    {
+      "Title": "美食雲👆一鍵享優惠",
+      "ImageURL": "https://media.etmall.com.tw/Promo/Image/Kanban/62/362849/27d048a3-ebac-43df-95b3-c50446358629.jpg",
+      "URL": "https://media.etmall.com.tw/sp/23413/m/index.html"
+    },
+    {
+      "Title": "生鮮超市 優惠齊聚🛒這夏購了沒！",
+      "ImageURL": "https://media.etmall.com.tw/Promo/Image/Kanban/62/350294/c42598d0-f0ec-40d0-a0e1-339344573088.jpg",
+      "URL": "https://media.etmall.com.tw/sp/20212/m/index.html"
+    },
+    {
+      "Title": "統一X舒潔✨聯合抽好禮",
+      "ImageURL": "https://media.etmall.com.tw/Promo/Image/Kanban/62/362865/8bc562b5-6421-4105-aff0-334ff019da45.jpg",
+      "URL": "https://media.etmall.com.tw/sp/23407/m/index.html"
+    }
+  ],
+  "CategoryBar": null
+}

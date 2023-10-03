@@ -1,0 +1,58 @@
+.card--1api1s01.build__wrap {
+  display: block !important;
+  margin-top: 3% !important;
+  margin-bottom: 3% !important;
+}
+
+.card--1api1s01.build__wrap.wow {
+  animation: 0.5s bounce-in-left both;
+}
+
+.card--1api1s01 .decor__top img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card--1api1s01 .decor__bg {
+  padding-left: 6%;
+  padding-right: 6%;
+  background: url(decor-promo-bg-1api1s01.png) 0 0 repeat-y;
+  background-size: 100%;
+  text-decoration: none;
+}
+
+.card--1api1s01 .decor__bg img {
+  border-radius: 1.6vw;
+}
+
+.card--1api1s01 .decor__bottom img {
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+.card--1api1s01 .swiper-container {
+  height: fit-content !important;
+}
+
+.card--1api1s01 .hidden {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .card--1api1s01.build__wrap {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+  .card--1api1s01 .decor__bg {
+    padding-left: 6%;
+    padding-right: 6%;
+    background-size: auto;
+  }
+
+  .card--1api1s01 .decor__bg img {
+    border-radius: 12px;
+  }
+}
