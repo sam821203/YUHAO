@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chart.js challenge</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      h1 {
+        color: rgb(57, 57, 57);
+        margin-bottom: 6px;
+      }
+      p {
+        color: rgb(148, 148, 148);
+        margin-bottom: 24px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 600px;
+        padding: 40px;
+        border-radius: 20px;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartCard">
+      <div class="chartBox">
+        <h1>Browser Market Share Worldwide</h1>
+        <p>Sept 2022 - Sept 2023</p>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+
+    <script>
+      // data block
+      const data = {
+        labels: ["Chrome", "Safari", "Edge", "Firefox", "Samsung", "Other"],
+        datasets: [
+          {
+            label: "Browser",
+            data: [63.45, 19.91, 5.29, 3.03, 2.31, 6.01],
+            backgroundColor: [
+              "rgba(0, 192, 0, 0.2)",
+              "rgba(255, 0, 0, 0.2)",
+              "rgba(121, 174, 255, 0.2)",
+              "rgba(228, 110, 13, 0.2)",
+              "rgba(48, 73, 251, 0.2)",
+              "rgba(128, 128, 128, 0.2)",
+            ],
+            borderColor: [
+              "rgba(0, 192, 0, 1)",
+              "rgba(255, 0, 0, 1)",
+              "rgba(121, 174, 255, 1)",
+              "rgba(228, 110, 13, 1)",
+              "rgba(48, 73, 251, 1)",
+              "rgba(128, 128, 128, 1)",
+            ],
+            borderWidth: 1,
+            cutout: "90%",
+          },
+        ],
+      };
+
+      // hoverLabels plugins block
+      const hoverLabels = {
+        id: "hoverLabels",
+        afterDatasetsDraw(chart, args, options) {
+          const {
+            ctx,
+            chartArea: { top, bottom, left, right, width, height },
+          } = chart;
+
+          ctx.save();
+
+          if (chart._active[0]) {
+            const textLabel = chart.config.data.labels[chart._active[0].index];
+            const dataLabel =
+              chart.config.data.datasets[chart._active[0].datasetIndex].data[
+                chart._active[0].index
+              ];
+            const color =
+              chart.config.data.datasets[chart._active[0].datasetIndex]
+                .borderColor[chart._active[0].index];
+
+            ctx.font = "bolder 60px Arial";
+            ctx.fillStyle = color;
+            ctx.textAlign = "center";
+            ctx.fillText(
+              `${textLabel}: ${dataLabel}%`,
+              width / 2,
+              height / 2 + 60 / 3
+            );
+          }
+
+          ctx.restore();
+        },
+      };
+
+      // config block
+      const config = {
+        type: "doughnut",
+        data: data,
+        options: {
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+        },
+        plugins: [hoverLabels],
+      };
+
+      // init render block
+      const myChart = new Chart(document.getElementById("myChart"), config);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart Challenge.html</title>
+    <link rel="icon" type="image/x-icon" href="logo-sm.png" />
+    <link
+      rel="stylesheet"
+      href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      .sp-page {
+        margin-top: 160px;
+      }
+
+      .sp-page__wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 32px;
+        grid-row-gap: 32px;
+      }
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+        border: none;
+        border-radius: 6px;
+        border: 1px solid #e2e2e2;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .img-wrap {
+        width: 100%;
+        height: 320px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <section class="sp-page">
+        <ul id="projects" class="sp-page__wrap">
+          <li class="item">
+            <a href="./chartjs/bar-growth-indicator-chart.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/bar-growth-indicator-chart.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/crosshair-chart.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/crosshair-chart.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/progress-bar-chart.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/progress-bar-chart.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/doughnut-chart-hover.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/doughnut-chart-cutout.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/drill-down-bar-chart.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/drilldown-bar-chart.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/indicator-tracker.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/indicator-tracker.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="/chartjs/radial-bar-chart-with-label.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/radial-bar-chart.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/switch-bar.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/switch-bar.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+          <li class="item">
+            <a href="./chartjs/waterfall-chart.html">
+              <div class="img-wrap">
+                <img
+                  src="./lazyload.jpg"
+                  data-src="./img/waterfall-chart.jpg"
+                  alt=""
+                />
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script>
+      const addImgLazyLoad = () => {
+        const lazyImgTarget = document.querySelectorAll("img[data-src]");
+
+        const loadImg = (entries, observer) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+
+            const img = entry.target;
+
+            img.src = img.dataset.src;
+            img.addEventListener("load", function () {
+              img.classList.remove("lazy-img");
+            });
+
+            observer.unobserve(img);
+          });
+        };
+
+        const imgObserver = new IntersectionObserver(loadImg, {
+          root: null,
+          threshold: 0,
+          rootMargin: "200px",
+        });
+
+        lazyImgTarget.forEach((img) => {
+          imgObserver.observe(img);
+        });
+      };
+
+      addImgLazyLoad();
+    </script>
+  </body>
+</html>

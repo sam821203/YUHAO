@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chart.js challenge</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .main-title {
+        font-size: 20px;
+        font-weight: 00;
+        text-align: center;
+        margin-bottom: 12px;
+      }
+      .chartCard {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 40%;
+        padding: 40px 20px;
+        border-radius: 20px;
+        background: white;
+      }
+      .button-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 48px;
+      }
+      button {
+        width: 120px;
+        height: 36px;
+        margin-left: 12px;
+        margin-right: 12px;
+        color: rgba(149, 157, 165, 1);
+        font-size: 14px;
+        border: none;
+        border-radius: 6px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartCard">
+      <div class="chartBox">
+        <div id="mainTitle" class="main-title">Tax</div>
+        <canvas id="myChart"></canvas>
+        <div class="button-group">
+          <button onclick="changeFinancials('tax')">Tax</button>
+          <button onclick="changeFinancials('cost')">Cost</button>
+          <button onclick="changeFinancials('budget')">Budget</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const departmentData = [
+        "行銷部門",
+        "企劃部門",
+        "營運部門",
+        "研發部門",
+        "設計部門",
+        "型錄部門",
+      ];
+      const taxData = [250, 500, 1100, 850, 420, 700];
+      const costData = [960, 666, 333, 564, 1300, 876];
+      const budgetData = [1000, 2400, 1600, 800, 3000, 2400, 4600];
+
+      const departmentInfo = departmentData.map((el, i) => {
+        let departmentDataset = {};
+
+        departmentDataset.department = el;
+        departmentDataset.financials = {};
+        departmentDataset.financials.cost = costData[i];
+        departmentDataset.financials.budget = budgetData[i];
+        departmentDataset.financials.budget = budgetData[i];
+        departmentDataset.financials.tax = taxData[i];
+
+        return departmentDataset;
+      });
+
+      // data block
+      const data = {
+        datasets: [
+          {
+            data: departmentInfo,
+            backgroundColor: [
+              "rgba(217, 156, 103, 0.6)",
+              "rgba(226, 171, 106, 0.6)",
+              "rgba(233, 186, 111, 0.6)",
+              "rgba(238, 202, 117, 0.6)",
+              "rgba(241, 219, 125, 0.6)",
+              "rgba(243, 236, 136, 0.6)",
+            ],
+            borderWidth: 0,
+            barPercentage: 0.5,
+            categoryPercentage: 0.8,
+          },
+        ],
+      };
+
+      // config block
+      const config = {
+        label: "Tax",
+        type: "bar",
+        data: data,
+        options: {
+          indexAxis: "y",
+          plugins: {
+            legend: {
+              display: false,
+            },
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+              grid: {
+                display: false,
+                drawBorder: false,
+              },
+            },
+          },
+          borderWidth: 1,
+          parsing: {
+            yAxisKey: "department",
+            xAxisKey: "financials.tax",
+          },
+        },
+      };
+
+      // init render block
+      const myChart = new Chart(document.getElementById("myChart"), config);
+      const mainTitle = document.getElementById("mainTitle");
+
+      const changeFinancials = (term) => {
+        myChart.config.options.parsing.xAxisKey = `financials.${term}`;
+        mainTitle.textContent = term.charAt(0).toUpperCase() + term.slice(1);
+        myChart.update();
+      };
+    </script>
+  </body>
+</html>

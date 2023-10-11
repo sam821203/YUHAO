@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chart.js challenge</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartCard {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 60%;
+        height: auto;
+        padding: 20px 80px;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.6.0/chart.min.js"></script>
+
+    <script>
+      let countriesNameArr = [];
+      let populationArr = [];
+      let flagsArr = [];
+
+      const getCountriesData = async () => {
+        try {
+          const res = await fetch("https://restcountries.com/v3.1/all");
+          const data = await res.json();
+
+          const filteredCountries = data.filter(
+            (country) => country.population > 100000000
+          );
+
+          const sortedCountries = filteredCountries.sort(
+            (a, b) => b.population - a.population
+          );
+
+          for (i = 0; i < sortedCountries.length; i++) {
+            const countryName = sortedCountries[i].name.common;
+            const countryFlag = sortedCountries[i].flags.svg;
+            const countryPopulation = sortedCountries[i].population;
+
+            countriesNameArr.push(countryName);
+            flagsArr.push(countryFlag);
+            populationArr.push(countryPopulation);
+          }
+          return Promise.resolve();
+        } catch (error) {
+          console.error("Error fetching data:", error);
+          return Promise.reject(error);
+        }
+      };
+
+      getCountriesData()
+        .then(() => {
+          // data block
+          const data = {
+            labels: countriesNameArr,
+            datasets: [
+              {
+                label: "# of Votes",
+                data: populationArr,
+                backgroundColor: ["rgba(0, 0, 0, 0.2)"],
+                borderColor: ["rgba(0, 0, 0, 0.05)"],
+                borderWidth: 0,
+                barPercentage: 0.2,
+                borderSkipped: false,
+                borderRadius: 10,
+                categoryPercentage: 0.8,
+                image: flagsArr,
+              },
+            ],
+          };
+
+          // imageItems block
+          const imageItems = {
+            id: "imageItems",
+            beforeDatasetsDraw(chart, args, pluginOptions) {
+              const {
+                ctx,
+                data,
+                options,
+                scales: { x, y },
+              } = chart;
+
+              ctx.save();
+
+              const imageSize = options.layout.padding.left;
+
+              data.datasets[0].image.forEach((imageLink, index) => {
+                const flagImage = new Image();
+                flagImage.src = imageLink;
+                ctx.drawImage(
+                  flagImage,
+                  0,
+                  y.getPixelForValue(index) - imageSize / 2,
+                  imageSize,
+                  imageSize * 0.66
+                );
+              });
+            },
+          };
+
+          // roundedProgressBar block
+          const roundedProgressBar = {
+            id: "roundedProgressBar",
+            beforeDatasetsDraw(chart, args, pluginsOptions) {
+              const {
+                ctx,
+                data,
+                chartArea: { top, bottom, left, right, width, height },
+                scales: { x, y },
+              } = chart;
+
+              ctx.save();
+
+              const segmentHeight = height / data.labels.length;
+              chart.getDatasetMeta(0).data.forEach((dataPoint, index) => {
+                dataPoint.y = top + segmentHeight * (index + 0.5);
+
+                // text label
+                ctx.font = "14px sans-serif";
+                ctx.fillStyle = "rgba(102, 102, 102, 1)";
+                ctx.textBaseline = "top";
+                ctx.textAlign = "left";
+                ctx.fillText(data.labels[index], left, dataPoint.y - 18);
+
+                // text value
+                ctx.font = "bold 14px sans-serif";
+                ctx.fillStyle = dataPoint.options.backgroundColor;
+                ctx.textBaseline = "top";
+                ctx.textAlign = "right";
+                ctx.fillText(
+                  data.datasets[0].data[index].toLocaleString(),
+                  right,
+                  dataPoint.y - 18
+                );
+
+                // background shadow
+                ctx.beginPath();
+                ctx.strokeStyle = dataPoint.options.borderColor;
+                ctx.fillStyle = dataPoint.options.borderColor;
+                ctx.lineJoin = "round";
+                ctx.lineWidth = dataPoint.height;
+                ctx.strokeRect(
+                  left + dataPoint.height / 2,
+                  dataPoint.y,
+                  width - dataPoint.height,
+                  1
+                );
+
+                ctx.restore();
+              });
+            },
+          };
+
+          // config block
+          const config = {
+            type: "bar",
+            data: data,
+            options: {
+              indexAxis: "y",
+              layout: {
+                padding: {
+                  top: 10,
+                  left: 30,
+                },
+              },
+              plugins: {
+                legend: {
+                  display: false,
+                },
+              },
+              scales: {
+                x: {
+                  grid: {
+                    display: false,
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    display: false,
+                  },
+                },
+                y: {
+                  beginAtZero: true,
+                  grid: {
+                    display: false,
+                    drawBorder: false,
+                  },
+                  ticks: {
+                    display: false,
+                  },
+                },
+              },
+            },
+            plugins: [roundedProgressBar, imageItems],
+          };
+
+          // init render block
+          const myChart = new Chart(document.getElementById("myChart"), config);
+        })
+        .catch((error) => {
+          console.error("Error rendering chart:", error);
+        });
+    </script>
+  </body>
+</html>

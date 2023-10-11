@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chart.js challenge</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+      }
+      .chartCard {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .chartBox {
+        width: 60%;
+        padding: 20px;
+        background: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="chartCard">
+      <div class="chartBox">
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="anime-data.js"></script>
+
+    <script>
+      const coordinates = {
+        top: 0,
+        bottom: 0,
+        left: 0,
+        right: 0,
+      };
+
+      // data block
+      const data = {
+        datasets: [
+          {
+            label: "Anime Popularity",
+            data: browserData,
+            backgroundColor: [
+              browserData[0].color,
+              browserData[1].color,
+              browserData[2].color,
+            ],
+            borderColor: [
+              browserData[0].color,
+              browserData[1].color,
+              browserData[2].color,
+            ],
+            borderWidth: 1,
+            barPercentage: 0.8,
+          },
+        ],
+      };
+
+      // resetButton block
+      const resetButton = {
+        id: "resetButton",
+        beforeDraw(chart, args, options) {
+          if (chart.data.datasets[0].label !== "Anime Popularity") {
+            const {
+              ctx,
+              chartArea: { top, bottom, left, right, width, height },
+            } = chart;
+
+            ctx.save();
+
+            const text = "Back";
+            const thickBorder = 1;
+            const textWidth = ctx.measureText(text).width;
+            const btnPadding = 24;
+            const btnPaddingRight = btnPadding / 2;
+
+            // background color
+            ctx.fillStyle = "rgba(34, 34, 34, 0.2)";
+            ctx.fillRect(
+              right - (textWidth + 2 + btnPadding),
+              5,
+              textWidth + btnPadding,
+              24
+            );
+
+            // text
+            ctx.fillStyle = "rgba(34, 34, 34, 1)";
+            ctx.font = "14px Arial";
+            ctx.fillText(text, right - (textWidth + 2 + btnPaddingRight), 18);
+
+            // border button
+            ctx.lineWidth = thickBorder;
+            ctx.strokeStyle = "rgba(34, 34, 34, 1)";
+            ctx.strokeRect(
+              right - (textWidth + 2 + btnPadding),
+              5,
+              textWidth + btnPadding,
+              24
+            );
+
+            coordinates.top = 5;
+            coordinates.bottom = 5 + 25;
+            coordinates.left = right - (textWidth + 2 + btnPadding);
+            coordinates.right = right;
+
+            ctx.restore();
+          }
+        },
+      };
+
+      // config block
+      const config = {
+        type: "bar",
+        data: data,
+        options: {
+          onHover: (event, chartElement) => {
+            if (myChart.config.data.datasets[0].label === "Anime Popularity") {
+              event.native.target.style.cursor = chartElement[0]
+                ? "pointer"
+                : "default";
+            } else {
+              event.native.target.style.cursor = "default";
+            }
+          },
+          parsing: {
+            xAxisKey: "browser",
+            yAxisKey: "popularity",
+          },
+          scales: {
+            y: {
+              beginAtZero: true,
+            },
+          },
+        },
+        plugins: [resetButton],
+      };
+
+      // init render block
+      const ctx = document.getElementById("myChart");
+      const myChart = new Chart(ctx, config);
+
+      const clickHandler = (event) => {
+        if (myChart.config.data.datasets[0].label === "Anime Popularity") {
+          const bar = myChart.getElementsAtEventForMode(
+            event,
+            "nearest",
+            { intersect: true },
+            true
+          );
+
+          if (bar[0]) {
+            changeChart(bar[0].index);
+          }
+        }
+      };
+
+      const changeChart = (browser) => {
+        myChart.config.options.parsing.xAxisKey = "episodeData.episode";
+        myChart.config.options.parsing.yAxisKey = "episodeData.views";
+
+        const vColor = [];
+        const vViews = [];
+
+        const vLabel = browserData[browser].episodeData.map((labels) => {
+          vViews.push(labels.views);
+          vColor.push(browserData[browser].color);
+          return labels.episode;
+        });
+
+        myChart.config.data.labels = vLabel;
+        myChart.config.data.datasets[0].label = browserData[browser].browser;
+        myChart.config.data.datasets[0].data = vViews;
+        myChart.config.data.datasets[0].backgroundColor = vColor;
+        myChart.config.data.datasets[0].borderColor = vColor;
+        myChart.update();
+      };
+
+      ctx.onclick = clickHandler;
+
+      // event handler =================================================================
+      const resetChart = () => {
+        myChart.config.options.parsing.xAxisKey = "browser";
+        myChart.config.options.parsing.yAxisKey = "popularity";
+
+        const bColor = [];
+        const bpopularity = [];
+        const bLabel = browserData.map((browser) => {
+          bpopularity.push(browser.popularity);
+          bColor.push(browser.color);
+          return browser.browser;
+        });
+
+        myChart.config.data.labels = bLabel;
+        myChart.config.data.datasets[0].label = "Anime Popularity";
+        myChart.config.data.datasets[0].data = bpopularity;
+        myChart.config.data.datasets[0].backgroundColor = bColor;
+        myChart.config.data.datasets[0].borderColor = bColor;
+        myChart.update();
+      };
+
+      const mousemoveHandler = (canvas, mousemove) => {
+        const x = mousemove.offsetX;
+        const y = mousemove.offsetY;
+
+        if (myChart.config.data.datasets[0].label !== "Anime Popularity") {
+          if (
+            x > coordinates.left &&
+            x < coordinates.right &&
+            y > coordinates.top &&
+            y < coordinates.bottom
+          ) {
+            canvas.style.cursor = "pointer";
+          } else {
+            canvas.style.cursor = "default";
+          }
+        }
+      };
+
+      const clickButtonHandler = (canvas, click) => {
+        const x = click.offsetX;
+        const y = click.offsetY;
+
+        if (myChart.config.data.datasets[0].label !== "Anime Popularity") {
+          if (
+            x > coordinates.left &&
+            x < coordinates.right &&
+            y > coordinates.top &&
+            y < coordinates.bottom
+          ) {
+            resetChart();
+          }
+        }
+      };
+
+      ctx.addEventListener("mousemove", (e) => {
+        myChart.resize();
+        mousemoveHandler(ctx, e);
+      });
+
+      ctx.addEventListener("click", (e) => {
+        myChart.resize();
+        clickButtonHandler(ctx, e);
+      });
+    </script>
+  </body>
+</html>
