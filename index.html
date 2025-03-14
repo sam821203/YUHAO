@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>YU HAO</title>
     <link rel="icon" type="image/x-icon" href="logo-sm.png" />
-    <link
-      rel="stylesheet"
-      href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css"
-    />
+    <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -44,65 +41,174 @@
     </nav>
     <main>
       <p class="description">
-        Hi! My name is Sam Huang. I'm a Web Developer actively working to
-        enhance my knowledge in the field of Data Visualization.
+        Hi! My name is Sam Huang. I'm a <strong>Web Developer</strong> actively working to enhance my knowledge in the
+        field of Data Visualization.
       </p>
-      <!-- <ul class="sort">
-        <li class="active">All</li>
-        <li>Front End</li>
-        <li>Web Design</li>
-        <li>Information Design</li>
-      </ul> -->
       <section class="sp-page">
-        <ul id="projects" class="sp-page__wrap">
-          <li class="item">
+        <div class="tabs">
+          <button class="tab-button active" data-category="all">All</button>
+          <button class="tab-button" data-category="works">Works</button>
+          <button class="tab-button" data-category="sp">SP</button>
+        </div>
+        <ul id="projects" class="sp-page__wrap" data-category="all">
+          <li class="item" data-category="works">
+            <a href="https://www.cht.com.tw/zh-tw/home/cht" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/cht-web.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>11</div>
+                <div class="title">中華官網</div>
+                <p class="info">前端頁面 RWD 切版與 UI 介面設計</p>
+                <div class="line"></div>
+                <p class="tools">JavaScript、SCSS、Swiper.js</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="works">
+            <a href="https://hisem.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/hisem.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2024<span>/</span>06</div>
+                <div class="title">中華 HiSEM 資安管理系統</div>
+                <p class="info">前端專案架構規劃，共用元件製作</p>
+                <div class="line"></div>
+                <p class="tools">Vue 3、PrimeVue、Lodash.js、Vueuse</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="works">
             <a href="https://voice-verse.vercel.app/" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/voice-verse.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/aeclice-web.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2025<span>/</span>09</div>
+                <div class="title">輻射防護雲化服務系統</div>
+                <p class="info">Google地圖與表格製作</p>
+                <div class="line"></div>
+                <p class="tools">Vue 3、Google map</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="works">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/gss.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2025<span>/</span>09</div>
+                <div class="title">華航地勤排班系統</div>
+                <p class="info">表格製作與資料庫串接</p>
+                <div class="line"></div>
+                <p class="tools">Javascript、jQuery、Java</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="works">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/data-quality.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2024<span>/</span>09</div>
+                <div class="title">資料治理平台</div>
+                <p class="info">後台前端頁面開發與 UI 介面設計</p>
+                <div class="line"></div>
+                <p class="tools">Vue 3、Element plus、Typescript</p>
+              </div>
+            </a>
+          </li>
+          <!-- <li class="item" data-category="works">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2024<span>/</span>09</div>
+                <div class="title">BCRM 企客系統</div>
+                <p class="info">前端開發</p>
+                <div class="line"></div>
+                <p class="tools">Vue 2</p>
+              </div>
+            </a>
+          </li> -->
+          <li class="item" data-category="works">
+            <a href="https://sam821203.github.io/ehsn-front-design/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/etmall-front-design.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>06</div>
+                <div class="title">東森得易購</div>
+                <p class="info">東森購物網專案整理。負責活動專案製作與資料串接、組版系統宮格維護與優化、EDM 模板製作</p>
+                <div class="line"></div>
+                <p class="tools">Sass, Pug, Webpack, Swiper, Python, Wix</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="sp">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2025<span>/</span>09</div>
+                <div class="title">AI Chat assistant</div>
+                <p class="info">AI Chat assistant</p>
+                <div class="line"></div>
+                <p class="tools">LangChain, Python, Vue</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="sp">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2025<span>/</span>09</div>
+                <div class="title">Line bots</div>
+                <p class="info">Line bots</p>
+                <div class="line"></div>
+                <p class="tools">Python</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="sp">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2024<span>/</span>09</div>
+                <div class="title">PDF-query</div>
+                <p class="info">PDF 詢問網站</p>
+                <div class="line"></div>
+                <p class="tools">Python</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="sp">
+            <a href="https://voice-verse.vercel.app/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/voice-verse.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2023<span>/</span>09</div>
                 <div class="title">VoiceVerse</div>
-                <p class="info">
-                  音樂串流平台。提供用戶註冊、上傳與管理音樂功能。能輕鬆在線上享受音樂庫裡的各種音頻
-                </p>
+                <p class="info">音樂串流平台。提供用戶註冊、上傳與管理音樂功能。能輕鬆在線上享受音樂庫裡的各種音頻</p>
                 <div class="line"></div>
-                <p class="tools">
-                  Vue, Vite, Pinia, Firebase, HowlerJS, PWA, scss
-                </p>
+                <p class="tools">Vue, Vite, Pinia, Firebase, Howler.js, PWA, SCSS</p>
               </div>
             </a>
           </li>
-          <li class="item">
-            <a href="Javascript:void(0)" class="evostake">
-              <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/evostake.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="page__description">
-                <div class="caption">2023<span>/</span>09</div>
-                <div class="title">Evostake</div>
-                <p class="info">客製化遊戲平台開發、後台系統建置</p>
-                <div class="line"></div>
-                <p class="tools">Vue, Vue CLI, Pinia, element UI, scss</p>
-              </div>
-            </a>
-          </li>
-          <li class="item">
+          <li class="item" data-category="sp">
             <a href="./chart-challenge.html" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/chartjs-challenge.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/chartjs-challenge.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2023<span>/</span>09</div>
@@ -113,103 +219,68 @@
               </div>
             </a>
           </li>
-          <li class="item">
+          <li class="item" data-category="sp">
             <a href="https://quasagram-573f0.web.app/#/" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/possimpible.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/possimpible.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2023<span>/</span>08</div>
                 <div class="title">Possimpible</div>
-                <p class="info">
-                  使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web
-                </p>
+                <p class="info">使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web</p>
                 <div class="line"></div>
-                <p class="tools">
-                  Vue, Quasar, axios, Firebase, PWA, Node.js, Express.js
-                </p>
+                <p class="tools">Vue, Quasar, axios, Firebase, PWA, Node.js, Express.js</p>
               </div>
             </a>
           </li>
-          <li class="item">
-            <a
-              href="https://artsleuth-requests-4684a.web.app/artists"
-              target="_blank"
-            >
+          <li class="item" data-category="sp">
+            <a href="https://artsleuth-requests-4684a.web.app/artists" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/art-sleuth.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/art-sleuth.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2023<span>/</span>06</div>
                 <div class="title">ArtSleuth</div>
-                <p class="info">
-                  藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家
-                </p>
+                <p class="info">藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家</p>
                 <div class="line"></div>
                 <p class="tools">Vue, Vue CLI, Vuex, Firebase, ESLint</p>
               </div>
             </a>
           </li>
-          <li class="item">
-            <a
-              href="https://sam821203.github.io/ehsn-front-design/"
-              target="_blank"
-            >
-              <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/etmall-front-design.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="page__description">
-                <div class="caption">2023<span>/</span>06</div>
-                <div class="title">東森得易購</div>
-                <p class="info">
-                  東森購物網專案整理。負責活動專案製作與資料串接、組版系統宮格維護與優化、EDM
-                  模板製作
-                </p>
-                <div class="line"></div>
-                <p class="tools">Sass, Pug, Webpack, Swiper, Python, Wix</p>
-              </div>
-            </a>
-          </li>
-          <li class="item">
-            <a
-              href="https://doterra-ivq4kqvbb-sam821203.vercel.app/"
-              target="_blank"
-            >
+          <li class="item" data-category="sp">
+            <a href="https://doterra-ivq4kqvbb-sam821203.vercel.app/" target="_blank">
               <div class="img-wrap">
                 <img src="./lazyload.jpg" data-src="./img/doTERRA.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2023<span>/</span>05</div>
                 <div class="title">dōTERRA</div>
-                <p class="info">
-                  dōTERRA
-                  電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計
-                </p>
+                <p class="info">dōTERRA 電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計</p>
                 <div class="line"></div>
                 <p class="tools">Vue, Vue CLI, Vuex, ESLint, Figma</p>
               </div>
             </a>
           </li>
-          <li class="item">
+          <li class="item" data-category="sp">
+            <a href="https://www.ginza-shinno.tokyo/" target="_blank">
+              <div class="img-wrap">
+                <img src="./lazyload.jpg" data-src="./img/ginza-shinno.jpg" alt="" />
+              </div>
+              <div class="page__description">
+                <div class="caption">2023<span>/</span>03</div>
+                <div class="title">銀座しんのう</div>
+                <p class="info">
+                  日本餐廳品牌網站。與 UI 和後端工程師合作，負責前端開發、Google Maps APIs 串接、動態效果製作
+                </p>
+                <div class="line"></div>
+                <p class="tools">Sass, Pug, Webpack, Swiper, AOS</p>
+              </div>
+            </a>
+          </li>
+          <li class="item" data-category="sp">
             <a href="./following-touch-firecracker/index.html" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/firetracker.png"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/firetracker.png" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2023<span>/</span>01</div>
@@ -220,35 +291,10 @@
               </div>
             </a>
           </li>
-          <li class="item">
-            <a href="https://www.ginza-shinno.tokyo/" target="_blank">
-              <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/ginza-shinno.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="page__description">
-                <div class="caption">2023<span>/</span>03</div>
-                <div class="title">銀座しんのう</div>
-                <p class="info">
-                  日本餐廳品牌網站。與 UI 和後端工程師合作，負責前端開發、Google
-                  Maps APIs 串接、動態效果製作
-                </p>
-                <div class="line"></div>
-                <p class="tools">Sass, Pug, Webpack, Swiper, AOS</p>
-              </div>
-            </a>
-          </li>
-          <li class="item">
+          <li class="item" data-category="sp">
             <a href="./falling-random/index.html" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/falling-random.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/falling-random.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2022<span>/</span>12</div>
@@ -259,36 +305,27 @@
               </div>
             </a>
           </li>
-          <li class="item">
-            <a
-              href="https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html"
-              target="_blank"
-            >
+          <li class="item" data-category="sp">
+            <a href="https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html" target="_blank">
               <div class="img-wrap">
                 <img src="./lazyload.jpg" data-src="./img/HFI.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2022<span>/</span>03</div>
                 <div class="title">洪裕數位布料圖書館平台</div>
-                <p class="info">
-                  與設計師和後端工程師合作，負責前端開發與動態效果製作
-                </p>
+                <p class="info">與設計師和後端工程師合作，負責前端開發與動態效果製作</p>
                 <div class="line"></div>
                 <p class="tools">Tailwind CSS, Gulp, Swiper, AOS</p>
               </div>
             </a>
           </li>
-          <li class="item">
+          <li class="item" data-category="sp">
             <a
               href="https://dev.creatop.tw/dev/2022/tnet-digifab/assets/zh-TW/advanced-filter/advanced-filter.html"
               target="_blank"
             >
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/tnet-digifab.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/tnet-digifab.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2022<span>/</span>02</div>
@@ -299,120 +336,56 @@
               </div>
             </a>
           </li>
-
-          <li class="item">
-            <a
-              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
-              target="_blank"
-            >
+          <li class="item" data-category="sp">
+            <a href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s" target="_blank">
               <div class="img-wrap">
-                <img
-                  src="./lazyload.jpg"
-                  data-src="./img/Movin-on.jpg"
-                  alt=""
-                />
+                <img src="./lazyload.jpg" data-src="./img/Movin-on.jpg" alt="" />
               </div>
               <div class="page__description">
                 <div class="caption">2022<span>/</span>01</div>
                 <div class="title">Movin'on 電影售票網</div>
                 <p class="info">
-                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
-                  PHP 工程師合作，負責前端開發與使用者介面設計
+                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與 PHP
+                  工程師合作，負責前端開發與使用者介面設計
                 </p>
                 <div class="line"></div>
                 <p class="tools">Bootstrap4, Figma, Miro</p>
               </div>
             </a>
           </li>
-
-          <!-- Design -->
-          <!-- <li class="item">
-            <a
-              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
-              target="_blank"
-            >
-              <div class="img-wrap">
-                <img src="./img/birds guide book36.jpg" alt="" />
-              </div>
-              <div class="page__description">
-                <div class="caption">2022<span>/</span>01</div>
-                <div class="title">Movin'on 電影售票網</div>
-                <p class="info">
-                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
-                  PHP 工程師合作，負責前端開發與使用者介面設計
-                </p>
-                <div class="line"></div>
-                <p class="tools">Bootstrap4, Figma, Miro</p>
-              </div>
-            </a>
-          </li>
-          <li class="item">
-            <a
-              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
-              target="_blank"
-            >
-              <div class="img-wrap">
-                <img
-                  src="./img/Perspective-presentation-Web-MockUp09-Mainfile.jpg"
-                  alt=""
-                />
-              </div>
-              <div class="page__description">
-                <div class="caption">2022<span>/</span>01</div>
-                <div class="title">Movin'on 電影售票網</div>
-                <p class="info">
-                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
-                  PHP 工程師合作，負責前端開發與使用者介面設計
-                </p>
-                <div class="line"></div>
-                <p class="tools">Bootstrap4, Figma, Miro</p>
-              </div>
-            </a>
-          </li>
-          <li class="item">
-            <a
-              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
-              target="_blank"
-            >
-              <div class="img-wrap">
-                <img src="./img/perspective_mockup.jpg" alt="" />
-              </div>
-              <div class="page__description">
-                <div class="caption">2022<span>/</span>01</div>
-                <div class="title">Movin'on 電影售票網</div>
-                <p class="info">
-                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
-                  PHP 工程師合作，負責前端開發與使用者介面設計
-                </p>
-                <div class="line"></div>
-                <p class="tools">Bootstrap4, Figma, Miro</p>
-              </div>
-            </a>
-          </li>
-          <li class="item">
-            <a
-              href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
-              target="_blank"
-            >
-              <div class="img-wrap">
-                <img src="./img/image_114.jpg" alt="" />
-              </div>
-              <div class="page__description">
-                <div class="caption">2022<span>/</span>01</div>
-                <div class="title">Dark Art</div>
-                <p class="info">
-                  完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
-                  PHP 工程師合作，負責前端開發與使用者介面設計
-                </p>
-                <div class="line"></div>
-                <p class="tools">Bootstrap4, Figma, Miro</p>
-              </div>
-            </a>
-          </li> -->
         </ul>
       </section>
     </main>
     <script>
+      function showTab(category) {
+        projects.forEach(project => {
+          const projectCategory = project.dataset.category;
+          if (category === 'all' || projectCategory === category) {
+            project.style.display = 'block';
+          } else {
+            project.style.display = 'none';
+          }
+        });
+      }
+
+      const projects = document.querySelectorAll('.item');
+      const buttons = document.querySelectorAll('.tab-button');
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          // 移除所有按鈕的 active class
+          buttons.forEach(btn => btn.classList.remove('active'));
+
+          // 為當前點擊的按鈕添加 active class
+          button.classList.add('active');
+
+          const category = button.dataset.category;
+          console.log('category', button.dataset);
+          // 過濾並顯示符合分類的專案
+          showTab(category);
+        });
+      });
+
       const addGoTopBtn = () => {
         const makeGoTopBtn = () => {
           const svgNameSpace = "http://www.w3.org/2000/svg";
