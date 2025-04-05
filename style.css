@@ -327,14 +327,12 @@ section {
 .tools .tag {
   display: inline-block;
   border-radius: 4px;
-  /* height: 40px; */
   padding: 4px 12px;
   margin-right: 8px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   color: #919191;
-  /* border: 1px solid #e8e8e8; */
   background-color: #f6f6f6;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, .035),0 3px 6px rgba(0, 0, 0, .035);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, .025),0 3px 6px rgba(0, 0, 0, .025);
 }
 
 .tabs {
@@ -352,15 +350,16 @@ section {
   border: none;
   border-radius: 50px;
   font-size: 16px;
+  font-weight: 500;
   transition: 0.1s ease-out;
 }
 
 .tab-button:hover {
-  background-color: #F6DE95;
+  background-color: #F2D066;
 }
 
 .tab-button.active {
-  background-color: #F6DE95;
+  background-color: #F2D066;
 }
 
 .icon-arrow {
