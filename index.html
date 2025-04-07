@@ -6,20 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fishing</title>
     <link rel="icon" type="image/x-icon" href="logo-small.png" />
-    <link
-      rel="stylesheet"
-      href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css"
-    />
+    <link rel="stylesheet" href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -35,9 +29,6 @@
             <a href="javascript:void(0)">Home</a>
           </li>
           <li>
-            <a href="javascript:void(0)">About</a>
-          </li>
-          <li>
             <a href="#projects">Projects</a>
           </li>
           <li>
@@ -49,14 +40,14 @@
     <main>
       <p class="description">
         Hi! My name is Yu Hao Huang. I'm a
-        <strong>Front-end Engineer</strong> actively working to enhance my
-        knowledge in the field of Web Development.
+        <strong>Front-end Engineer</strong> actively working to enhance my knowledge in the field of Web Development.
       </p>
       <section class="sp-page">
         <div class="tabs">
-          <button class="tab-button active" data-category="all">All</button>
-          <button class="tab-button" data-category="works">Works</button>
-          <button class="tab-button" data-category="sp">Side Projects</button>
+          <a class="tab-button active" data-category="all">All</a>
+          <a class="tab-button" data-category="works">Works</a>
+          <a class="tab-button" data-category="sp">Side Projects</a>
+          <a class="tab-button" data-category="sh">Side Hustles</a>
         </div>
         <ul id="projects" class="sp-page__wrap" data-category="all">
           <li class="item" data-category="works">
@@ -65,24 +56,18 @@
             </div>
             <div class="page__description">
               <div class="title">中華官網</div>
-              <p class="info">
-                根據品牌風格與設計準則，設計並開發直覺且一致性的使用者介面。實作
-                RWD，確保在各種裝置上都有良好的瀏覽體驗
-              </p>
+              <p class="info">根據品牌風格與設計準則，設計與前端開發 RWD 響應式網頁以符合各裝置</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">JavaScript</span><span class="tag">SCSS</span
-                ><span class="tag">Swiper</span><span class="tag">Figma</span>
+                <span class="tag">JavaScript</span><span class="tag">SCSS</span><span class="tag">Swiper</span
+                ><span class="tag">Figma</span>
               </p>
               <a href="https://www.cht.com.tw/zh-tw/home/cht" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -95,24 +80,18 @@
             </div>
             <div class="page__description">
               <div class="title">中華 HiSEM 資安管理系統</div>
-              <p class="info">
-                軟體開發流程、前端專案架構規劃、共用元件製作、部署
-              </p>
+              <p class="info">因應資安威脅，導入新系統取代老舊架構。前端專案架構規劃與頁面開發、共用元件製作</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">PrimeVue</span
-                ><span class="tag">PrimeFlex</span><span class="tag">Vite</span
-                ><span class="tag">Lodash</span><span class="tag">Vueuse</span>
+                <span class="tag">Vue 3</span><span class="tag">PrimeVue</span><span class="tag">PrimeFlex</span
+                ><span class="tag">Vite</span><span class="tag">Lodash</span><span class="tag">Vueuse</span>
               </p>
               <a href="https://hisem.app/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -121,31 +100,22 @@
           </li>
           <li class="item" data-category="works">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/aeclice-web.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/aeclice-web.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">輻射防護雲化服務系統</div>
-              <p class="info">Google地圖與表格製作</p>
+              <p class="info">整合 Google 地圖即時追蹤、異常警示、歷史查詢與資安機制，強化高風險輻射源管理效能</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">Google Map</span
-                ><span class="tag">TypeScript</span
-                ><span class="tag">Element Plus</span
-                ><span class="tag">Tailwind CSS</span>
+                <span class="tag">Vue 3</span><span class="tag">Google Map</span><span class="tag">TypeScript</span
+                ><span class="tag">Element Plus</span><span class="tag">Tailwind CSS</span>
               </p>
-              <a href="javascript:;" target="_blank">
+              <a class="disabled-link">
                 <div class="more-button__wrap">
-                  <div class="more-button">
+                  <div class="more-button disabled">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -158,21 +128,17 @@
             </div>
             <div class="page__description">
               <div class="title">華航地勤排班系統</div>
-              <p class="info">表格製作與資料庫串接</p>
+              <p class="info">開發具彈性排班與即時更新功能的前端頁面。整合人員資訊、視覺化報表與簡易的人力配置工具</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Javascript</span
-                ><span class="tag">jQuery</span><span class="tag">Java</span>
+                <span class="tag">Javascript</span><span class="tag">jQuery</span><span class="tag">Java</span>
               </p>
-              <a href="https://voice-verse.vercel.app/" target="_blank">
+              <a href="http://192.168.63.67/gssAdm/code/iam" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -181,30 +147,25 @@
           </li>
           <li class="item" data-category="works">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/data-quality.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/data-quality.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">資料治理平台</div>
-              <p class="info">後台前端頁面開發與 UI 介面設計</p>
+              <p class="info">
+                後台頁面設計與開發，前台會員權限登入製作。平台可查詢主要功能模組，並支持資料市集與其他系統的 API
+                整合，實現資料資產的可視化與查找
+              </p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">TypeScript</span
-                ><span class="tag">Element Plus</span
+                <span class="tag">Vue 3</span><span class="tag">TypeScript</span><span class="tag">Element Plus</span
                 ><span class="tag">Websocket</span>
               </p>
-              <a href="javascript:;" target="_blank">
+              <a class="disabled-link">
                 <div class="more-button__wrap">
-                  <div class="more-button">
+                  <div class="more-button disabled">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -213,92 +174,22 @@
           </li>
           <li class="item" data-category="works">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/etmall-front-design.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/etmall-front-design.jpg" alt="" />
             </div>
             <div class="page__description">
-              <div class="title">東森得易購</div>
-              <p class="info">
-                東森購物網專案整理。負責活動專案製作與資料串接、組版系統宮格維護與優化、EDM
-                模板製作
-              </p>
+              <div class="title">東森購物</div>
+              <p class="info">東森購物網專案整理。負責活動專案製作與資料串接、組版系統宮格維護與優化、EDM 模板製作</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">SCSS</span><span class="tag">Pug</span
-                ><span class="tag">Webpack</span>
+                <span class="tag">SCSS</span><span class="tag">Pug</span><span class="tag">Webpack</span
+                ><span class="tag">Figma</span>
               </p>
-              <a
-                href="https://sam821203.github.io/ehsn-front-design/"
-                target="_blank"
-              >
+              <a href="https://sam821203.github.io/ehsn-front-design/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="item" data-category="sp">
-            <div class="img-wrap">
-              <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
-            </div>
-            <div class="page__description">
-              <div class="title">Pulse</div>
-              <p class="info">製作中...</p>
-              <div class="line"></div>
-              <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">Nest.js</span
-                ><span class="tag">MongoDB</span><span class="tag">D3.js</span
-                ><span class="tag">Websocket</span>
-              </p>
-              <a href="https://teknews.vercel.app/" target="_blank">
-                <div class="more-button__wrap">
-                  <div class="more-button">
-                    <span>查看</span>
-                    <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
-          <li class="item" data-category="sp">
-            <div class="img-wrap">
-              <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
-            </div>
-            <div class="page__description">
-              <div class="title">Mailyx</div>
-              <p class="info">信件管理 App。提供註冊、收信與寄信的功能</p>
-              <div class="line"></div>
-              <p class="tools">
-                <span class="tag">Angular</span
-                ><span class="tag">TypeScript</span><span class="tag">RxJS</span
-                ><span class="tag">Nest.js</span><span class="tag">MongoDB</span
-                ><span class="tag">Mailgun</span>
-              </p>
-              <a href="https://teknews.vercel.app/" target="_blank">
-                <div class="more-button__wrap">
-                  <div class="more-button">
-                    <span>查看</span>
-                    <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -311,25 +202,18 @@
             </div>
             <div class="page__description">
               <div class="title">TekNews</div>
-              <p class="info">
-                一個結合即時新聞與天氣資訊的便利小工具，讓使用者一次掌握最新資訊！
-              </p>
+              <p class="info">結合即時新聞與天氣資訊的便利小工具，讓使用者一次掌握最新資訊！</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Angular</span
-                ><span class="tag">TypeScript</span><span class="tag">RxJS</span
-                ><span class="tag">NewsAPI</span
-                ><span class="tag">OpenWeatherMap</span>
+                <span class="tag">Angular</span><span class="tag">TypeScript</span><span class="tag">RxJS</span
+                ><span class="tag">NewsAPI</span><span class="tag">OpenWeatherMap</span>
               </p>
               <a href="https://teknews.vercel.app/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -338,37 +222,25 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/ai-chat-assisant.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/ai-chat-assisant.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">AI Chat assistant</div>
               <p class="info">
-                與智能聊天機器人進行即時對話💬 使用 LangChain 和 OpenAI API
-                處理語意理解，並整合 Google 搜尋功能來提供即時、準確的資訊回應
+                與智能聊天機器人進行即時💬 使用 LangChain、OpenAI API 處理語意理解，並整合 Google
+                搜尋功能來提供即時、準確的回應
               </p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Python</span><span class="tag">LangChain</span
-                ><span class="tag">OpenAI</span
-                ><span class="tag">Google Search</span
-                ><span class="tag">Vue 3</span>
+                <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">OpenAI</span
+                ><span class="tag">Google Search</span><span class="tag">Vue 3</span>
               </p>
-              <a
-                href="https://chat-bot-green-three.vercel.app/"
-                target="_blank"
-              >
+              <a href="https://chat-bot-green-three.vercel.app/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -381,25 +253,18 @@
             </div>
             <div class="page__description">
               <div class="title">Birdie Bots</div>
-              <p class="info">
-                LINE 鳥類知識問答機器人🤖 發送訊息時，系統會透過 OpenAI API
-                生成專業的鳥類相關回答
-              </p>
+              <p class="info">LINE 鳥類知識問答機器人🤖 發送訊息時，系統會透過 OpenAI API 生成專業的鳥類相關回答</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Python</span
-                ><span class="tag">LINE Messaging API</span
+                <span class="tag">Python</span><span class="tag">LINE Messaging API</span
                 ><span class="tag">OpenAI</span>
               </p>
-              <a href="" target="_blank">
+              <a href="https://github.com/sam821203/birdie-bot" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -413,23 +278,19 @@
             <div class="page__description">
               <div class="title">PDF-query</div>
               <p class="info">
-                資訊查詢系統將 PDF 文件轉換為向量，嵌入並儲存在 Chroma
-                資料庫中，讓使用者透過查詢獲得與該 PDF 相關的內容回應
+                資訊查詢系統將 PDF 文件轉換為向量，嵌入並儲存在 Chroma 資料庫中，讓使用者透過查詢獲得與該 PDF
+                相關的內容回應
               </p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Python</span><span class="tag">LangChain</span
-                ><span class="tag">OpenAI</span>
+                <span class="tag">Python</span><span class="tag">LangChain</span><span class="tag">OpenAI</span>
               </p>
-              <a href="" target="_blank">
+              <a href="https://github.com/sam821203/birdie-bot" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -438,22 +299,15 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/voice-verse.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/voice-verse.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">VoiceVerse</div>
-              <p class="info">
-                音樂串流平台。提供用戶註冊、上傳與管理音樂功能。能輕鬆在線上享受音樂庫裡的各種音頻
-              </p>
+              <p class="info">音樂串流平台。提供用戶註冊、上傳與管理音樂功能。能輕鬆在線上享受音樂庫裡的各種音頻</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">Vite</span
-                ><span class="tag">Pinia</span><span class="tag">Firebase</span
-                ><span class="tag">Howler.js</span><span class="tag">PWA</span
+                <span class="tag">Vue 3</span><span class="tag">Vite</span><span class="tag">Pinia</span
+                ><span class="tag">Firebase</span><span class="tag">Howler.js</span><span class="tag">PWA</span
                 ><span class="tag">SCSS</span>
               </p>
               <a href="https://voice-verse.vercel.app/" target="_blank">
@@ -461,10 +315,7 @@
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -473,28 +324,21 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/chartjs-challenge.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/chartjs-challenge.jpg" alt="" />
             </div>
             <div class="page__description">
-              <div class="title">ChartJS challenge</div>
-              <p class="info">使用 chart.js 做點圖表唄!</p>
+              <div class="title">Chart challenge</div>
+              <p class="info">使用各類視覺化函式庫做點圖表唄!</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Chart.js</span><span class="tag">Canvas</span>
+                <span class="tag">Chart.js</span><span class="tag">D3.js</span><span class="tag">Canvas</span>
               </p>
               <a href="./chart-challenge.html" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -503,32 +347,22 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/possimpible.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/possimpible.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">Possimpible</div>
-              <p class="info">
-                使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web
-              </p>
+              <p class="info">使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">Quasar</span
-                ><span class="tag">Firebase</span><span class="tag">PWA</span
-                ><span class="tag">Express.js</span>
+                <span class="tag">Vue 3</span><span class="tag">Quasar</span><span class="tag">Firebase</span
+                ><span class="tag">PWA</span><span class="tag">Express.js</span>
               </p>
               <a href="https://quasagram-573f0.web.app/#/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -537,34 +371,21 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/art-sleuth.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/art-sleuth.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">ArtSleuth</div>
-              <p class="info">
-                藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家
-              </p>
+              <p class="info">藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">Vuex</span
-                ><span class="tag">Firebase</span>
+                <span class="tag">Vue 3</span><span class="tag">Vuex</span><span class="tag">Firebase</span>
               </p>
-              <a
-                href="https://artsleuth-requests-4684a.web.app/artists"
-                target="_blank"
-              >
+              <a href="https://artsleuth-requests-4684a.web.app/artists" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -577,27 +398,17 @@
             </div>
             <div class="page__description">
               <div class="title">dōTERRA</div>
-              <p class="info">
-                dōTERRA
-                電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計
-              </p>
+              <p class="info">dōTERRA 電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Vue 3</span><span class="tag">Vuex</span
-                ><span class="tag">Figma</span>
+                <span class="tag">Vue 3</span><span class="tag">Vuex</span><span class="tag">Figma</span>
               </p>
-              <a
-                href="https://doterra-ivq4kqvbb-sam821203.vercel.app/"
-                target="_blank"
-              >
+              <a href="https://doterra-ivq4kqvbb-sam821203.vercel.app/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -606,33 +417,24 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/ginza-shinno.jpg"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/ginza-shinno.jpg" alt="" />
             </div>
             <div class="page__description">
               <div class="title">銀座しんのう</div>
               <p class="info">
-                日本餐廳品牌網站。與 UI 和後端工程師合作，負責前端開發、Google
-                Maps APIs 串接、動態效果製作
+                日本餐廳品牌網站。與 UI 和後端工程師合作，負責前端開發、Google Maps APIs 串接、動態效果製作
               </p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">SCSS</span><span class="tag">Pug</span
-                ><span class="tag">Webpack</span><span class="tag">Swiper</span
-                ><span class="tag">AOS</span>
+                <span class="tag">SCSS</span><span class="tag">Pug</span><span class="tag">Webpack</span
+                ><span class="tag">Swiper</span><span class="tag">AOS</span>
               </p>
               <a href="https://www.ginza-shinno.tokyo/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -641,31 +443,19 @@
           </li>
           <li class="item" data-category="sp">
             <div class="img-wrap">
-              <img
-                src="./lazyload.jpg"
-                data-src="./img/firetracker.png"
-                alt=""
-              />
+              <img src="./lazyload.jpg" data-src="./img/firetracker.png" alt="" />
             </div>
             <div class="page__description">
               <div class="title">Touch Firecracker</div>
               <p class="info">客製化手指與滑鼠滑動煙火特效</p>
               <div class="line"></div>
-              <p class="tools">
-                <span class="tag">JavaScript</span><span class="tag">CSS</span>
-              </p>
-              <a
-                href="./following-touch-firecracker/index.html"
-                target="_blank"
-              >
+              <p class="tools"><span class="tag">JavaScript</span><span class="tag">CSS</span></p>
+              <a href="./following-touch-firecracker/index.html" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -678,27 +468,18 @@
             </div>
             <div class="page__description">
               <div class="title">洪裕數位布料圖書館平台</div>
-              <p class="info">
-                與設計師和後端工程師合作，負責前端開發與動態效果製作
-              </p>
+              <p class="info">與設計師和後端工程師合作，負責前端開發與動態效果製作</p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Tailwind CSS</span
-                ><span class="tag">Gulp</span><span class="tag">Swiper</span
+                <span class="tag">Tailwind CSS</span><span class="tag">Gulp</span><span class="tag">Swiper</span
                 ><span class="tag">AOS</span>
               </p>
-              <a
-                href="https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html"
-                target="_blank"
-              >
+              <a href="https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -712,26 +493,70 @@
             <div class="page__description">
               <div class="title">Movin'on 電影售票網</div>
               <p class="info">
-                完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與
-                PHP 工程師合作，負責前端開發與使用者介面設計
+                完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與 PHP
+                工程師合作，負責前端開發與使用者介面設計
               </p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Bootstrap</span><span class="tag">Figma</span
-                ><span class="tag">Miro</span>
+                <span class="tag">Bootstrap</span><span class="tag">Figma</span><span class="tag">Miro</span>
               </p>
-              <a
-                href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
-                target="_blank"
-              >
+              <a href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
                     <span>查看</span>
                     <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="item" data-category="sh">
+            <div class="img-wrap">
+              <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
+            </div>
+            <div class="page__description">
+              <div class="title">Pulse 股票分析平台</div>
+              <p class="info">
+                即時個股追蹤、財報數據分析與技術圖表。平台提供視覺化介面，讓使用者輕鬆查看各項股票的最新動態與財務指標
+              </p>
+              <div class="line"></div>
+              <p class="tools">
+                <span class="tag">Vue 3</span><span class="tag">Nest.js</span><span class="tag">MongoDB</span
+                ><span class="tag">D3.js</span><span class="tag">Websocket</span>
+              </p>
+              <a href="https://github.com/sam821203/Pulse-frontend" target="_blank">
+                <div class="more-button__wrap">
+                  <div class="more-button">
+                    <span>查看</span>
+                    <div class="icon-arrow">
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="item" data-category="sh">
+            <div class="img-wrap">
+              <img src="./lazyload.jpg" data-src="./img/empty.jpg" alt="" />
+            </div>
+            <div class="page__description">
+              <div class="title">Mailyx</div>
+              <p class="info">註冊即擁有專屬 Email，可輕鬆收發信件的全方位信件管理平台！</p>
+              <div class="line"></div>
+              <p class="tools">
+                <span class="tag">Angular</span><span class="tag">Semantic UI</span><span class="tag">TypeScript</span
+                ><span class="tag">RxJS</span><span class="tag">Nest.js</span><span class="tag">MongoDB</span
+                ><span class="tag">Mailgun</span>
+              </p>
+              <a href="https://github.com/sam821203/mailyx" target="_blank">
+                <div class="more-button__wrap">
+                  <div class="more-button">
+                    <span>查看</span>
+                    <div class="icon-arrow">
+                      <i class="fa-solid fa-up-right-from-square" style="color: white"></i>
                     </div>
                   </div>
                 </div>
@@ -758,15 +583,12 @@
 
       buttons.forEach((button) => {
         button.addEventListener("click", () => {
-          // 移除所有按鈕的 active class
           buttons.forEach((btn) => btn.classList.remove("active"));
 
-          // 為當前點擊的按鈕添加 active class
           button.classList.add("active");
 
           const category = button.dataset.category;
           console.log("category", button.dataset);
-          // 過濾並顯示符合分類的專案
           showTab(category);
         });
       });
