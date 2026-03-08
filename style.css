@@ -138,8 +138,8 @@ section {
 .logo__wrap {
   display: flex;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
 }
 
 .logo__wrap img {
@@ -148,9 +148,9 @@ section {
 }
 
 .logo__title {
-  font-family: "Kanit", sans-serif;
-  font-weight: 500;
-  font-size: 32px;
+  font-family: "Caveat", cursive;
+  font-weight: 600;
+  font-size: 36px;
 }
 
 .works__wrap {
@@ -435,8 +435,234 @@ section {
   pointer-events: none;
 }
 
-@media (max-width: 420px) {
+.card-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.card-actions > a {
+  width: auto;
+  flex-shrink: 0;
+}
+
+.card-github-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #777;
+  font-size: 2rem;
+  transition: color 0.2s;
+}
+
+.card-github-link:hover {
+  color: #444;
+}
+
+.card-github-link i {
+  display: block;
+}
+
+/* ========== RWD: Tablet & below (< 992px) ========== */
+@media (max-width: 991px) {
+  section {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .nav__wrap {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .description {
+    width: 100%;
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+    box-sizing: border-box;
+  }
+
+  .logo__title {
+    font-size: 27px;
+  }
+
+  .works__wrap > li {
+    margin-left: 16px;
+    font-size: 18px;
+  }
+}
+
+/* ========== RWD: Tablet grid only (577px ~ 991px) ========== */
+@media (min-width: 577px) and (max-width: 991px) {
+  .sp-page__wrap {
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+  }
+}
+
+/* ========== RWD: Mobile (≤ 576px) ========== */
+@media (max-width: 576px) {
+  .nav__wrap {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .logo__title {
+    font-size: 22px;
+  }
+
+  .works__wrap > li {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+
+  .works__wrap a {
+    font-size: 14px;
+  }
+
+  .description {
+    margin-top: 120px;
+    margin-bottom: 80px;
+    padding-left: 16px;
+    padding-right: 16px;
+    font-size: 18px;
+  }
+
+  .tabs {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .tab-button {
+    margin: 0 6px;
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .sp-page__wrap {
+    grid-template-columns: 1fr;
+    grid-column-gap: 16px;
+    grid-row-gap: 16px;
+  }
+
+  .page__description {
+    padding: 16px 20px;
+  }
+
+  .page__description .info {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .tools {
+    height: auto;
+    min-height: 80px;
+  }
+
+  .go-top {
+    right: 16px;
+    bottom: 24px;
+  }
+
   .more-button {
     height: 48px;
   }
+}
+
+/* Lightbox */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#lightbox.is-open {
+  display: flex;
+}
+
+.lightbox__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+}
+
+.lightbox__close {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 101;
+  width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  font-size: 1.25rem;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.lightbox__close:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.lightbox__img {
+  position: relative;
+  z-index: 101;
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+#projects .img-wrap {
+  cursor: pointer;
+  position: relative;
+}
+
+#projects .img-wrap::after {
+  content: "\f067";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 400;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 1.25rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+#projects .img-wrap:hover::after {
+  opacity: 1;
+}
+
+#projects .img-wrap.no-lightbox::after {
+  display: none;
 }

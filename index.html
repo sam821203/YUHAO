@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fishing</title>
-    <link rel="icon" type="image/x-icon" href="logo-small.png" />
+    <link rel="icon" type="image/x-icon" href="logo.png" />
     <link
       rel="stylesheet"
       href="https://media.etmall.com.tw/sp/12500/generate_v1.5.5.css"
@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
     />
     <link
@@ -27,7 +27,7 @@
     <nav id="navMenu">
       <div class="nav__wrap">
         <div class="logo__wrap">
-          <img src="logo-small.png" alt="" />
+          <img src="logo.png" alt="" />
           <span class="logo__title">Fishing</span>
         </div>
         <ul class="works__wrap">
@@ -46,7 +46,7 @@
     <main>
       <p class="description">
         Hi! My name is Yu Hao Huang. I'm a
-        <strong>Front-end Engineer</strong> actively working to enhance my
+        <strong>Full Stack Engineer</strong> actively working to enhance my
         knowledge in the field of Web Development.
       </p>
       <section class="sp-page">
@@ -57,6 +57,70 @@
           <a class="tab-button" data-category="sh">Side Hustles</a>
         </div>
         <ul id="projects" class="sp-page__wrap" data-category="all">
+          <li class="item" data-category="sp">
+            <div class="img-wrap">
+              <img src="./lazyload.jpg" data-src="./img/insightaero.jpg" alt="" />
+            </div>
+            <div class="page__description">
+              <div class="title">InsightAero</div>
+              <p class="info">
+                環境感知無人機任務監控平台：即時遙測、氣象整合、有效空速修正與 AI 導航及結案報告
+              </p>
+              <div class="line"></div>
+              <p class="tools">
+                  <span class="tag">React</span><span class="tag">AI</span
+                ><span class="tag">Google Map</span><span class="tag">OpenWeatherMap</span><span class="tag">WebSocket</span
+                ><span class="tag">FastAPI</span><span class="tag">PostgreSQL</span>
+              </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/InsightAero" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="disabled-link">
+                <div class="more-button__wrap">
+                  <div class="more-button disabled">
+                    <span>查看</span>
+                    <div class="icon-arrow">
+                      <i
+                        class="fa-solid fa-up-right-from-square"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              </div>
+            </div>
+          </li>
+          <li class="item" data-category="sp">
+            <div class="img-wrap">
+              <img src="./lazyload.jpg" data-src="./img/salesOps.jpg" alt="" />
+            </div>
+            <div class="page__description">
+              <div class="title">SalesOps</div>
+              <p class="info">
+                內部 SalesOps 平台，用於管理銷售工作流程、追蹤績效，並確保資料完整性
+              </p>
+              <div class="line"></div>
+              <p class="tools">
+                <span class="tag">React</span><span class="tag">Hono</span><span class="tag">SQLite</span><span class="tag">Prisma</span><span class="tag">Husky</span><span class="tag">Cursor Rules/Skills</span>
+              </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/SalesOps" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="disabled-link">
+                <div class="more-button__wrap">
+                  <div class="more-button disabled">
+                    <span>查看</span>
+                    <div class="icon-arrow">
+                      <i
+                        class="fa-solid fa-up-right-from-square"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              </div>
+            </div>
+          </li>
           <li class="item" data-category="works">
             <div class="img-wrap">
               <img src="./lazyload.jpg" data-src="./img/cht-web.jpg" alt="" />
@@ -72,6 +136,7 @@
                 <span class="tag">JavaScript</span><span class="tag">SCSS</span
                 ><span class="tag">Swiper</span><span class="tag">Figma</span>
               </p>
+              <div class="card-actions">
               <a href="https://www.cht.com.tw/zh-tw/home/cht" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
@@ -85,6 +150,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="works">
@@ -102,6 +168,7 @@
                 ><span class="tag">PrimeFlex</span><span class="tag">Vite</span
                 ><span class="tag">Lodash</span><span class="tag">Vueuse</span>
               </p>
+              <div class="card-actions">
               <a class="disabled-link" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button disabled">
@@ -115,6 +182,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="works">
@@ -138,6 +206,7 @@
                 ><span class="tag">Element Plus</span
                 ><span class="tag">Tailwind CSS</span>
               </p>
+              <div class="card-actions">
               <a class="disabled-link">
                 <div class="more-button__wrap">
                   <div class="more-button disabled">
@@ -151,6 +220,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="works">
@@ -167,6 +237,7 @@
                 <span class="tag">Javascript</span
                 ><span class="tag">jQuery</span><span class="tag">Java</span>
               </p>
+              <div class="card-actions">
               <a class="disabled-link" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button disabled">
@@ -180,6 +251,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="works">
@@ -202,6 +274,7 @@
                 ><span class="tag">Element Plus</span
                 ><span class="tag">Websocket</span>
               </p>
+              <div class="card-actions">
               <a class="disabled-link">
                 <div class="more-button__wrap">
                   <div class="more-button disabled">
@@ -215,6 +288,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="works">
@@ -236,6 +310,8 @@
                 <span class="tag">SCSS</span><span class="tag">Pug</span
                 ><span class="tag">Webpack</span><span class="tag">Figma</span>
               </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/ehsn-front-design" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
               <a
                 href="https://sam821203.github.io/ehsn-front-design/"
                 target="_blank"
@@ -252,39 +328,10 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
-          <li class="item" data-category="sp">
-            <div class="img-wrap">
-              <img src="./lazyload.jpg" data-src="./img/teknews.jpg" alt="" />
-            </div>
-            <div class="page__description">
-              <div class="title">TekNews</div>
-              <p class="info">
-                結合即時新聞與天氣資訊的便利小工具，讓使用者一次掌握最新資訊！
-              </p>
-              <div class="line"></div>
-              <p class="tools">
-                <span class="tag">Angular</span
-                ><span class="tag">TypeScript</span><span class="tag">RxJS</span
-                ><span class="tag">NewsAPI</span
-                ><span class="tag">OpenWeatherMap</span>
-              </p>
-              <a href="https://teknews.vercel.app/" target="_blank">
-                <div class="more-button__wrap">
-                  <div class="more-button">
-                    <span>查看</span>
-                    <div class="icon-arrow">
-                      <i
-                        class="fa-solid fa-up-right-from-square"
-                        style="color: white"
-                      ></i>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </li>
+        
           <li class="item" data-category="sp">
             <div class="img-wrap">
               <img
@@ -294,18 +341,19 @@
               />
             </div>
             <div class="page__description">
-              <div class="title">AI Chat assistant</div>
+              <div class="title">AI ChatBot</div>
               <p class="info">
-                與智能聊天機器人進行即時💬 使用 LangChain、OpenAI API
-                處理語意理解，並整合 Google 搜尋功能來提供即時、準確的回應
+                一個能聊天💬的 AI 小幫手，有一般問答跟會自己搜尋的 Agent 模式，用 LangGraph、OpenAI 當大腦，Flask + Vue 3 當手腳
               </p>
               <div class="line"></div>
               <p class="tools">
-                <span class="tag">Python</span><span class="tag">LangChain</span
+                <span class="tag">Python</span><span class="tag">LangGraph</span
                 ><span class="tag">OpenAI</span
                 ><span class="tag">Google Search</span
                 ><span class="tag">Vue 3</span>
               </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/chat-bot" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
               <a
                 href="https://chat-bot-green-three.vercel.app/"
                 target="_blank"
@@ -322,6 +370,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -340,9 +389,11 @@
                 ><span class="tag">LINE Messaging API</span
                 ><span class="tag">OpenAI</span>
               </p>
-              <a href="https://github.com/sam821203/birdie-bot" target="_blank">
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/birdie-bot" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="disabled-link">
                 <div class="more-button__wrap">
-                  <div class="more-button">
+                  <div class="more-button disabled">
                     <span>查看</span>
                     <div class="icon-arrow">
                       <i
@@ -353,6 +404,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -362,20 +414,19 @@
             <div class="page__description">
               <div class="title">PDF-query</div>
               <p class="info">
-                資訊查詢系統將 PDF 文件轉換為向量，嵌入並儲存在 Chroma
-                資料庫中，讓使用者透過查詢獲得與該 PDF 相關的內容回應
+                以自然語言查詢 PDF 的應用。上傳 PDF 後可提問並取得附有來源頁面的回答
               </p>
               <div class="line"></div>
               <p class="tools">
                 <span class="tag">Python</span><span class="tag">LangChain</span
-                ><span class="tag">OpenAI</span>
+                ><span class="tag">RAG</span
+                  ><span class="tag">OpenAI</span>
               </p>
-              <a
-                href="https://github.com/sam821203/langchain-pdf-query"
-                target="_blank"
-              >
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/langchain-pdf-query" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a class="disabled-link">
                 <div class="more-button__wrap">
-                  <div class="more-button">
+                  <div class="more-button disabled">
                     <span>查看</span>
                     <div class="icon-arrow">
                       <i
@@ -386,6 +437,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -408,6 +460,8 @@
                 ><span class="tag">Howler.js</span><span class="tag">PWA</span
                 ><span class="tag">SCSS</span>
               </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/VoiceVerse" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
               <a href="https://voice-verse.vercel.app/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
@@ -421,6 +475,41 @@
                   </div>
                 </div>
               </a>
+              </div>
+            </div>
+          </li>
+          <li class="item" data-category="sp">
+            <div class="img-wrap">
+              <img src="./lazyload.jpg" data-src="./img/teknews.jpg" alt="" />
+            </div>
+            <div class="page__description">
+              <div class="title">TekNews</div>
+              <p class="info">
+                結合即時新聞與天氣資訊的便利小工具，讓使用者一次掌握最新資訊！
+              </p>
+              <div class="line"></div>
+              <p class="tools">
+                <span class="tag">Angular</span
+                ><span class="tag">TypeScript</span><span class="tag">RxJS</span
+                ><span class="tag">NewsAPI</span
+                ><span class="tag">OpenWeatherMap</span>
+              </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/teknews" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+              <a href="https://teknews.vercel.app/" target="_blank">
+                <div class="more-button__wrap">
+                  <div class="more-button">
+                    <span>查看</span>
+                    <div class="icon-arrow">
+                      <i
+                        class="fa-solid fa-up-right-from-square"
+                        style="color: white"
+                      ></i>
+                    </div>
+                  </div>
+                </div>
+              </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -439,6 +528,7 @@
                 <span class="tag">Chart.js</span><span class="tag">D3.js</span
                 ><span class="tag">Canvas</span>
               </p>
+              <div class="card-actions">
               <a href="./chart-challenge.html" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
@@ -452,6 +542,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -473,6 +564,7 @@
                 ><span class="tag">Firebase</span><span class="tag">PWA</span
                 ><span class="tag">Express.js</span>
               </p>
+              <div class="card-actions">
               <a href="https://quasagram-573f0.web.app/#/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
@@ -486,6 +578,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -506,6 +599,7 @@
                 <span class="tag">Vue 3</span><span class="tag">Vuex</span
                 ><span class="tag">Firebase</span>
               </p>
+              <div class="card-actions">
               <a
                 href="https://artsleuth-requests-4684a.web.app/artists"
                 target="_blank"
@@ -522,6 +616,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -539,6 +634,7 @@
                 <span class="tag">Vue 3</span><span class="tag">Vuex</span
                 ><span class="tag">Figma</span>
               </p>
+              <div class="card-actions">
               <a
                 href="https://doterra-ivq4kqvbb-sam821203.vercel.app/"
                 target="_blank"
@@ -555,6 +651,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -577,6 +674,7 @@
                 ><span class="tag">Webpack</span><span class="tag">Swiper</span
                 ><span class="tag">AOS</span>
               </p>
+              <div class="card-actions">
               <a href="https://www.ginza-shinno.tokyo/" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
@@ -590,6 +688,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -607,6 +706,7 @@
               <p class="tools">
                 <span class="tag">JavaScript</span><span class="tag">CSS</span>
               </p>
+              <div class="card-actions">
               <a
                 href="./following-touch-firecracker/index.html"
                 target="_blank"
@@ -623,6 +723,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -640,6 +741,7 @@
                 ><span class="tag">Gulp</span><span class="tag">Swiper</span
                 ><span class="tag">AOS</span>
               </p>
+              <div class="card-actions">
               <a
                 href="https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html"
                 target="_blank"
@@ -656,6 +758,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sp">
@@ -673,6 +776,7 @@
                 <span class="tag">Bootstrap</span><span class="tag">Figma</span
                 ><span class="tag">Miro</span>
               </p>
+              <div class="card-actions">
               <a
                 href="https://www.youtube.com/watch?v=OMYploDx6BY&t=131s"
                 target="_blank"
@@ -689,6 +793,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sh">
@@ -706,6 +811,8 @@
                 ><span class="tag">MongoDB</span><span class="tag">D3.js</span
                 ><span class="tag">Websocket</span>
               </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/Pulse-frontend" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
               <a
                 href="https://github.com/sam821203/Pulse-frontend"
                 target="_blank"
@@ -722,6 +829,7 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
           <li class="item" data-category="sh">
@@ -741,6 +849,8 @@
                 ><span class="tag">Nest.js</span><span class="tag">MongoDB</span
                 ><span class="tag">Mailgun</span>
               </p>
+              <div class="card-actions">
+              <a href="https://github.com/sam821203/mailyx" class="card-github-link" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
               <a href="https://github.com/sam821203/mailyx" target="_blank">
                 <div class="more-button__wrap">
                   <div class="more-button">
@@ -754,11 +864,17 @@
                   </div>
                 </div>
               </a>
+              </div>
             </div>
           </li>
         </ul>
       </section>
     </main>
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button type="button" class="lightbox__close" aria-label="關閉"><i class="fa-solid fa-xmark"></i></button>
+      <div class="lightbox__backdrop"></div>
+      <img class="lightbox__img" src="" alt="" />
+    </div>
     <script>
       function showTab(category) {
         projects.forEach((project) => {
@@ -900,10 +1016,54 @@
         });
       };
 
+      const addLightbox = () => {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = lightbox.querySelector(".lightbox__img");
+        const lightboxBackdrop = lightbox.querySelector(".lightbox__backdrop");
+        const lightboxClose = lightbox.querySelector(".lightbox__close");
+        const projectImages = document.querySelectorAll("#projects .img-wrap img");
+
+        const openLightbox = (src) => {
+          lightboxImg.src = src;
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          lightboxClose.focus();
+          document.addEventListener("keydown", handleEscape);
+        };
+
+        const closeLightbox = () => {
+          lightbox.classList.remove("is-open");
+          lightbox.setAttribute("aria-hidden", "true");
+          lightboxImg.src = "";
+          document.removeEventListener("keydown", handleEscape);
+        };
+
+        const handleEscape = (e) => {
+          if (e.key === "Escape") closeLightbox();
+        };
+
+        projectImages.forEach((img) => {
+          const src = img.dataset.src || img.src;
+          if (src && src.includes("empty.jpg")) {
+            img.closest(".img-wrap").classList.add("no-lightbox");
+            return;
+          }
+          img.addEventListener("click", (e) => {
+            e.preventDefault();
+            const imgSrc = img.dataset.src || img.src;
+            if (imgSrc) openLightbox(imgSrc);
+          });
+        });
+
+        lightboxBackdrop.addEventListener("click", closeLightbox);
+        lightboxClose.addEventListener("click", closeLightbox);
+      };
+
       addGoTopBtn();
       addScrollTop();
       addCheckAnchors();
       addImgLazyLoad();
+      addLightbox();
     </script>
   </body>
 </html>
