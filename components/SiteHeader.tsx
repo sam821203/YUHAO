@@ -7,10 +7,11 @@ import { site } from "@/lib/content";
 import { ThemeToggle } from "./ThemeToggle";
 
 const nav = [
-  { href: "#top", label: "Home" },
-  { href: "#projects", label: "Projects" },
-  { href: "#campaigns", label: "Campaigns" },
-  { href: `mailto:${site.email}`, label: "Contact" },
+  { href: "#about", label: "關於" },
+  { href: "#experience", label: "經歷" },
+  { href: "#projects", label: "作品" },
+  { href: "#campaigns", label: "活動頁" },
+  { href: "#contact", label: "聯絡" },
 ];
 
 export function SiteHeader() {

@@ -235,3 +235,23 @@ export const campaignVideos = [
   "new-year-2nd",
   "summer-1st",
 ];
+
+export const about =
+  "我是一名專注於資料視覺化與即時系統的前端工程師，參與過資安、能源、航空與電商等領域的大型專案。我重視乾淨的架構、可重用的元件與流暢的使用者體驗，讓複雜的資料變得清晰易懂。";
+
+export const skills: { category: string; items: string[] }[] = [
+  { category: "核心", items: ["Vue 3", "React", "Angular", "TypeScript", "JavaScript (ES6+)"] },
+  { category: "樣式與 UI", items: ["Tailwind CSS", "SCSS", "Element Plus", "PrimeVue", "RWD", "Figma"] },
+  { category: "資料視覺化與地圖", items: ["D3.js", "Chart.js", "Canvas", "Google Maps API"] },
+  { category: "工具鏈", items: ["Vite", "Webpack", "Gulp", "Pinia", "Vuex", "RxJS", "PWA"] },
+  { category: "亦熟悉", items: ["Node.js / Nest.js", "FastAPI", "WebSocket", "OpenAI API", "LangChain"] },
+];
+
+export const experience: { title: string; desc: string; tags: string[] }[] = [
+  { title: "中華 HiSEM 資安管理系統", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
+  { title: "輻射防護雲化服務系統", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
+  { title: "資料治理平台", desc: "資料血緣視覺化與權限管理介面。", tags: ["D3.js", "Vue 3", "Pinia"] },
+  { title: "華航地勤排班系統", desc: "複雜排班甘特圖與拖拉互動，優化大量資料渲染。", tags: ["Angular", "RxJS", "Canvas"] },
+  { title: "中華電信官網", desc: "響應式官網改版與無障礙優化。", tags: ["SCSS", "RWD", "Gulp"] },
+  { title: "東森購物", desc: "電商活動頁與購物流程前端開發。", tags: ["Vue", "Webpack", "PWA"] },
+];
