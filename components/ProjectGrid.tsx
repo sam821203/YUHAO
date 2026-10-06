@@ -1,17 +1,16 @@
 "use client";
 
-import { useCallback, useState } from "react";
-import { categories, projects, type Category, type Project } from "@/lib/content";
+import { useState } from "react";
+import { categories, projects, type Category } from "@/lib/content";
 import { ProjectCard } from "./ProjectCard";
-import { Lightbox } from "./Lightbox";
 import { Reveal } from "./Reveal";
 
 export function ProjectGrid() {
   const [filter, setFilter] = useState<"all" | Category>("all");
-  const [preview, setPreview] = useState<Project | null>(null);
-  const closePreview = useCallback(() => setPreview(null), []);
 
-  const shown = projects.filter((p) => filter === "all" || p.category === filter);
+  const matches = projects.filter((p) => filter === "all" || p.category === filter);
+  const featured = matches.filter((p) => p.featured);
+  const rest = matches.filter((p) => !p.featured);
 
   return (
     <>
@@ -31,14 +30,25 @@ export function ProjectGrid() {
           </button>
         ))}
       </div>
+      {featured.length > 0 && (
+        <>
+          <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">★ 置頂</p>
+          <div className="mb-12 grid gap-6 md:grid-cols-3">
+            {featured.map((p, i) => (
+              <Reveal key={`${filter}-${p.slug}`} delay={i * 80} className="h-full">
+                <ProjectCard p={p} large />
+              </Reveal>
+            ))}
+          </div>
+        </>
+      )}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        {shown.map((p, i) => (
-          <Reveal key={`${filter}-${p.title}`} delay={(i % 3) * 80} className="h-full">
-            <ProjectCard p={p} onPreview={setPreview} />
+        {rest.map((p, i) => (
+          <Reveal key={`${filter}-${p.slug}`} delay={(i % 3) * 80} className="h-full">
+            <ProjectCard p={p} />
           </Reveal>
         ))}
       </div>
-      {preview && <Lightbox project={preview} onClose={closePreview} />}
     </>
   );
 }

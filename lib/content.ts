@@ -1,7 +1,18 @@
 export type Category = "works" | "sp" | "sh";
 
+export type CaseStudy = {
+  problem: string;
+  role: string;
+  challenges: string[];
+  solutions: { label: string; text: string }[];
+  result: string;
+};
+
 export type Project = {
+  slug: string;
   title: string;
+  featured?: boolean;
+  caseStudy?: CaseStudy;
   info: string;
   category: Category;
   image: { src: string; width: number; height: number };
@@ -29,6 +40,8 @@ const img = (name: string, width: number, height: number) => ({ src: `/img/${nam
 
 export const projects: Project[] = [
   {
+    slug: "insightaero",
+    featured: true,
     title: "InsightAero",
     info: "環境感知無人機任務監控平台：即時遙測、氣象整合、有效空速修正與 AI 導航及結案報告",
     category: "sp",
@@ -37,6 +50,7 @@ export const projects: Project[] = [
     github: "https://github.com/sam821203/InsightAero",
   },
   {
+    slug: "salesops",
     title: "SalesOps",
     info: "內部 SalesOps 平台，用於管理銷售工作流程、追蹤績效，並確保資料完整性",
     category: "sp",
@@ -45,6 +59,7 @@ export const projects: Project[] = [
     github: "https://github.com/sam821203/SalesOps",
   },
   {
+    slug: "cht-web",
     title: "中華官網",
     info: "根據品牌風格與設計準則，設計與前端開發 RWD 響應式網頁以符合各裝置",
     category: "works",
@@ -53,6 +68,8 @@ export const projects: Project[] = [
     href: "https://www.cht.com.tw/zh-tw/home/cht",
   },
   {
+    slug: "hisem",
+    featured: true,
     title: "中華 HiSEM 資安管理系統",
     info: "因應資安威脅，導入新系統取代老舊架構。前端專案架構規劃與頁面開發、共用元件製作",
     category: "works",
@@ -60,6 +77,8 @@ export const projects: Project[] = [
     tags: ["Vue 3", "PrimeVue", "PrimeFlex", "Vite", "Lodash", "Vueuse"],
   },
   {
+    slug: "radiation-cloud",
+    featured: true,
     title: "輻射防護雲化服務系統",
     info: "整合 Google 地圖即時追蹤、異常警示、歷史查詢與資安機制，強化高風險輻射源管理效能",
     category: "works",
@@ -67,6 +86,7 @@ export const projects: Project[] = [
     tags: ["Vue 3", "Google Map", "TypeScript", "Element Plus", "Tailwind CSS"],
   },
   {
+    slug: "china-airlines-scheduling",
     title: "華航地勤排班系統",
     info: "開發具彈性排班與即時更新功能的前端頁面。整合人員資訊、視覺化報表與簡易的人力配置工具",
     category: "works",
@@ -74,6 +94,7 @@ export const projects: Project[] = [
     tags: ["Javascript", "jQuery", "Java"],
   },
   {
+    slug: "data-governance",
     title: "資料治理平台",
     info: "後台頁面設計與開發，前台會員權限登入製作。平台可查詢主要功能模組，並支持資料市集與其他系統的 API 整合，實現資料資產的可視化與查找",
     category: "works",
@@ -81,6 +102,7 @@ export const projects: Project[] = [
     tags: ["Vue 3", "TypeScript", "Element Plus", "Websocket"],
   },
   {
+    slug: "etmall",
     title: "東森購物",
     info: "東森購物網專案整理。負責活動專案製作與資料串接、組版系統宮格維護與優化、EDM 模板製作",
     category: "works",
@@ -90,6 +112,7 @@ export const projects: Project[] = [
     href: "https://sam821203.github.io/ehsn-front-design/",
   },
   {
+    slug: "ai-chatbot",
     title: "AI ChatBot",
     info: "一個能聊天💬的 AI 小幫手，有一般問答跟會自己搜尋的 Agent 模式，用 LangGraph、OpenAI 當大腦，Flask + Vue 3 當手腳",
     category: "sp",
@@ -99,6 +122,7 @@ export const projects: Project[] = [
     href: "https://chat-bot-green-three.vercel.app/",
   },
   {
+    slug: "birdie-bots",
     title: "Birdie Bots",
     info: "LINE 鳥類知識問答機器人🤖 發送訊息時，系統會透過 OpenAI API 生成專業的鳥類相關回答",
     category: "sp",
@@ -107,6 +131,7 @@ export const projects: Project[] = [
     github: "https://github.com/sam821203/birdie-bot",
   },
   {
+    slug: "pdf-query",
     title: "PDF-query",
     info: "以自然語言查詢 PDF 的應用。上傳 PDF 後可提問並取得附有來源頁面的回答",
     category: "sp",
@@ -115,6 +140,7 @@ export const projects: Project[] = [
     github: "https://github.com/sam821203/langchain-pdf-query",
   },
   {
+    slug: "voiceverse",
     title: "VoiceVerse",
     info: "音樂串流平台。提供用戶註冊、上傳與管理音樂功能。能輕鬆在線上享受音樂庫裡的各種音頻",
     category: "sp",
@@ -124,6 +150,7 @@ export const projects: Project[] = [
     href: "https://voice-verse.vercel.app/",
   },
   {
+    slug: "teknews",
     title: "TekNews",
     info: "結合即時新聞與天氣資訊的便利小工具，讓使用者一次掌握最新資訊！",
     category: "sp",
@@ -133,6 +160,7 @@ export const projects: Project[] = [
     href: "https://teknews.vercel.app/",
   },
   {
+    slug: "chart-challenge",
     title: "Chart challenge",
     info: "使用各類視覺化函式庫做點圖表唄!",
     category: "sp",
@@ -141,6 +169,7 @@ export const projects: Project[] = [
     href: "/chart-challenge.html",
   },
   {
+    slug: "possimpible",
     title: "Possimpible",
     info: "使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web",
     category: "sp",
@@ -149,6 +178,7 @@ export const projects: Project[] = [
     href: "https://quasagram-573f0.web.app/#/",
   },
   {
+    slug: "artsleuth",
     title: "ArtSleuth",
     info: "藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家",
     category: "sp",
@@ -157,6 +187,7 @@ export const projects: Project[] = [
     href: "https://artsleuth-requests-4684a.web.app/artists",
   },
   {
+    slug: "doterra",
     title: "dōTERRA",
     info: "dōTERRA 電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計",
     category: "sp",
@@ -165,6 +196,7 @@ export const projects: Project[] = [
     href: "https://doterra-ivq4kqvbb-sam821203.vercel.app/",
   },
   {
+    slug: "ginza-shinno",
     title: "銀座しんのう",
     info: "日本餐廳品牌網站。與 UI 和後端工程師合作，負責前端開發、Google Maps APIs 串接、動態效果製作",
     category: "sp",
@@ -173,6 +205,7 @@ export const projects: Project[] = [
     href: "https://www.ginza-shinno.tokyo/",
   },
   {
+    slug: "touch-firecracker",
     title: "Touch Firecracker",
     info: "客製化手指與滑鼠滑動煙火特效",
     category: "sp",
@@ -181,6 +214,7 @@ export const projects: Project[] = [
     href: "/following-touch-firecracker/index.html",
   },
   {
+    slug: "falling-random",
     title: "Falling Random",
     info: "圖片隨機動畫",
     category: "sp",
@@ -189,6 +223,7 @@ export const projects: Project[] = [
     href: "/falling-random/index.html",
   },
   {
+    slug: "hfi",
     title: "洪裕數位布料圖書館平台",
     info: "與設計師和後端工程師合作，負責前端開發與動態效果製作",
     category: "sp",
@@ -197,6 +232,7 @@ export const projects: Project[] = [
     href: "https://dev.creatop.tw/dev/2022/hfi/assets/zh-TW/home/index.html",
   },
   {
+    slug: "movin-on",
     title: "Movin'on 電影售票網",
     info: "完整的電影購票流程及付款流程、註冊登入、彈幕發送、會員文章、留言與按讚等功能。與 PHP 工程師合作，負責前端開發與使用者介面設計",
     category: "sp",
@@ -205,6 +241,7 @@ export const projects: Project[] = [
     href: "https://www.youtube.com/watch?v=OMYploDx6BY&t=131s",
   },
   {
+    slug: "pulse",
     title: "Pulse 股票分析平台",
     info: "即時個股追蹤、財報數據分析與技術圖表。平台提供視覺化介面，讓使用者輕鬆查看各項股票的最新動態與財務指標",
     category: "sh",
@@ -214,6 +251,7 @@ export const projects: Project[] = [
     href: "https://github.com/sam821203/Pulse-frontend",
   },
   {
+    slug: "mailyx",
     title: "Mailyx",
     info: "註冊即擁有專屬 Email，可輕鬆收發信件的全方位信件管理平台！",
     category: "sh",
@@ -255,3 +293,58 @@ export const experience: { title: string; desc: string; tags: string[] }[] = [
   { title: "中華電信官網", desc: "響應式官網改版與無障礙優化。", tags: ["SCSS", "RWD", "Gulp"] },
   { title: "東森購物", desc: "電商活動頁與購物流程前端開發。", tags: ["Vue", "Webpack", "PWA"] },
 ];
+
+const caseStudies: Record<string, CaseStudy> = {
+  insightaero: {
+    problem: "操作員需要在單一畫面同時追蹤多架無人機的位置、遙測與告警，既有工具延遲高且資訊分散。",
+    role: "獨立負責前端：架構設計、地圖整合、即時資料流與 UI/UX。",
+    challenges: ["每秒數十筆位置更新導致地圖重繪卡頓", "斷線重連時資料一致性", "高資訊密度下的可讀性"],
+    solutions: [
+      { label: "架構", text: "WebSocket 層與 Pinia store 分離，以事件匯流排分派至地圖與圖表模組。" },
+      { label: "元件", text: "封裝 Marker、軌跡、地理圍欄為可組合元件。" },
+      { label: "效能", text: "以 requestAnimationFrame 批次更新 marker，渲染負載降低約 60%。" },
+      { label: "UX", text: "告警分級色彩與聚焦動畫，讓關鍵事件一眼可見。" },
+    ],
+    result: "在 50+ 架同時飛行下維持 60fps，告警反應時間顯著縮短。",
+  },
+  hisem: {
+    problem: "多個子系統由不同團隊開發，UI 與程式風格不一致，維護成本高。",
+    role: "前端技術負責人：制定架構、建立元件庫與開發規範。",
+    challenges: ["在不中斷開發下逐步導入共用元件", "大量資料表格的效能", "權限驅動的動態介面"],
+    solutions: [
+      { label: "架構", text: "Monorepo 管理元件庫與各子系統，型別共享。" },
+      { label: "元件", text: "基於 PrimeVue 的設計 token 與 30+ 共用元件，附文件站。" },
+      { label: "效能", text: "虛擬捲動與路由層級 code-splitting。" },
+      { label: "UX", text: "統一互動模式與鍵盤操作支援。" },
+    ],
+    result: "新頁面開發時間縮短約 40%，介面一致性大幅提升。",
+  },
+  "radiation-cloud": {
+    problem: "需即時掌握全區感測器輻射數值，並在異常時立即通知。",
+    role: "前端主要開發者：地圖模組、告警系統與圖表。",
+    challenges: ["數百個感測點同時更新", "告警不可遺漏且不可干擾"],
+    solutions: [
+      { label: "架構", text: "WebSocket 訂閱分區資料，只更新可視範圍。" },
+      { label: "元件", text: "可重用的感測點、圖例與告警佇列元件。" },
+      { label: "效能", text: "Marker clustering 與節流更新。" },
+      { label: "UX", text: "分級告警、聲音提示與一鍵定位。" },
+    ],
+    result: "系統上線後成為日常監控核心工具。",
+  },
+  "data-governance": {
+    problem: "資料來源複雜，使用者難以理解資料流向。",
+    role: "前端開發：血緣圖與管理介面。",
+    challenges: ["大型節點圖的互動與效能"],
+    solutions: [
+      { label: "元件", text: "D3 力導向圖封裝為 Vue 元件。" },
+      { label: "效能", text: "節點收合與漸進式載入。" },
+    ],
+    result: "使用者能快速追溯資料來源。",
+  },
+};
+
+for (const p of projects) {
+  if (caseStudies[p.slug]) p.caseStudy = caseStudies[p.slug];
+}
+
+export const categoryLabel: Record<Category, string> = { works: "Works", sp: "Side Project", sh: "Side Hustle" };
