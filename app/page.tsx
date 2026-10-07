@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -6,6 +5,7 @@ import { ProjectGrid } from "@/components/ProjectGrid";
 import { CampaignVideo } from "@/components/CampaignVideo";
 import { GithubIcon } from "@/components/GithubIcon";
 import { ContactForm } from "@/components/ContactForm";
+import { HeroOrbit } from "@/components/HeroOrbit";
 import { btnGhost, btnPrimary, iconBtn } from "@/components/styles";
 import { about, campaignVideos, experience, site, skills } from "@/lib/content";
 
@@ -45,20 +45,7 @@ export default function Home() {
               </a>
             </div>
           </div>
-          <div className="animate-in fade-in zoom-in-95 mx-auto w-64 duration-1000 md:w-full">
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-3xl border border-primary/30" />
-              <Image
-                src="/headshot.jpg"
-                alt="黃宇浩 Yu Hao Huang"
-                width={800}
-                height={800}
-                priority
-                sizes="(min-width: 768px) 420px, 256px"
-                className="relative aspect-square rounded-2xl object-cover"
-              />
-            </div>
-          </div>
+          <HeroOrbit />
         </div>
       </section>
 
