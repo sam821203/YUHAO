@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
@@ -14,7 +13,7 @@ export default function Home() {
     <main id="top">
       <section className="bg-grid relative overflow-hidden">
         <div className="glow-orb pointer-events-none absolute -top-40 right-0 size-[600px]" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1.4fr_1fr] md:py-32">
+        <div className="relative mx-auto max-w-6xl px-5 py-20 md:py-32">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
               <MapPin className="size-4 text-primary" /> 台灣
@@ -43,14 +42,6 @@ export default function Home() {
               <a href={`mailto:${site.email}`} aria-label="Email" className={iconBtn}>
                 <Mail className="size-4" />
               </a>
-            </div>
-          </div>
-          <div className="animate-in fade-in zoom-in-95 mx-auto w-56 duration-1000 md:w-full md:max-w-sm">
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-3xl border border-primary/30" />
-              <div className="relative flex aspect-square items-center justify-center rounded-2xl border bg-card">
-                <Image src="/logo.png" alt={`${site.brand} logo`} width={923} height={923} priority sizes="(min-width: 768px) 384px, 224px" className="w-3/4" />
-              </div>
             </div>
           </div>
         </div>

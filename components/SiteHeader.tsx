@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { site } from "@/lib/content";
@@ -20,8 +19,7 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/75 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <a href="#top" className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight">
-          <Image src="/logo-small.png" alt="" width={28} height={28} priority />
+        <a href="#top" className="font-mono text-sm font-semibold tracking-tight">
           <span>
             <span className="text-primary">&lt;</span>
             {site.brand}
