@@ -13,7 +13,6 @@ export const metadata: Metadata = {
   title: `${site.brand} · ${site.name}`,
   description: `Hi! My name is ${site.name}. I'm a ${site.role} actively working to enhance my knowledge in the field of Web Development.`,
   authors: [{ name: site.name }],
-  icons: { icon: "/logo.png" },
 };
 
 export const viewport: Viewport = {
