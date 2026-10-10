@@ -6,7 +6,7 @@ import type { ReactNode } from "react";
 import { ArrowLeft, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/GithubIcon";
 import { Reveal } from "@/components/Reveal";
-import { categoryLabel, projects, site } from "@/lib/content";
+import { categoryLabel, projects, site, type CaseStudy } from "@/lib/content";
 
 type Params = { slug: string };
 
@@ -30,6 +30,82 @@ function Heading({ n, children }: { n: string; children: ReactNode }) {
       {children}
     </h2>
   );
+}
+
+function Bullets({ items }: { items: string[] }) {
+  return (
+    <ul className="space-y-2">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-muted-foreground">
+          <span className="text-accent">▸</span>
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+function sections(cs: CaseStudy): { title: string; body: ReactNode }[] {
+  const list: { title: string; body: ReactNode }[] = [
+    { title: "問題", body: <p className="leading-relaxed text-muted-foreground">{cs.problem}</p> },
+    { title: "我的角色", body: <p className="leading-relaxed text-muted-foreground">{cs.role}</p> },
+  ];
+  if (cs.challenges) list.push({ title: "前端挑戰", body: <Bullets items={cs.challenges} /> });
+  if (cs.strategies) {
+    list.push({
+      title: "核心對策",
+      body: (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {cs.strategies.map((s) => (
+            <div key={s.label} className="card-lift rounded-xl border bg-card p-5">
+              <h3 className="mb-3 font-mono text-sm text-primary">{s.label}</h3>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                {s.items.map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span className="text-accent">▸</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      ),
+    });
+  }
+  if (cs.solutions) {
+    list.push({
+      title: "解決方案",
+      body: (
+        <div className="grid gap-4 sm:grid-cols-2">
+          {cs.solutions.map((s) => (
+            <div key={s.label} className="card-lift rounded-xl border bg-card p-5">
+              <h3 className="font-mono text-sm text-primary">{s.label}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
+            </div>
+          ))}
+        </div>
+      ),
+    });
+  }
+  list.push({
+    title: "成果",
+    body: Array.isArray(cs.result) ? (
+      <div className="rounded-xl border-l-4 border-primary bg-muted p-5">
+        <ul className="space-y-2">
+          {cs.result.map((item) => (
+            <li key={item} className="flex gap-3">
+              <span className="text-primary">✓</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ) : (
+      <p className="rounded-xl border-l-4 border-primary bg-muted p-5 text-lg">{cs.result}</p>
+    ),
+  });
+  return list;
 }
 
 export default async function ProjectPage({ params }: { params: Promise<Params> }) {
@@ -93,40 +169,12 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
       {cs ? (
         <div className="mt-16 space-y-14">
-          <Reveal>
-            <Heading n="01">問題</Heading>
-            <p className="leading-relaxed text-muted-foreground">{cs.problem}</p>
-          </Reveal>
-          <Reveal>
-            <Heading n="02">我的角色</Heading>
-            <p className="leading-relaxed text-muted-foreground">{cs.role}</p>
-          </Reveal>
-          <Reveal>
-            <Heading n="03">前端挑戰</Heading>
-            <ul className="space-y-2">
-              {cs.challenges.map((c) => (
-                <li key={c} className="flex gap-3 text-muted-foreground">
-                  <span className="text-accent">▸</span>
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-          <Reveal>
-            <Heading n="04">解決方案</Heading>
-            <div className="grid gap-4 sm:grid-cols-2">
-              {cs.solutions.map((s) => (
-                <div key={s.label} className="card-lift rounded-xl border bg-card p-5">
-                  <h3 className="font-mono text-sm text-primary">{s.label}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground">{s.text}</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-          <Reveal>
-            <Heading n="05">成果</Heading>
-            <p className="rounded-xl border-l-4 border-primary bg-muted p-5 text-lg">{cs.result}</p>
-          </Reveal>
+          {sections(cs).map((section, i) => (
+            <Reveal key={section.title}>
+              <Heading n={String(i + 1).padStart(2, "0")}>{section.title}</Heading>
+              {section.body}
+            </Reveal>
+          ))}
         </div>
       ) : (
         <div className="mt-16">

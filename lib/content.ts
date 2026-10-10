@@ -3,9 +3,10 @@ export type Category = "works" | "sp" | "sh";
 export type CaseStudy = {
   problem: string;
   role: string;
-  challenges: string[];
-  solutions: { label: string; text: string }[];
-  result: string;
+  challenges?: string[];
+  solutions?: { label: string; text: string }[];
+  strategies?: { label: string; items: string[] }[];
+  result: string | string[];
 };
 
 export type Project = {
@@ -39,6 +40,14 @@ export const categories: { key: "all" | Category; label: string }[] = [
 const img = (name: string, width: number, height: number) => ({ src: `/img/${name}`, width, height });
 
 export const projects: Project[] = [
+  {
+    slug: "supplier-compliance",
+    title: "設備供應商合規追蹤平台",
+    info: "Excel 匯入驗證、合規評分與 KPI 視覺化、明細追溯及異常自動通知",
+    category: "works",
+    image: img("supplierCompliance.jpg", 1440, 720),
+    tags: ["Keycloak", "Excel 匯入", "Design Token", "資料視覺化", "AI Workflow"],
+  },
   {
     slug: "insightaero",
     featured: true,
@@ -295,6 +304,48 @@ export const experience: { title: string; desc: string; tags: string[] }[] = [
 ];
 
 const caseStudies: Record<string, CaseStudy> = {
+  "supplier-compliance": {
+    problem: "各設備供應商機台的合規狀況與需求，原以格式不一的 Excel 分散紀錄，難以統一追蹤、比較與即時掌握。",
+    role: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review，並直接與使用單位進行需求分析。",
+    strategies: [
+      {
+        label: "架構｜模組化與統一權限控管",
+        items: [
+          "上線前將集中於單一頁面的功能拆分並模組化，預留擴充空間，隔離新需求對既有功能的影響。",
+          "路由控管頁面權限，共用權限判斷控管元件層級的顯示；API 層整合 Keycloak 自動續期 Token，並統一處理 401/403 與重試。",
+        ],
+      },
+      {
+        label: "流程｜人機協作自動化",
+        items: [
+          "任務啟動時自動注入規範與自查清單，讓人與 AI 依同一標準開發。",
+          "依相依關係精準載入程式碼以節省模型 Token，高風險操作須經授權。",
+          "提交階段以 Lint 與自訂規則自動攔截不合規程式碼。",
+        ],
+      },
+      {
+        label: "元件｜Design Token 與載入優化",
+        items: [
+          "建立三層 Token（基礎/語意/元件），以單一色彩源支援雙主題切換。",
+          "依路由與相依套件雙重分包，避免大型套件佔用首屏關鍵路徑。",
+        ],
+      },
+      {
+        label: "資料｜匯入流程與指標可視化",
+        items: [
+          "以分步引導上傳，使用者隨時掌握目前進度。",
+          "解析不同來源、多層表頭的 Excel 並驗證，整合為統一的資料表。",
+          "以趨勢、分布與達標率圖表呈現合規指標。",
+        ],
+      },
+    ],
+    result: [
+      "新需求有明確的歸屬模組，降低對既有功能的回歸風險。",
+      "導入 AI workflow（Rule/Skill/Hook）自動把關規範，Code Review 得以聚焦於業務邏輯、邊界情境與架構設計。",
+      "新頁面直接沿用共用元件，維持視覺一致並減少畫面返工。",
+      "多來源 Excel 整合為統一資料表，各供應商的合規狀況可即時追蹤與比較。",
+    ],
+  },
   insightaero: {
     problem: "操作員需要在單一畫面同時追蹤多架無人機的位置、遙測與告警，既有工具延遲高且資訊分散。",
     role: "獨立負責前端：架構設計、地圖整合、即時資料流與 UI/UX。",
