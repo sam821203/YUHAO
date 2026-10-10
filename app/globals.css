@@ -30,25 +30,25 @@
 
 :root {
   --radius: 0.75rem;
-  /* Ant Design Lime (lime-6) on a slate starfield */
-  --background: #15191f;
-  --foreground: #f2f5f8;
-  --card: #1c222b;
-  --card-foreground: #f2f5f8;
-  --primary: #a0d911;
-  --primary-foreground: #162312;
-  --secondary: #232b33;
-  --secondary-foreground: #f2f5f8;
-  --muted: #181d24;
-  --muted-foreground: #a3adb9;
-  --accent: #d3f261;
-  --accent-foreground: #162312;
-  --destructive: oklch(0.65 0.22 27);
-  --border: rgb(160 217 17 / 18%);
-  --input: rgb(160 217 17 / 24%);
-  --ring: #a0d911;
-  --glow: color-mix(in oklab, var(--primary) 26%, transparent);
-  color-scheme: dark;
+  /* Ant Design Cyan (cyan-7) on white with a faint dot grid */
+  --background: #ffffff;
+  --foreground: #0f1f22;
+  --card: #ffffff;
+  --card-foreground: #0f1f22;
+  --primary: #08979c;
+  --primary-foreground: #ffffff;
+  --secondary: #e6fffb;
+  --secondary-foreground: #00474f;
+  --muted: #f5fafa;
+  --muted-foreground: #4e5d60;
+  --accent: #13c2c2;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.58 0.22 27);
+  --border: rgb(8 151 156 / 20%);
+  --input: rgb(8 151 156 / 26%);
+  --ring: #08979c;
+  --glow: color-mix(in oklab, var(--accent) 22%, transparent);
+  color-scheme: light;
 }
 
 @layer base {
@@ -60,7 +60,11 @@
   }
   body {
     background-color: var(--color-background);
-    background-image: linear-gradient(to bottom left, #1c222a, #101318);
+    background-image:
+      radial-gradient(circle at 92% 8%, rgb(19 194 194 / 14%), transparent 32%),
+      radial-gradient(circle at 4% 70%, rgb(135 232 222 / 18%), transparent 30%),
+      radial-gradient(rgb(8 151 156 / 14%) 1px, transparent 1.2px);
+    background-size: auto, auto, 22px 22px;
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
