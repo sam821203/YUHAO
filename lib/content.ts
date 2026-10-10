@@ -154,8 +154,11 @@ export const projects: Project[] = [
   },
 ];
 
-export const about =
-  "我是一名擁有 4 年半經驗、專精 React / TypeScript 的前端工程師，具備英國 University of Reading 文字設計碩士背景，專注於資料視覺化與即時系統。參與過資安、輻射防護、航空、電商與半導體等領域的專案，並擔任前端技術負責人從零規劃架構、制定開發規範與帶領新進工程師。我重視乾淨的架構、可重用的元件與流暢的使用者體驗，讓複雜的資料變得清晰易懂。";
+export const about = [
+  "我是擁有 4 年半經驗的前端工程師，專精 React／Vue 與 TypeScript。擅長把資料量龐大、角色權限複雜的系統，轉化為使用者能快速判讀與決策的介面，也具備以 Hono.js 開發 API、參與資料庫設計的前後端整合經驗。",
+  "東海大學資工畢業後，我赴英國 University of Reading 攻讀文字設計與圖像傳播碩士，以 Distinction 畢業。這段跨領域訓練讓我特別重視資訊層級與使用者理解成本，習慣從「如何讓使用者在最短時間內做出正確判斷」來設計介面。",
+  "目前擔任前端技術負責人，主導架構設計與 Code Review、帶領新進工程師，並制定 AI 協作開發規範；過去也曾擔任內部講師，習慣從系統與團隊整體的角度思考問題。",
+];
 
 export const skills: { category: string; items: string[] }[] = [
   { category: "Core", items: ["React", "Vue 3", "TypeScript", "JavaScript (ES6+)"] },
