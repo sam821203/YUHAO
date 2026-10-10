@@ -30,23 +30,23 @@
 
 :root {
   --radius: 0.75rem;
-  /* Purple starfield palette, after soumyajit.vercel.app */
-  --background: #0c0513;
-  --foreground: #f5f0fa;
-  --card: #1b1a2e;
-  --card-foreground: #f5f0fa;
-  --primary: #c770f0;
-  --primary-foreground: #14081f;
-  --secondary: #2d1950;
-  --secondary-foreground: #f5f0fa;
-  --muted: #181a27;
-  --muted-foreground: #b3a8c7;
-  --accent: #e0a8ff;
-  --accent-foreground: #14081f;
+  /* Daybreak Blue (Ant Design blue-6) starfield palette */
+  --background: #121a2b;
+  --foreground: #eef4ff;
+  --card: #1a2540;
+  --card-foreground: #eef4ff;
+  --primary: #1677ff;
+  --primary-foreground: #ffffff;
+  --secondary: #15305a;
+  --secondary-foreground: #eef4ff;
+  --muted: #162036;
+  --muted-foreground: #a6b5cc;
+  --accent: #69b1ff;
+  --accent-foreground: #0b1a33;
   --destructive: oklch(0.65 0.22 27);
-  --border: rgb(199 112 240 / 16%);
-  --input: rgb(199 112 240 / 22%);
-  --ring: #c770f0;
+  --border: rgb(22 119 255 / 18%);
+  --input: rgb(22 119 255 / 24%);
+  --ring: #1677ff;
   --glow: color-mix(in oklab, var(--primary) 28%, transparent);
   color-scheme: dark;
 }
@@ -60,7 +60,7 @@
   }
   body {
     background-color: var(--color-background);
-    background-image: linear-gradient(to bottom left, #110f10, #0c0818);
+    background-image: linear-gradient(to bottom left, #18233a, #0e1524);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
