@@ -62,9 +62,7 @@
     background-color: var(--color-background);
     background-image:
       radial-gradient(circle at 92% 8%, rgb(19 194 194 / 14%), transparent 32%),
-      radial-gradient(circle at 4% 70%, rgb(135 232 222 / 18%), transparent 30%),
-      radial-gradient(rgb(8 151 156 / 14%) 1px, transparent 1.2px);
-    background-size: auto, auto, 22px 22px;
+      radial-gradient(circle at 4% 70%, rgb(135 232 222 / 18%), transparent 30%);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);

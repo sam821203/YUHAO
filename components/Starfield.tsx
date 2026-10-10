@@ -2,7 +2,8 @@
 
 import { useEffect, useRef } from "react";
 
-type Star = { x: number; y: number; r: number; base: number; phase: number; speed: number };
+const GAP = 22;
+const REACH = 150;
 
 export function Starfield() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -13,10 +14,10 @@ export function Starfield() {
     if (!canvas || !ctx) return;
 
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    let stars: Star[] = [];
     let width = 0;
     let height = 0;
     let frame = 0;
+    const pointer = { x: -9999, y: -9999 };
 
     const resize = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
@@ -25,39 +26,46 @@ export function Starfield() {
       canvas.width = width * dpr;
       canvas.height = height * dpr;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-      const count = Math.round((width * height) / 6500);
-      stars = Array.from({ length: count }, () => ({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        r: Math.random() * 1.1 + 0.3,
-        base: Math.random() * 0.6 + 0.2,
-        phase: Math.random() * Math.PI * 2,
-        speed: Math.random() * 0.02 + 0.005,
-      }));
+      if (reduced) draw(0);
     };
 
     const draw = (t: number) => {
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = "#08979c";
-      for (const s of stars) {
-        if (!reduced) {
-          s.x += 0.04;
-          if (s.x > width) s.x = 0;
+      const shift = reduced ? 0 : (t * 0.006) % GAP;
+      for (let y = -GAP + shift; y < height + GAP; y += GAP) {
+        for (let x = -GAP + shift; x < width + GAP; x += GAP) {
+          const wave = reduced ? 0 : Math.pow(Math.max(0, Math.sin((x + y) * 0.008 - t * 0.0012)), 6);
+          const dist = Math.hypot(x - pointer.x, y - pointer.y);
+          const near = dist < REACH ? 1 - dist / REACH : 0;
+          ctx.globalAlpha = 0.14 + wave * 0.22 + near * 0.55;
+          ctx.beginPath();
+          ctx.arc(x, y, 1 + wave * 0.4 + near * 1.1, 0, Math.PI * 2);
+          ctx.fill();
         }
-        ctx.globalAlpha = 0.4 * (reduced ? s.base : s.base * (0.55 + 0.45 * Math.sin(s.phase + t * s.speed * 0.06)));
-        ctx.beginPath();
-        ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        ctx.fill();
       }
       if (!reduced) frame = requestAnimationFrame(draw);
     };
 
+    const onMove = (e: PointerEvent) => {
+      pointer.x = e.clientX;
+      pointer.y = e.clientY;
+    };
+    const onLeave = () => {
+      pointer.x = -9999;
+      pointer.y = -9999;
+    };
+
     resize();
-    draw(0);
+    if (!reduced) frame = requestAnimationFrame(draw);
     window.addEventListener("resize", resize);
+    window.addEventListener("pointermove", onMove);
+    document.addEventListener("pointerleave", onLeave);
     return () => {
       cancelAnimationFrame(frame);
       window.removeEventListener("resize", resize);
+      window.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerleave", onLeave);
     };
   }, []);
 
