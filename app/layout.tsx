@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { PT_Mono } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { GoTop } from "@/components/GoTop";
@@ -7,7 +7,7 @@ import { Starfield } from "@/components/Starfield";
 import { site } from "@/lib/content";
 import "./globals.css";
 
-const ptMono = PT_Mono({ subsets: ["latin"], weight: "400", variable: "--font-pt-mono", display: "swap" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700", "800"], variable: "--font-jakarta", display: "swap" });
 
 export const metadata: Metadata = {
   title: `${site.brand} · ${site.name}`,
@@ -22,7 +22,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="zh-Hant" className={ptMono.variable}>
+    <html lang="zh-Hant" className={jakarta.variable}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
