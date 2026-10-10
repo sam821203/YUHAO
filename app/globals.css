@@ -30,7 +30,7 @@
 
 :root {
   --radius: 0.75rem;
-  /* Ant Design Cyan (cyan-7) on white with a faint dot grid */
+  /* Ant Design Cyan (cyan-7) on white with drifting glows */
   --background: #ffffff;
   --foreground: #0f1f22;
   --card: #ffffff;
@@ -60,9 +60,6 @@
   }
   body {
     background-color: var(--color-background);
-    background-image:
-      radial-gradient(circle at 92% 8%, rgb(19 194 194 / 14%), transparent 32%),
-      radial-gradient(circle at 4% 70%, rgb(135 232 222 / 18%), transparent 30%);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
@@ -122,5 +119,37 @@
   }
   50% {
     transform: translateY(-6px);
+  }
+}
+
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+.aurora-a {
+  width: 620px;
+  height: 520px;
+  top: -120px;
+  right: -140px;
+  background: rgb(19 194 194 / 22%);
+  animation: aurora-a 18s ease-in-out infinite alternate;
+}
+.aurora-b {
+  width: 560px;
+  height: 480px;
+  bottom: -160px;
+  left: -160px;
+  background: rgb(135 232 222 / 30%);
+  animation: aurora-b 22s ease-in-out infinite alternate;
+}
+@keyframes aurora-a {
+  to {
+    transform: translate(-260px, 180px) scale(1.15);
+  }
+}
+@keyframes aurora-b {
+  to {
+    transform: translate(300px, -160px) scale(1.2);
   }
 }

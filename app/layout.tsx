@@ -3,7 +3,7 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { GoTop } from "@/components/GoTop";
-import { Starfield } from "@/components/Starfield";
+import { Backdrop } from "@/components/Backdrop";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" />
       </head>
       <body>
-        <Starfield />
+        <Backdrop />
         <SiteHeader />
         {children}
         <footer className="border-t py-8 text-center font-mono text-xs text-muted-foreground">
