@@ -15,7 +15,7 @@ export function ProjectCard({ p, large }: { p: Project; large?: boolean }) {
           alt={p.title}
           width={p.image.width}
           height={p.image.height}
-          sizes={large ? "(min-width: 1024px) 560px, (min-width: 768px) 50vw, 100vw" : "(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"}
+          sizes={large ? "(min-width: 1024px) 368px, (min-width: 768px) 33vw, 100vw" : "(min-width: 1024px) 368px, (min-width: 640px) 50vw, 100vw"}
           className="size-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
