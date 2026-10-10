@@ -213,7 +213,7 @@ export const about =
   "我是一名專注於資料視覺化與即時系統的前端工程師，參與過資安、能源、航空與電商等領域的大型專案。我重視乾淨的架構、可重用的元件與流暢的使用者體驗，讓複雜的資料變得清晰易懂。";
 
 export const skills: { category: string; items: string[] }[] = [
-  { category: "核心", items: ["Vue 3", "React", "Angular", "TypeScript", "JavaScript (ES6+)"] },
+  { category: "核心", items: ["React", "Vue 3", "Angular", "TypeScript", "JavaScript (ES6+)"] },
   { category: "樣式與 UI", items: ["Tailwind CSS", "SCSS", "Element Plus", "PrimeVue", "RWD", "Figma"] },
   { category: "資料視覺化與地圖", items: ["D3.js", "Chart.js", "Canvas", "Google Maps API"] },
   { category: "工具鏈", items: ["Vite", "Webpack", "Gulp", "Pinia", "Vuex", "RxJS", "PWA"] },
