@@ -1,8 +1,8 @@
 import Image from "next/image";
 
 const chips = [
-  { label: "Vue 3", ring: "inner", angle: -100 },
-  { label: "React", ring: "inner", angle: -20 },
+  { label: "React", ring: "inner", angle: -100 },
+  { label: "Vue 3", ring: "inner", angle: -20 },
   { label: "TypeScript", ring: "outer", angle: 25 },
   { label: "D3.js", ring: "inner", angle: 80, accent: true },
   { label: "WebSocket", ring: "outer", angle: 130 },

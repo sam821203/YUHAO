@@ -9,7 +9,6 @@ const nav = [
   { href: "#about", label: "關於" },
   { href: "#experience", label: "經歷" },
   { href: "#projects", label: "作品" },
-  { href: "#campaigns", label: "活動頁" },
   { href: "#contact", label: "聯絡" },
 ];
 

@@ -7,7 +7,7 @@ export function ProjectCard({ p }: { p: Project }) {
   return (
     <Link
       href={`/projects/${p.slug}`}
-      className="card-lift group flex h-full flex-col overflow-hidden rounded-xl border bg-card focus-visible:outline-2 focus-visible:outline-ring"
+      className="card-lift group flex h-full flex-col overflow-hidden rounded-lg border bg-card focus-visible:outline-2 focus-visible:outline-ring"
     >
       <div className="aspect-video overflow-hidden bg-muted">
         <Image

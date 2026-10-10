@@ -25,9 +25,9 @@ Every push to the default branch then deploys to production, and every pull requ
 
 ```
 app/          layout, home page, 404, global styles and design tokens (globals.css)
-components/   header, project grid, cards, lightbox, campaign videos, small client helpers
+components/   header, hero orbit, project grid, cards, small client helpers
 lib/          content.ts holds all project entries and site info
-public/       images, logos, videos and the original static demos
+public/       images, headshot and the original static demos
 ```
 
 To add or edit a project, change `lib/content.ts`.

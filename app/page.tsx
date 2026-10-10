@@ -2,12 +2,11 @@ import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ProjectGrid } from "@/components/ProjectGrid";
-import { CampaignVideo } from "@/components/CampaignVideo";
 import { GithubIcon } from "@/components/GithubIcon";
 import { ContactForm } from "@/components/ContactForm";
 import { HeroOrbit } from "@/components/HeroOrbit";
 import { btnGhost, btnPrimary, iconBtn } from "@/components/styles";
-import { about, campaignVideos, experience, site, skills } from "@/lib/content";
+import { about, experience, site, skills } from "@/lib/content";
 
 export default function Home() {
   return (
@@ -101,26 +100,10 @@ export default function Home() {
         <ProjectGrid />
       </section>
 
-      <section id="campaigns" className="scroll-mt-16">
-        <div className="mx-auto max-w-6xl px-5 py-24">
-          <SectionTitle k="04 / campaigns">東森購物</SectionTitle>
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {campaignVideos.map((name, i) => (
-              <Reveal key={name} delay={(i % 3) * 80}>
-                <figure className="card-lift overflow-hidden rounded-xl border bg-card">
-                  <CampaignVideo name={name} />
-                  <figcaption className="px-4 py-3 font-mono text-xs text-muted-foreground">#{name}</figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="contact" className="scroll-mt-16 border-t bg-muted/40">
         <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-2">
           <div>
-            <SectionTitle k="05 / contact">一起合作</SectionTitle>
+            <SectionTitle k="04 / contact">一起合作</SectionTitle>
             <Reveal>
               <p className="text-muted-foreground">有專案、職缺或想法？歡迎來信。</p>
               <a href={`mailto:${site.email}`} className="mt-6 inline-flex items-center gap-2 font-mono text-primary hover:underline">

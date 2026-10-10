@@ -25,7 +25,7 @@ export type Project = {
 export const site = {
   brand: "Fishing",
   name: "Yu Hao Huang",
-  role: "Full Stack Engineer",
+  role: "Front End Engineer",
   email: "sam8212003@yahoo.com.tw",
   github: "https://github.com/sam821203",
 };
@@ -58,15 +58,6 @@ export const projects: Project[] = [
     image: img("insightAero.jpg", 1245, 603),
     tags: ["React", "AI", "Google Map", "OpenWeatherMap", "WebSocket", "FastAPI", "PostgreSQL"],
     github: "https://github.com/sam821203/InsightAero",
-  },
-  {
-    slug: "salesops",
-    title: "SalesOps",
-    info: "內部 SalesOps 平台，用於管理銷售工作流程、追蹤績效，並確保資料完整性",
-    category: "sp",
-    image: img("salesOps.jpg", 1435, 696),
-    tags: ["React", "Hono", "SQLite", "Prisma", "Husky", "Cursor Rules/Skills"],
-    github: "https://github.com/sam821203/SalesOps",
   },
   {
     slug: "cht-web",
@@ -102,14 +93,6 @@ export const projects: Project[] = [
     category: "works",
     image: img("gss.jpg", 1426, 808),
     tags: ["Javascript", "jQuery", "Java"],
-  },
-  {
-    slug: "data-governance",
-    title: "資料治理平台",
-    info: "後台頁面設計與開發，前台會員權限登入製作。平台可查詢主要功能模組，並支持資料市集與其他系統的 API 整合，實現資料資產的可視化與查找",
-    category: "works",
-    image: img("data-quality.jpg", 1140, 810),
-    tags: ["Vue 3", "TypeScript", "Element Plus", "Websocket"],
   },
   {
     slug: "etmall",
@@ -158,52 +141,6 @@ export const projects: Project[] = [
     tags: ["Vue 3", "Vite", "Pinia", "Firebase", "Howler.js", "PWA", "SCSS"],
     github: "https://github.com/sam821203/VoiceVerse",
     href: "https://voice-verse.vercel.app/",
-  },
-  {
-    slug: "teknews",
-    title: "TekNews",
-    info: "結合即時新聞與天氣資訊的便利小工具，讓使用者一次掌握最新資訊！",
-    category: "sp",
-    image: img("teknews.jpg", 956, 538),
-    tags: ["Angular", "TypeScript", "RxJS", "NewsAPI", "OpenWeatherMap"],
-    github: "https://github.com/sam821203/teknews",
-    href: "https://teknews.vercel.app/",
-  },
-  {
-    slug: "chart-challenge",
-    title: "Chart challenge",
-    info: "使用各類視覺化函式庫做點圖表唄!",
-    category: "sp",
-    image: img("chartjs-challenge.jpg", 1920, 1080),
-    tags: ["Chart.js", "D3.js", "Canvas"],
-    href: "/chart-challenge.html",
-  },
-  {
-    slug: "possimpible",
-    title: "Possimpible",
-    info: "使用電腦相機拍照並上傳，使用 PWA 創建類似原生應用程式的 Web",
-    category: "sp",
-    image: img("possimpible.jpg", 1440, 810),
-    tags: ["Vue 3", "Quasar", "Firebase", "PWA", "Express.js"],
-    href: "https://quasagram-573f0.web.app/#/",
-  },
-  {
-    slug: "artsleuth",
-    title: "ArtSleuth",
-    info: "藝術家自由接案平台。提供註冊、發帖與聯絡的方式讓潛在客戶能夠輕鬆找到合適的藝術家",
-    category: "sp",
-    image: img("art-sleuth.jpg", 1920, 1080),
-    tags: ["Vue 3", "Vuex", "Firebase"],
-    href: "https://artsleuth-requests-4684a.web.app/artists",
-  },
-  {
-    slug: "doterra",
-    title: "dōTERRA",
-    info: "dōTERRA 電商網站首頁。實作元件拆解、資料響應式與資料計算、使用者介面設計",
-    category: "sp",
-    image: img("doTERRA.jpg", 1726, 1080),
-    tags: ["Vue 3", "Vuex", "Figma"],
-    href: "https://doterra-ivq4kqvbb-sam821203.vercel.app/",
   },
   {
     slug: "ginza-shinno",
@@ -260,28 +197,6 @@ export const projects: Project[] = [
     github: "https://github.com/sam821203/Pulse-frontend",
     href: "https://github.com/sam821203/Pulse-frontend",
   },
-  {
-    slug: "mailyx",
-    title: "Mailyx",
-    info: "註冊即擁有專屬 Email，可輕鬆收發信件的全方位信件管理平台！",
-    category: "sh",
-    image: img("empty.jpg", 960, 540),
-    tags: ["Angular", "Semantic UI", "TypeScript", "RxJS", "Nest.js", "MongoDB", "Mailgun"],
-    github: "https://github.com/sam821203/mailyx",
-    href: "https://github.com/sam821203/mailyx",
-  },
-];
-
-export const campaignVideos = [
-  "1212-1st",
-  "1212-2nd",
-  "back-to-school",
-  "father",
-  "goddess-2nd",
-  "graduation",
-  "mother-2nd",
-  "new-year-2nd",
-  "summer-1st",
 ];
 
 export const about =
@@ -383,16 +298,6 @@ const caseStudies: Record<string, CaseStudy> = {
       { label: "UX", text: "分級告警、聲音提示與一鍵定位。" },
     ],
     result: "系統上線後成為日常監控核心工具。",
-  },
-  "data-governance": {
-    problem: "資料來源複雜，使用者難以理解資料流向。",
-    role: "前端開發：血緣圖與管理介面。",
-    challenges: ["大型節點圖的互動與效能"],
-    solutions: [
-      { label: "元件", text: "D3 力導向圖封裝為 Vue 元件。" },
-      { label: "效能", text: "節點收合與漸進式載入。" },
-    ],
-    result: "使用者能快速追溯資料來源。",
   },
 };
 
