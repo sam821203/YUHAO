@@ -47,7 +47,19 @@ function Bullets({ items }: { items: string[] }) {
 
 function sections(cs: CaseStudy): { title: string; body: ReactNode }[] {
   const list: { title: string; body: ReactNode }[] = [
-    { title: "問題", body: <p className="leading-relaxed text-muted-foreground">{cs.problem}</p> },
+    {
+      title: "問題",
+      body: (
+        <>
+          <p className="leading-relaxed text-muted-foreground">{cs.problem}</p>
+          {cs.problemItems && (
+            <div className="mt-4">
+              <Bullets items={cs.problemItems} />
+            </div>
+          )}
+        </>
+      ),
+    },
     { title: "我的角色", body: <p className="leading-relaxed text-muted-foreground">{cs.role}</p> },
   ];
   if (cs.challenges) list.push({ title: "前端挑戰", body: <Bullets items={cs.challenges} /> });

@@ -2,6 +2,7 @@ export type Category = "works" | "sp" | "sh";
 
 export type CaseStudy = {
   problem: string;
+  problemItems?: string[];
   role: string;
   challenges?: string[];
   solutions?: { label: string; text: string }[];
@@ -40,6 +41,15 @@ export const categories: { key: "all" | Category; label: string }[] = [
 const img = (name: string, width: number, height: number) => ({ src: `/img/${name}`, width, height });
 
 export const projects: Project[] = [
+  {
+    slug: "semiconductor-monitor",
+    featured: true,
+    title: "半導體廠即時監控平台",
+    info: "整合跨廠區數據追蹤 Wafer / Lot 請求與業務流程，以 Pass / Fail 與 Duration 指標快速定位生產瓶頸",
+    category: "works",
+    image: img("semiconductorMonitor.jpg", 1440, 720),
+    tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"],
+  },
   {
     slug: "supplier-compliance",
     featured: true,
@@ -211,6 +221,7 @@ export const skills: { category: string; items: string[] }[] = [
 ];
 
 export const experience: { title: string; desc: string; tags: string[] }[] = [
+  { title: "半導體廠即時監控平台", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "設備供應商合規追蹤平台", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
   { title: "中華 HiSEM 資安管理系統", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
   { title: "輻射防護雲化服務系統", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
@@ -221,6 +232,45 @@ export const experience: { title: string; desc: string; tags: string[] }[] = [
 ];
 
 const caseStudies: Record<string, CaseStudy> = {
+  "semiconductor-monitor": {
+    problem: "平台整合五個子系統，服務跨廠區分析與維運人員，原有三個痛點：",
+    problemItems: [
+      "列表資料量龐大，主管難以找到所需資料。",
+      "返回列表需重設篩選，難以多筆對照。",
+      "Edge 服務配置直接在 K8s 修改，缺乏審核與回滾。",
+    ],
+    role: "前端工程師：專案開案後加入，參與需求釐清與架構討論，負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發，與同仁互相 Code Review。",
+    strategies: [
+      {
+        label: "資料｜查詢與呈現",
+        items: [
+          "客製化時間選擇器搭配多重查詢條件，快速縮小資料範圍。",
+          "設計篩選結果的圖表呈現與操作流程，讓 Pass / Fail 與 Duration 一眼可辨。",
+        ],
+      },
+      {
+        label: "狀態｜多頁籤與持久化",
+        items: [
+          "細節以頁籤開啟，可多筆並列對照，列表篩選條件不會遺失。",
+          "頁籤與表格狀態持久化，重新整理後完整還原；時區、語系與主題統一管理。",
+          "配合狀態保留，以拆分大型套件維持載入速度。",
+        ],
+      },
+      {
+        label: "流程｜受控的配置變更",
+        items: [
+          "將配置變更轉為提單、審核、自動下發、部署驗證、可回滾的流程。",
+          "下發期間自動追蹤進度，完成即停止；衝突與錯誤提供明確引導，而非僅顯示錯誤訊息。",
+        ],
+      },
+    ],
+    result: [
+      "主管可透過複合條件快速鎖定所需資料。",
+      "細節可多筆並開對照，分析脈絡不中斷。",
+      "配置變更可審核、可追溯、可回滾，降低誤改風險。",
+      "五個子系統整合為一致入口，維持每月穩定發版。",
+    ],
+  },
   "supplier-compliance": {
     problem: "各設備供應商機台的合規狀況與需求，原以格式不一的 Excel 分散紀錄，難以統一追蹤、比較與即時掌握。",
     role: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review，並直接與使用單位進行需求分析。",
