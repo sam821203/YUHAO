@@ -30,12 +30,12 @@
 
 :root {
   --radius: 0.75rem;
-  /* Ant Design Cyan (cyan-7) on white with drifting glows */
+  /* Ant Design Cyan, darkened slightly for 4.5:1 text contrast, on white with drifting glows */
   --background: #ffffff;
   --foreground: #0f1f22;
   --card: #ffffff;
   --card-foreground: #0f1f22;
-  --primary: #08979c;
+  --primary: #057f84;
   --primary-foreground: #ffffff;
   --secondary: #e6fffb;
   --secondary-foreground: #00474f;
@@ -46,7 +46,7 @@
   --destructive: oklch(0.58 0.22 27);
   --border: rgb(8 151 156 / 20%);
   --input: rgb(8 151 156 / 26%);
-  --ring: #08979c;
+  --ring: #057f84;
   --glow: color-mix(in oklab, var(--accent) 22%, transparent);
   color-scheme: light;
 }
