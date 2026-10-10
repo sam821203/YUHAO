@@ -33,7 +33,7 @@ export function ProjectGrid() {
       {featured.length > 0 && (
         <>
           <p className="mb-4 font-mono text-xs uppercase tracking-wider text-accent">★ 置頂</p>
-          <div className="mb-12 grid gap-6 md:grid-cols-3">
+          <div className={`mb-12 grid gap-6 ${featured.length % 3 !== 0 && featured.length % 2 === 0 ? "md:grid-cols-2" : "md:grid-cols-3"}`}>
             {featured.map((p, i) => (
               <Reveal key={`${filter}-${p.slug}`} delay={i * 80} className="h-full">
                 <ProjectCard p={p} large />
