@@ -3,8 +3,8 @@
 
 /* Design tokens mirrored from yuhao-codes-world (src/styles.css) */
 @theme inline {
-  --font-sans: var(--font-space-grotesk), "Noto Sans TC", system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
+  --font-sans: var(--font-pt-mono), "Noto Sans TC", ui-monospace, monospace;
+  --font-mono: var(--font-pt-mono), "Noto Sans TC", ui-monospace, monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);

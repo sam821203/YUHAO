@@ -3,15 +3,15 @@
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X } from "lucide-react";
-import { site } from "@/lib/content";
+import { BriefcaseBusiness, House, Mail, Menu, Presentation, UserRound, X } from "lucide-react";
+
 
 const nav = [
-  { href: "/", label: "首頁" },
-  { href: "/about", label: "關於" },
-  { href: "/experience", label: "經歷" },
-  { href: "/projects", label: "作品" },
-  { href: "/contact", label: "聯絡" },
+  { href: "/", label: "首頁", Icon: House },
+  { href: "/about", label: "關於", Icon: UserRound },
+  { href: "/experience", label: "經歷", Icon: BriefcaseBusiness },
+  { href: "/projects", label: "作品", Icon: Presentation },
+  { href: "/contact", label: "聯絡", Icon: Mail },
 ];
 
 function isActive(pathname: string, href: string) {
@@ -25,12 +25,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-card/65 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="/" className="font-mono text-base font-semibold tracking-tight">
-          <span className="text-primary">&lt;</span>
-          {site.brand}
-          <span className="text-primary">/&gt;</span>
+        <Link href="/" aria-label="Home" className="font-[Arial,Helvetica,sans-serif] text-[28px] leading-none font-black tracking-tight text-primary">
+          Yh.
         </Link>
-        <nav className="hidden gap-8 text-sm md:flex" aria-label="Main">
+        <nav className="hidden gap-7 md:flex" aria-label="Main">
           {nav.map((item) => {
             const active = isActive(pathname, item.href);
             return (
@@ -38,10 +36,11 @@ export function SiteHeader() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? "page" : undefined}
-                className={`relative py-1 transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:rounded-full after:bg-primary after:transition-transform hover:text-foreground hover:after:scale-x-100 ${
+                className={`relative inline-flex items-center gap-1.5 py-1 transition-colors after:absolute after:inset-x-0 after:-bottom-0.5 after:h-0.5 after:origin-left after:rounded-full after:bg-primary after:transition-transform hover:text-foreground hover:after:scale-x-100 ${
                   active ? "text-foreground after:scale-x-100" : "text-muted-foreground after:scale-x-0"
                 }`}
               >
+                <item.Icon className="size-4" strokeWidth={1.75} />
                 {item.label}
               </Link>
             );
@@ -65,10 +64,11 @@ export function SiteHeader() {
                 <Link
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className={`block py-2 text-sm transition-colors hover:text-primary ${
+                  className={`flex items-center gap-2 py-2 transition-colors hover:text-primary ${
                     isActive(pathname, item.href) ? "text-primary" : "text-muted-foreground"
                   }`}
                 >
+                  <item.Icon className="size-4" strokeWidth={1.75} />
                   {item.label}
                 </Link>
               </li>
