@@ -3,8 +3,9 @@
 
 /* Design tokens mirrored from yuhao-codes-world (src/styles.css) */
 @theme inline {
-  --font-sans: var(--font-pt-mono), "Noto Sans TC", ui-monospace, monospace;
-  --font-mono: var(--font-pt-mono), "Noto Sans TC", ui-monospace, monospace;
+  --font-sans: var(--font-lexend), "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-lexend), "Noto Sans TC", ui-sans-serif, system-ui, sans-serif;
+  --leading-relaxed: 1.85;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -30,25 +31,25 @@
 
 :root {
   --radius: 0.75rem;
-  /* Daybreak Blue (Ant Design blue-6) starfield palette */
-  --background: #121a2b;
-  --foreground: #eef4ff;
-  --card: #1a2540;
-  --card-foreground: #eef4ff;
-  --primary: #1677ff;
+  /* Ant Design Cyan, darkened slightly for 4.5:1 text contrast, on white with drifting glows */
+  --background: #ffffff;
+  --foreground: #0f1f22;
+  --card: #ffffff;
+  --card-foreground: #0f1f22;
+  --primary: #057f84;
   --primary-foreground: #ffffff;
-  --secondary: #15305a;
-  --secondary-foreground: #eef4ff;
-  --muted: #162036;
-  --muted-foreground: #a6b5cc;
-  --accent: #69b1ff;
-  --accent-foreground: #0b1a33;
-  --destructive: oklch(0.65 0.22 27);
-  --border: rgb(22 119 255 / 18%);
-  --input: rgb(22 119 255 / 24%);
-  --ring: #1677ff;
-  --glow: color-mix(in oklab, var(--primary) 28%, transparent);
-  color-scheme: dark;
+  --secondary: #e6fffb;
+  --secondary-foreground: #00474f;
+  --muted: #f5fafa;
+  --muted-foreground: #374245;
+  --accent: #13c2c2;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.58 0.22 27);
+  --border: rgb(8 151 156 / 20%);
+  --input: rgb(8 151 156 / 26%);
+  --ring: #057f84;
+  --glow: color-mix(in oklab, var(--accent) 22%, transparent);
+  color-scheme: light;
 }
 
 @layer base {
@@ -60,11 +61,14 @@
   }
   body {
     background-color: var(--color-background);
-    background-image: linear-gradient(to bottom left, #18233a, #0e1524);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    letter-spacing: 0.02em;
     -webkit-font-smoothing: antialiased;
+  }
+  main :where(p, li) {
+    line-height: 1.85;
   }
   ::selection {
     background: var(--glow);
@@ -120,5 +124,42 @@
   }
   50% {
     transform: translateY(-6px);
+  }
+}
+
+.aurora {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+}
+.aurora-a {
+  width: 620px;
+  height: 520px;
+  top: -120px;
+  right: -140px;
+  background: rgb(19 194 194 / 22%);
+  animation: aurora-a 18s ease-in-out infinite alternate;
+}
+.aurora-b {
+  width: 560px;
+  height: 480px;
+  bottom: -160px;
+  left: -160px;
+  background: rgb(135 232 222 / 30%);
+  animation: aurora-b 22s ease-in-out infinite alternate;
+}
+@keyframes aurora-a {
+  to {
+    transform: translate(-260px, 180px) scale(1.15);
+  }
+}
+@keyframes aurora-b {
+  to {
+    transform: translate(300px, -160px) scale(1.2);
+  }
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
   }
 }

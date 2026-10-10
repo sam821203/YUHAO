@@ -13,7 +13,11 @@ export function AboutSection() {
       <SectionTitle k="about">About Me</SectionTitle>
       <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
         <Reveal>
-          <p className="text-lg leading-relaxed text-muted-foreground">{about}</p>
+          <div className="space-y-4 text-lg leading-relaxed text-muted-foreground">
+            {about.map((para) => (
+              <p key={para}>{para}</p>
+            ))}
+          </div>
         </Reveal>
         <div className="space-y-6">
           {skills.map((s, i) => (
