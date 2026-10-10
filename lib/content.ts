@@ -220,15 +220,114 @@ export const skills: { category: string; items: string[] }[] = [
   { category: "亦熟悉", items: ["Node.js / Nest.js", "FastAPI", "WebSocket", "OpenAI API", "LangChain"] },
 ];
 
-export const experience: { title: string; desc: string; tags: string[] }[] = [
-  { title: "設備供應商合規追蹤平台", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
-  { title: "半導體廠即時監控平台", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
-  { title: "中華 HiSEM 資安管理系統", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
-  { title: "輻射防護雲化服務系統", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
-  { title: "資料治理平台", desc: "資料血緣視覺化與權限管理介面。", tags: ["D3.js", "Vue 3", "Pinia"] },
-  { title: "華航地勤排班系統", desc: "複雜排班甘特圖與拖拉互動，優化大量資料渲染。", tags: ["Angular", "RxJS", "Canvas"] },
-  { title: "中華電信官網", desc: "響應式官網改版與無障礙優化。", tags: ["SCSS", "RWD", "Gulp"] },
-  { title: "東森購物", desc: "電商活動頁與購物流程前端開發。", tags: ["Vue", "Webpack", "PWA"] },
+export type Experience = {
+  company: string;
+  title: string;
+  period: string;
+  projects: { name: string; slug?: string; points: string[] }[];
+  tags: string[];
+};
+
+export const experience: Experience[] = [
+  {
+    company: "緯創軟體股份有限公司",
+    title: "前端工程師",
+    period: "2025.06 — 至今",
+    projects: [
+      {
+        name: "設備供應商合規追蹤平台",
+        slug: "supplier-compliance",
+        points: [
+          "主導前端架構設計，制定團隊開發規範與程式碼風格",
+          "實作單點登入（SSO）、Token 自動續期與 15+ 種角色權限控管（RBAC）",
+          "建立統一 API 資料傳輸與錯誤處理機制",
+          "開發合規績效儀表板，透過數據視覺化協助使用者決策",
+          "規劃三層式 Design Token 架構，實現多主題切換與 UI 介面一致性",
+          "導入 Code Splitting 與打包優化，大幅提升首屏載入效能",
+          "整合自動化測試與程式碼品質檢驗，確保系統高維護性",
+          "制定 AI 工具協作規範，標準化團隊開發工作流",
+          "帶領新進工程師進行 Code Review，提升團隊產出品質",
+          "負責 Wireframe 繪製與需求分析，精確對接業務情境與開發落地",
+        ],
+      },
+      {
+        name: "半導體設備即時監控與事件分析平台",
+        slug: "semiconductor-monitor",
+        points: [
+          "繪製系統流程與邏輯架構，協助跨團隊釐清業務需求",
+          "負責資料庫 Schema 設計、SQL 查詢優化與 API 開發，落實全端整合",
+          "建立全域狀態管理機制，整合跨時區、多國語系與視覺主題切換",
+          "封裝複合式時間與條件篩選介面，優化大數據檢索效率",
+          "開發即時監控儀表板，將事件數據視覺化以加速異常定位",
+          "落實 Code Review 機制，確保系統穩定度與團隊知識共享",
+        ],
+      },
+      {
+        name: "工單系統",
+        points: [
+          "實作建立、審核、發布、回滾等狀態流轉",
+          "將工程師直接進 K8s 修改 env / configmap 的高風險路徑，轉換為提單、審核、自動下發、Pod 世代驗證、可回滾的可控流程",
+        ],
+      },
+    ],
+    tags: ["React", "TypeScript", "Ant Design", "Zustand", "Vitest", "Tailwind CSS", "Vite", "Hono.js", "MySQL", "PlantUML", "Excalidraw"],
+  },
+  {
+    company: "資拓宏宇國際股份有限公司",
+    title: "前端工程師",
+    period: "2023.11 — 2025.05",
+    projects: [
+      {
+        name: "企業 B2E 管理系統",
+        points: [
+          "Vue3 + TypeScript 建構模組化架構，整合 Pinia 與 Element Plus，提升開發效率與系統可擴展性",
+          "參與需求分析與事件風暴，配合敏捷開發快速迭代功能",
+          "開發具高重用性的共用元件，落實原子化設計促進一致性",
+          "實施 Git Flow 與 Code Review，提升程式碼品質與協作效率",
+          "串接 RESTful API 實作完整 CRUD 流程",
+          "建置互動式報表模組，整合圖表與數據視覺化呈現",
+          "與團隊共同導入 Copilot 並探討 AI Agent 實際應用，優化開發流程並提升工作效率",
+        ],
+      },
+      {
+        name: "公共安全監控系統",
+        points: [
+          "整合 Google Maps API，實作地理位置即時追蹤與視覺化展示",
+          "建置異常告警機制，主動推送異常狀況並提供即時回應",
+          "開發歷史查詢模組，支援時間軸與事件紀錄檢索",
+        ],
+      },
+      {
+        name: "品牌形象網站",
+        points: ["根據品牌設計準則，獨立設計跨裝置 UI", "前端開發 RWD 與可重用的前端元件"],
+      },
+    ],
+    tags: ["Vue 3", "Vue 2", "TypeScript", "Pinia", "Vuex", "Vite", "SCSS", "Element Plus", "PrimeVue", "Tailwind CSS", "WebSocket", "jQuery", "Figma"],
+  },
+  {
+    company: "東森得易購股份有限公司",
+    title: "前端設計師",
+    period: "2022.04 — 2023.10",
+    projects: [
+      {
+        name: "主活動頁開發",
+        points: [
+          "與 UI / 網頁設計師合作，使用 Sass 與 Webpack 開發跨裝置響應式活動頁面",
+          "前端效能優化如圖片資源壓縮、資源懶載等手法，有效調校 Core Web Vitals、SEO",
+          "模組化可重複使用的動畫元件",
+        ],
+      },
+      {
+        name: "EDM 電子報模板系統",
+        points: ["主導開發商品 API 宮格模組，設計高度彈性的 EDM 模板，加速行銷內容佈署流程"],
+      },
+      {
+        name: "內部課程講師",
+        points: ["教授 HTML、CSS 與 Design Sprint 產品流程設計，協助設計團隊提升網頁開發能力"],
+      },
+    ],
+    tags: ["Sass", "Webpack", "HTML", "CSS"],
+  },
 ];
 
 const caseStudies: Record<string, CaseStudy> = {
