@@ -27,7 +27,7 @@ export const site = {
   brand: "Fishing",
   name: "Yu Hao Huang",
   role: "Front End Engineer",
-  email: "sam8212003@yahoo.com.tw",
+  email: "sam821203@yahoo.com.tw",
   github: "https://github.com/sam821203",
 };
 
@@ -72,17 +72,17 @@ export const projects: Project[] = [
   {
     slug: "cht-web",
     title: "中華官網",
-    info: "中華電信官網改版：以 Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 頁面，頁籤與輪播元件加上 ARIA 標記",
+    info: "中華電信官網改版：依品牌設計準則獨立設計跨裝置 UI 與 Icon，以 Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 頁面",
     category: "works",
     image: img("cht-web.jpg", 953, 540),
-    tags: ["JavaScript", "SCSS", "Bootstrap 5", "Webpack", "Nunjucks", "Swiper"],
+    tags: ["JavaScript", "SCSS", "Bootstrap 5", "Webpack", "Nunjucks", "Swiper", "Figma"],
     href: "https://www.cht.com.tw/zh-tw/home/cht",
   },
   {
     slug: "hisem",
     featured: true,
     title: "中華 HiSEM 資安管理系統",
-    info: "因應資安要求以新架構重建資安管理系統：規劃 Vue 3 前端架構、共用元件與 API 層，實作角色權限與表單驗證",
+    info: "重建資安管理系統、追蹤垃圾簡訊門號：規劃 Vue 3 前端架構、共用元件與 API 層，實作角色權限與表單驗證",
     category: "works",
     image: img("hisem.jpg", 1440, 813),
     tags: ["Vue 3", "Vite", "PrimeVue", "Pinia", "Axios", "VeeValidate"],
@@ -107,7 +107,7 @@ export const projects: Project[] = [
   {
     slug: "etmall",
     title: "東森購物",
-    info: "東森購物網活動頁與宮格組版模組：以 JSON 設定檔驅動商品區塊並串接商品 API，Webpack 建置、RWD 與圖片懶載入",
+    info: "東森購物網活動頁、商品 API 宮格模組與 EDM 模板：以 JSON 設定檔驅動版位，圖片懶載入與 Core Web Vitals 調校",
     category: "works",
     image: img("etmall-front-design.jpg", 952, 540),
     tags: ["JavaScript", "jQuery", "Webpack", "Swiper", "RWD"],
@@ -155,25 +155,25 @@ export const projects: Project[] = [
 ];
 
 export const about =
-  "我是一名專注於資料視覺化與即時系統的前端工程師，參與過資安、輻射防護、航空、電商與半導體等領域的專案，並擔任前端技術負責人從零規劃架構與開發規範。我重視乾淨的架構、可重用的元件與流暢的使用者體驗，讓複雜的資料變得清晰易懂。";
+  "我是一名擁有 4 年半經驗、專精 React / TypeScript 的前端工程師，具備英國 University of Reading 文字設計碩士背景，專注於資料視覺化與即時系統。參與過資安、輻射防護、航空、電商與半導體等領域的專案，並擔任前端技術負責人從零規劃架構、制定開發規範與帶領新進工程師。我重視乾淨的架構、可重用的元件與流暢的使用者體驗，讓複雜的資料變得清晰易懂。";
 
 export const skills: { category: string; items: string[] }[] = [
   { category: "Core", items: ["React", "Vue 3", "TypeScript", "JavaScript (ES6+)"] },
   { category: "State & Data", items: ["Zustand", "Pinia", "TanStack Query", "Axios"] },
-  { category: "Styling & UI", items: ["Tailwind CSS", "SCSS", "Ant Design", "Element Plus", "PrimeVue", "RWD", "Figma"] },
-  { category: "Data Viz & Maps", items: ["D3.js", "AG Grid", "Google Maps API", "Canvas"] },
+  { category: "Styling & UI", items: ["Tailwind CSS", "SCSS", "Ant Design", "shadcn/ui", "Element Plus", "PrimeVue", "RWD", "Figma"] },
+  { category: "Data Viz & Maps", items: ["D3.js", "Recharts", "Chart.js", "AG Grid", "Google Maps API", "Canvas"] },
   { category: "Tooling", items: ["Vite", "Webpack", "Gulp", "ESLint / Prettier", "Vitest", "PWA"] },
-  { category: "Also Familiar", items: ["Angular", "RxJS", "Node.js / Nest.js", "FastAPI", "WebSocket", "LangChain / LangGraph"] },
+  { category: "Also Familiar", items: ["Angular", "RxJS", "Node.js / Nest.js", "Hono.js", "FastAPI", "WebSocket", "LangChain / LangGraph"] },
 ];
 
 export const experience: { title: string; company?: string; period?: string; desc: string; tags: string[] }[] = [
-  { title: "設備供應商合規追蹤平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
+  { title: "設備供應商合規追蹤平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制，主導 Code Review 並帶領新進工程師。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
   { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "規劃 Vue 3 前端架構與共用元件，封裝 Axios 錯誤處理與 XSRF / XSS 防護，實作角色權限與表單驗證。", tags: ["Vue 3", "PrimeVue", "Pinia"] },
   { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "以 Vue 3 + TypeScript 開發 Google 地圖監控、電子圍籬與歷史軌跡，封裝型別化 API 層與 JWT 安全機制。", tags: ["Vue 3", "TypeScript", "Google Maps"] },
   { title: "華航地勤排班系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "以 jQuery UI 打造拖拉式排班時間軸，含任務重疊偵測、右鍵複製貼上與人力配置。", tags: ["JavaScript", "jQuery UI", "vis-timeline"] },
-  { title: "中華電信官網", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "以 Webpack + Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 官網，頁籤與輪播元件加上 ARIA 標記。", tags: ["SCSS", "Bootstrap 5", "Webpack"] },
-  { title: "東森購物", company: "東森得易購", period: "2022.04 — 2023.10", desc: "負責活動頁、機制頁與宮格組版模組開發，以資料設定檔驅動版位並串接商品 API。", tags: ["JavaScript", "jQuery", "Webpack"] },
+  { title: "中華電信官網", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "依品牌設計準則獨立設計跨裝置 UI，並以 Webpack + Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 官網。", tags: ["SCSS", "Bootstrap 5", "Webpack", "Figma"] },
+  { title: "東森購物", company: "東森得易購", period: "2022.04 — 2023.10", desc: "負責活動頁與商品 API 宮格模組、EDM 模板開發並調校 Core Web Vitals，也擔任內部講師教授 HTML / CSS 與 Design Sprint。", tags: ["JavaScript", "jQuery", "Webpack"] },
 ];
 
 const caseStudies: Record<string, CaseStudy> = {
@@ -190,7 +190,7 @@ const caseStudies: Record<string, CaseStudy> = {
         label: "資料｜查詢與呈現",
         items: [
           "客製化時間選擇器搭配多重查詢條件，快速縮小資料範圍。",
-          "設計篩選結果的圖表呈現與操作流程，讓 Pass / Fail 與 Duration 一眼可辨。",
+          "以 Recharts 設計篩選結果的監控圖表與操作流程，讓 Pass / Fail 與 Duration 一眼可辨。",
         ],
       },
       {
@@ -218,13 +218,13 @@ const caseStudies: Record<string, CaseStudy> = {
   },
   "supplier-compliance": {
     problem: "各設備供應商機台的合規狀況與需求，原以格式不一的 Excel 分散紀錄，難以統一追蹤、比較與即時掌握。",
-    role: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review，並直接與使用單位進行需求分析。",
+    role: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review、帶領新進工程師 Pair Programming，並直接與使用單位進行需求分析與 Wireframe 繪製。",
     strategies: [
       {
         label: "架構｜模組化與統一權限控管",
         items: [
           "上線前將集中於單一頁面的功能拆分並模組化，預留擴充空間，隔離新需求對既有功能的影響。",
-          "路由控管頁面權限，共用權限判斷控管元件層級的顯示；API 層整合 Keycloak 自動續期 Token，並統一處理 401/403 與重試。",
+          "以 RBAC（15+ 權限）控管頁面與元件層級顯示；整合 Keycloak SSO 自動續期 Token，並以 Axios 攔截器與 TanStack Query 統一 JWT 注入、401/403 與錯誤重試。",
         ],
       },
       {
@@ -232,7 +232,7 @@ const caseStudies: Record<string, CaseStudy> = {
         items: [
           "任務啟動時自動注入規範與自查清單，讓人與 AI 依同一標準開發。",
           "依相依關係精準載入程式碼以節省模型 Token，高風險操作須經授權。",
-          "提交階段以 Lint 與自訂規則自動攔截不合規程式碼。",
+          "提交階段以 ESLint、Husky 與自訂規則自動攔截不合規程式碼，並以 Vitest 建立單元測試。",
         ],
       },
       {
@@ -247,7 +247,7 @@ const caseStudies: Record<string, CaseStudy> = {
         items: [
           "以分步引導上傳，使用者隨時掌握目前進度。",
           "解析不同來源、多層表頭的 Excel 並驗證，整合為統一的資料表。",
-          "以趨勢、分布與達標率圖表呈現合規指標。",
+          "以 Recharts 實作趨勢、分布與達標率圖表，呈現合規績效 Dashboard。",
         ],
       },
     ],
@@ -271,7 +271,7 @@ const caseStudies: Record<string, CaseStudy> = {
     result: "完成從任務建立、多機即時監控到 AI 結案報告的完整流程，並以單元測試驗證風場修正與電量規劃演算法。",
   },
   hisem: {
-    problem: "舊系統架構老舊，需因應資安要求以新架構重建資安事件與垃圾郵件管理後台。",
+    problem: "舊系統架構老舊，需因應資安要求以新架構重建資安管理系統，追蹤垃圾簡訊門號並提供即時提醒與查詢。",
     role: "前端架構規劃與核心開發：專案架構、共用元件、API 層與權限流程，並負責頁面開發。",
     challenges: ["多種事件列表與報表需要一致的表格與分頁行為", "兼顧資安防護（XSRF、XSS）與統一錯誤處理", "多角色登入與角色切換"],
     solutions: [
