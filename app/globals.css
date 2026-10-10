@@ -30,25 +30,25 @@
 
 :root {
   --radius: 0.75rem;
-  /* Calendula Gold (Ant Design gold-7 / gold-6) on white */
-  --background: #ffffff;
-  --foreground: #1f1a10;
-  --card: #ffffff;
-  --card-foreground: #1f1a10;
-  --primary: #d48806;
-  --primary-foreground: #ffffff;
-  --secondary: #fff1b8;
-  --secondary-foreground: #1f1a10;
-  --muted: #f7f5ef;
-  --muted-foreground: #5c5546;
-  --accent: #faad14;
-  --accent-foreground: #1a1300;
-  --destructive: oklch(0.58 0.22 27);
-  --border: rgb(212 136 6 / 22%);
-  --input: rgb(212 136 6 / 28%);
-  --ring: #d48806;
-  --glow: color-mix(in oklab, var(--primary) 22%, transparent);
-  color-scheme: light;
+  /* Ant Design Lime (lime-6) on a slate starfield */
+  --background: #15191f;
+  --foreground: #f2f5f8;
+  --card: #1c222b;
+  --card-foreground: #f2f5f8;
+  --primary: #a0d911;
+  --primary-foreground: #162312;
+  --secondary: #232b33;
+  --secondary-foreground: #f2f5f8;
+  --muted: #181d24;
+  --muted-foreground: #a3adb9;
+  --accent: #d3f261;
+  --accent-foreground: #162312;
+  --destructive: oklch(0.65 0.22 27);
+  --border: rgb(160 217 17 / 18%);
+  --input: rgb(160 217 17 / 24%);
+  --ring: #a0d911;
+  --glow: color-mix(in oklab, var(--primary) 26%, transparent);
+  color-scheme: dark;
 }
 
 @layer base {
@@ -60,7 +60,7 @@
   }
   body {
     background-color: var(--color-background);
-    background-image: linear-gradient(to bottom left, #ffffff, #fafaf7);
+    background-image: linear-gradient(to bottom left, #1c222a, #101318);
     background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
