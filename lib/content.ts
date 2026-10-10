@@ -42,15 +42,6 @@ const img = (name: string, width: number, height: number) => ({ src: `/img/${nam
 
 export const projects: Project[] = [
   {
-    slug: "semiconductor-monitor",
-    featured: true,
-    title: "半導體廠即時監控平台",
-    info: "整合跨廠區數據追蹤 Wafer / Lot 請求與業務流程，以 Pass / Fail 與 Duration 指標快速定位生產瓶頸",
-    category: "works",
-    image: img("semiconductorMonitor.jpg", 1440, 720),
-    tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"],
-  },
-  {
     slug: "supplier-compliance",
     featured: true,
     title: "設備供應商合規追蹤平台",
@@ -58,6 +49,15 @@ export const projects: Project[] = [
     category: "works",
     image: img("supplierCompliance.jpg", 1440, 720),
     tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"],
+  },
+  {
+    slug: "semiconductor-monitor",
+    featured: true,
+    title: "半導體廠即時監控平台",
+    info: "整合跨廠區數據追蹤 Wafer / Lot 請求與業務流程，以 Pass / Fail 與 Duration 指標快速定位生產瓶頸",
+    category: "works",
+    image: img("semiconductorMonitor.jpg", 1440, 720),
+    tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"],
   },
   {
     slug: "insightaero",
@@ -221,8 +221,8 @@ export const skills: { category: string; items: string[] }[] = [
 ];
 
 export const experience: { title: string; desc: string; tags: string[] }[] = [
-  { title: "半導體廠即時監控平台", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "設備供應商合規追蹤平台", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
+  { title: "半導體廠即時監控平台", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
   { title: "輻射防護雲化服務系統", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
   { title: "資料治理平台", desc: "資料血緣視覺化與權限管理介面。", tags: ["D3.js", "Vue 3", "Pinia"] },
