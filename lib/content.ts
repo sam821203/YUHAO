@@ -47,7 +47,7 @@ export const projects: Project[] = [
     info: "Excel 匯入驗證、合規評分與 KPI 視覺化、明細追溯及異常自動通知",
     category: "works",
     image: img("supplierCompliance.jpg", 1440, 720),
-    tags: ["Keycloak", "Excel 匯入", "Design Token", "資料視覺化", "AI Workflow"],
+    tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"],
   },
   {
     slug: "insightaero",
@@ -296,7 +296,7 @@ export const skills: { category: string; items: string[] }[] = [
 ];
 
 export const experience: { title: string; desc: string; tags: string[] }[] = [
-  { title: "設備供應商合規追蹤平台", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["Keycloak", "Design Token", "AI Workflow"] },
+  { title: "設備供應商合規追蹤平台", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
   { title: "中華 HiSEM 資安管理系統", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
   { title: "輻射防護雲化服務系統", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
   { title: "資料治理平台", desc: "資料血緣視覺化與權限管理介面。", tags: ["D3.js", "Vue 3", "Pinia"] },
