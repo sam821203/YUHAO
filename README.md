@@ -1,6 +1,6 @@
 # Fishing · Yu Hao Huang portfolio
 
-Personal portfolio built with Next.js (App Router, TypeScript) and Tailwind CSS v4. The layout started from [yuhao-codes-world](https://github.com/sam821203/yuhao-codes-world); the starfield layout follows [soumyajit.vercel.app](https://soumyajit.vercel.app/) and the palette uses Ant Design Calendula Gold. The site is dark only.
+Personal portfolio built with Next.js (App Router, TypeScript) and Tailwind CSS v4. The layout started from [yuhao-codes-world](https://github.com/sam821203/yuhao-codes-world); the starfield layout follows [soumyajit.vercel.app](https://soumyajit.vercel.app/) and the palette uses Ant Design Calendula Gold on a white background.
 
 ## Run locally
 

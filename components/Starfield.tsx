@@ -38,13 +38,13 @@ export function Starfield() {
 
     const draw = (t: number) => {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = "#ffffff";
+      ctx.fillStyle = "#b08a3e";
       for (const s of stars) {
         if (!reduced) {
           s.x += 0.04;
           if (s.x > width) s.x = 0;
         }
-        ctx.globalAlpha = reduced ? s.base : s.base * (0.55 + 0.45 * Math.sin(s.phase + t * s.speed * 0.06));
+        ctx.globalAlpha = 0.5 * (reduced ? s.base : s.base * (0.55 + 0.45 * Math.sin(s.phase + t * s.speed * 0.06)));
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
         ctx.fill();
