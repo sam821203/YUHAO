@@ -30,23 +30,23 @@
 
 :root {
   --radius: 0.75rem;
-  /* Daybreak Blue (Ant Design blue-6) starfield palette */
+  /* Calendula Gold (Ant Design gold-6) on a navy starfield */
   --background: #121a2b;
-  --foreground: #eef4ff;
+  --foreground: #f4f6fb;
   --card: #1a2540;
-  --card-foreground: #eef4ff;
-  --primary: #1677ff;
-  --primary-foreground: #ffffff;
-  --secondary: #15305a;
-  --secondary-foreground: #eef4ff;
+  --card-foreground: #f4f6fb;
+  --primary: #faad14;
+  --primary-foreground: #1a1300;
+  --secondary: #2a2a1e;
+  --secondary-foreground: #f4f6fb;
   --muted: #162036;
   --muted-foreground: #a6b5cc;
-  --accent: #69b1ff;
-  --accent-foreground: #0b1a33;
+  --accent: #ffd666;
+  --accent-foreground: #1a1300;
   --destructive: oklch(0.65 0.22 27);
-  --border: rgb(22 119 255 / 18%);
-  --input: rgb(22 119 255 / 24%);
-  --ring: #1677ff;
+  --border: rgb(250 173 20 / 18%);
+  --input: rgb(250 173 20 / 24%);
+  --ring: #faad14;
   --glow: color-mix(in oklab, var(--primary) 28%, transparent);
   color-scheme: dark;
 }
