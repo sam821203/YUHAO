@@ -37,7 +37,5 @@ To add or edit a project, change `lib/content.ts`.
 These live under `public/` unchanged and are linked from the project list:
 
 - `/chart-challenge.html` (and the charts in `/chartjs/`)
-- `/following-touch-firecracker/index.html`
-- `/falling-random/index.html`
 
 `public/style.css` and `public/lazyload.jpg` are kept because `chart-challenge.html` still uses them.
