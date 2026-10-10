@@ -20,7 +20,7 @@ export default function Home() {
             <p className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
               <MapPin className="size-4 text-primary" /> Taiwan
             </p>
-            <h1 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
+            <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">
               {site.name}
             </h1>
             <p className="mt-5 font-mono text-lg text-primary">{site.role}</p>
