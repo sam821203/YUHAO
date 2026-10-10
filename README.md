@@ -1,6 +1,6 @@
 # Fishing · Yu Hao Huang portfolio
 
-Personal portfolio built with Next.js (App Router, TypeScript) and Tailwind CSS v4. The visual style (color tokens, typography, cards, buttons, animations, dark/light mode) follows [yuhao-codes-world](https://github.com/sam821203/yuhao-codes-world).
+Personal portfolio built with Next.js (App Router, TypeScript) and Tailwind CSS v4. The layout started from [yuhao-codes-world](https://github.com/sam821203/yuhao-codes-world); the dark purple starfield palette follows [soumyajit.vercel.app](https://soumyajit.vercel.app/). The site is dark only.
 
 ## Run locally
 
@@ -24,8 +24,8 @@ Every push to the default branch then deploys to production, and every pull requ
 ## Structure
 
 ```
-app/          layout, home page, 404, global styles and design tokens (globals.css)
-components/   header, hero orbit, project grid, cards, small client helpers
+app/          layout, pages (/, /about, /experience, /projects, /projects/[slug], /contact), 404, design tokens (globals.css)
+components/   header, starfield, hero orbit, page sections, project grid, cards, small client helpers
 lib/          content.ts holds all project entries and site info
 public/       images, headshot and the original static demos
 ```

@@ -129,7 +129,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
 
   return (
     <main className="mx-auto max-w-4xl px-5 py-12">
-      <Link href="/#projects" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
+      <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
         <ArrowLeft className="size-4" />
         返回作品
       </Link>

@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-@custom-variant dark (&:is(.dark *));
-
 /* Design tokens mirrored from yuhao-codes-world (src/styles.css) */
 @theme inline {
   --font-sans: var(--font-space-grotesk), "Noto Sans TC", system-ui, sans-serif;
@@ -32,43 +30,25 @@
 
 :root {
   --radius: 0.75rem;
-  /* Palette I: Transformative Teal x Clay (2026) */
-  --background: #efe7db;
-  --foreground: #1d2a2b;
-  --card: #f7f1e8;
-  --card-foreground: #1d2a2b;
-  --primary: #1f5c63;
-  --primary-foreground: #ffffff;
-  --secondary: #e3d8c8;
-  --secondary-foreground: #2a3536;
-  --muted: #e6dccd;
-  --muted-foreground: #5b6566;
-  --accent: #8a5a3c;
-  --accent-foreground: #ffffff;
-  --destructive: oklch(0.58 0.22 27);
-  --border: #d6c7b2;
-  --input: #d6c7b2;
-  --ring: #1f5c63;
-  --glow: color-mix(in oklab, var(--primary) 18%, transparent);
-  --grid-line: color-mix(in oklab, var(--foreground) 5%, transparent);
-}
-
-.dark {
-  --background: #111a1b;
-  --foreground: #efe7db;
-  --card: #172223;
-  --card-foreground: #efe7db;
-  --primary: #5fc3c4;
-  --primary-foreground: #0d1617;
-  --secondary: #1f2a2b;
-  --secondary-foreground: #efe7db;
-  --muted: #1b2627;
-  --muted-foreground: #a5aeac;
-  --accent: #d9b48f;
-  --accent-foreground: #1d1610;
-  --border: rgb(239 231 219 / 10%);
-  --input: rgb(239 231 219 / 14%);
-  --ring: #5fc3c4;
+  /* Purple starfield palette, after soumyajit.vercel.app */
+  --background: #0c0513;
+  --foreground: #f5f0fa;
+  --card: #1b1a2e;
+  --card-foreground: #f5f0fa;
+  --primary: #c770f0;
+  --primary-foreground: #14081f;
+  --secondary: #2d1950;
+  --secondary-foreground: #f5f0fa;
+  --muted: #181a27;
+  --muted-foreground: #b3a8c7;
+  --accent: #e0a8ff;
+  --accent-foreground: #14081f;
+  --destructive: oklch(0.65 0.22 27);
+  --border: rgb(199 112 240 / 16%);
+  --input: rgb(199 112 240 / 22%);
+  --ring: #c770f0;
+  --glow: color-mix(in oklab, var(--primary) 28%, transparent);
+  color-scheme: dark;
 }
 
 @layer base {
@@ -80,6 +60,8 @@
   }
   body {
     background-color: var(--color-background);
+    background-image: linear-gradient(to bottom left, #110f10, #0c0818);
+    background-attachment: fixed;
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
@@ -101,13 +83,6 @@
       transition: none !important;
     }
   }
-}
-
-@utility bg-grid {
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 48px 48px;
 }
 
 @utility glow-orb {

@@ -3,6 +3,7 @@ import { JetBrains_Mono, Space_Grotesk } from "next/font/google";
 import type { ReactNode } from "react";
 import { SiteHeader } from "@/components/SiteHeader";
 import { GoTop } from "@/components/GoTop";
+import { Starfield } from "@/components/Starfield";
 import { site } from "@/lib/content";
 import "./globals.css";
 
@@ -16,24 +17,20 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#efe7db" },
-    { media: "(prefers-color-scheme: dark)", color: "#111a1b" },
-  ],
+  themeColor: "#0c0513",
+  colorScheme: "dark",
 };
-
-const themeScript = `try{var d=localStorage.getItem("dark");document.documentElement.classList.toggle("dark",d===null||d==="1")}catch(e){}`;
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="zh-Hant" className={`dark ${spaceGrotesk.variable} ${jetbrainsMono.variable}`} suppressHydrationWarning>
+    <html lang="zh-Hant" className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}>
       <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&display=swap" />
       </head>
       <body>
+        <Starfield />
         <SiteHeader />
         {children}
         <footer className="border-t py-8 text-center font-mono text-xs text-muted-foreground">

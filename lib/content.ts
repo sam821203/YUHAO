@@ -47,7 +47,7 @@ export const projects: Project[] = [
     title: "設備供應商合規追蹤平台",
     info: "Excel 匯入驗證、合規評分與 KPI 視覺化、明細追溯及異常自動通知",
     category: "works",
-    image: img("supplierCompliance.jpg", 1440, 720),
+    image: img("supplier-compliance.jpg", 1440, 720),
     tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"],
   },
   {
@@ -56,7 +56,7 @@ export const projects: Project[] = [
     title: "半導體廠即時監控平台",
     info: "整合跨廠區數據追蹤 Wafer / Lot 請求與業務流程，以 Pass / Fail 與 Duration 指標快速定位生產瓶頸",
     category: "works",
-    image: img("semiconductorMonitor.jpg", 1440, 720),
+    image: img("semiconductor-monitor.jpg", 1440, 720),
     tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"],
   },
   {

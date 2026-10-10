@@ -1,17 +1,19 @@
+import Link from "next/link";
 import { ArrowRight, Mail, MapPin } from "lucide-react";
+import { GithubIcon } from "@/components/GithubIcon";
+import { HeroOrbit } from "@/components/HeroOrbit";
+import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
-import { ProjectGrid } from "@/components/ProjectGrid";
-import { GithubIcon } from "@/components/GithubIcon";
-import { ContactForm } from "@/components/ContactForm";
-import { HeroOrbit } from "@/components/HeroOrbit";
 import { btnGhost, btnPrimary, iconBtn } from "@/components/styles";
-import { about, experience, site, skills } from "@/lib/content";
+import { projects, site } from "@/lib/content";
 
 export default function Home() {
+  const featured = projects.filter((p) => p.featured);
+
   return (
-    <main id="top">
-      <section className="bg-grid relative overflow-hidden">
+    <main>
+      <section className="relative overflow-x-clip">
         <div className="glow-orb pointer-events-none absolute -top-40 right-0 size-[600px]" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1.4fr_1fr] md:py-32">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
@@ -28,12 +30,12 @@ export default function Home() {
               actively working to enhance my knowledge in the field of Web Development.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#projects" className={btnPrimary}>
+              <Link href="/projects" className={btnPrimary}>
                 查看作品 <ArrowRight className="size-4" />
-              </a>
-              <a href="#contact" className={btnGhost}>
+              </Link>
+              <Link href="/contact" className={btnGhost}>
                 聯絡我
-              </a>
+              </Link>
             </div>
             <div className="mt-8 flex gap-2">
               <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={iconBtn}>
@@ -48,85 +50,19 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="about" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-24">
-        <SectionTitle k="01 / about">關於我</SectionTitle>
-        <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
-          <Reveal>
-            <p className="text-lg leading-relaxed text-muted-foreground">{about}</p>
-          </Reveal>
-          <div className="space-y-6">
-            {skills.map((s, i) => (
-              <Reveal key={s.category} delay={i * 60}>
-                <h3 className="mb-2 font-mono text-xs uppercase tracking-wider text-muted-foreground">{s.category}</h3>
-                <div className="flex flex-wrap gap-2">
-                  {s.items.map((item) => (
-                    <span key={item} className="rounded-md border bg-card px-3 py-1 text-sm transition-colors hover:border-primary hover:text-primary">
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </Reveal>
-            ))}
-          </div>
+      <section className="mx-auto max-w-6xl px-5 pb-24">
+        <div className="flex flex-wrap items-end justify-between gap-4">
+          <SectionTitle k="featured">精選作品</SectionTitle>
+          <Link href="/projects" className="mb-10 inline-flex items-center gap-2 font-mono text-sm text-primary hover:underline">
+            查看全部作品 <ArrowRight className="size-4" />
+          </Link>
         </div>
-      </section>
-
-      <section id="experience" className="scroll-mt-16 border-y bg-muted/40">
-        <div className="mx-auto max-w-6xl px-5 py-24">
-          <SectionTitle k="02 / experience">工作經歷</SectionTitle>
-          <ol className="relative ml-2 border-l">
-            {experience.map((e, i) => (
-              <li key={e.title} className="mb-10 ml-6 last:mb-0">
-                <Reveal delay={i * 50}>
-                  <span className="absolute -left-[5px] mt-1 size-2.5 rounded-full bg-primary ring-4 ring-background" />
-                  {(e.company || e.period) && (
-                    <p className="font-mono text-xs tracking-wider text-muted-foreground">
-                      {e.period}
-                      {e.company && e.period && " · "}
-                      {e.company && <span className="text-primary">{e.company}</span>}
-                    </p>
-                  )}
-                  <h3 className="mt-1 text-lg font-semibold">{e.title}</h3>
-                  <p className="mt-1 text-muted-foreground">{e.desc}</p>
-                  <div className="mt-2 flex flex-wrap gap-1.5">
-                    {e.tags.map((tag) => (
-                      <span key={tag} className="font-mono text-xs text-primary">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
-                </Reveal>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section id="projects" className="mx-auto max-w-6xl scroll-mt-16 px-5 py-24">
-        <SectionTitle k="03 / projects">精選作品</SectionTitle>
-        <ProjectGrid />
-      </section>
-
-      <section id="contact" className="scroll-mt-16 border-t bg-muted/40">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 py-24 md:grid-cols-2">
-          <div>
-            <SectionTitle k="04 / contact">一起合作</SectionTitle>
-            <Reveal>
-              <p className="text-muted-foreground">有專案、職缺或想法？歡迎來信。</p>
-              <a href={`mailto:${site.email}`} className="mt-6 inline-flex items-center gap-2 font-mono text-primary hover:underline">
-                <Mail className="size-4" />
-                {site.email}
-              </a>
-              <div className="mt-6 flex gap-2">
-                <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className={iconBtn}>
-                  <GithubIcon className="size-4" />
-                </a>
-              </div>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {featured.map((p, i) => (
+            <Reveal key={p.slug} delay={(i % 3) * 80} className="h-full">
+              <ProjectCard p={p} />
             </Reveal>
-          </div>
-          <Reveal>
-            <ContactForm />
-          </Reveal>
+          ))}
         </div>
       </section>
     </main>
