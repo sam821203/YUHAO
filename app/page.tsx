@@ -18,11 +18,10 @@ export default function Home() {
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-20 md:grid-cols-[1.4fr_1fr] md:py-32">
           <div className="animate-in fade-in slide-in-from-bottom-4 duration-700">
             <p className="flex items-center gap-2 font-mono text-sm text-muted-foreground">
-              <MapPin className="size-4 text-primary" /> 台灣
+              <MapPin className="size-4 text-primary" /> Taiwan
             </p>
             <h1 className="mt-4 text-5xl font-bold tracking-tight md:text-7xl">
-              黃宇浩
-              <span className="mt-2 block text-2xl font-medium text-muted-foreground md:text-3xl">{site.name}</span>
+              {site.name}
             </h1>
             <p className="mt-5 font-mono text-lg text-primary">{site.role}</p>
             <p className="mt-4 max-w-xl text-lg text-muted-foreground">
@@ -31,10 +30,10 @@ export default function Home() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/projects" className={btnPrimary}>
-                查看作品 <ArrowRight className="size-4" />
+                View Projects <ArrowRight className="size-4" />
               </Link>
               <Link href="/contact" className={btnGhost}>
-                聯絡我
+                Contact Me
               </Link>
             </div>
             <div className="mt-8 flex gap-2">
@@ -52,9 +51,9 @@ export default function Home() {
 
       <section className="mx-auto max-w-6xl px-5 pb-24">
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <SectionTitle k="featured">精選作品</SectionTitle>
+          <SectionTitle k="featured">Featured Projects</SectionTitle>
           <Link href="/projects" className="mb-10 inline-flex items-center gap-2 font-mono text-sm text-primary hover:underline">
-            查看全部作品 <ArrowRight className="size-4" />
+            View All Projects <ArrowRight className="size-4" />
           </Link>
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

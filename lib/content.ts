@@ -213,16 +213,16 @@ export const about =
   "我是一名專注於資料視覺化與即時系統的前端工程師，參與過資安、能源、航空與電商等領域的大型專案。我重視乾淨的架構、可重用的元件與流暢的使用者體驗，讓複雜的資料變得清晰易懂。";
 
 export const skills: { category: string; items: string[] }[] = [
-  { category: "核心", items: ["React", "Vue 3", "Angular", "TypeScript", "JavaScript (ES6+)"] },
-  { category: "樣式與 UI", items: ["Tailwind CSS", "SCSS", "Element Plus", "PrimeVue", "RWD", "Figma"] },
-  { category: "資料視覺化與地圖", items: ["D3.js", "Chart.js", "Canvas", "Google Maps API"] },
-  { category: "工具鏈", items: ["Vite", "Webpack", "Gulp", "Pinia", "Vuex", "RxJS", "PWA"] },
-  { category: "亦熟悉", items: ["Node.js / Nest.js", "FastAPI", "WebSocket", "OpenAI API", "LangChain"] },
+  { category: "Core", items: ["React", "Vue 3", "Angular", "TypeScript", "JavaScript (ES6+)"] },
+  { category: "Styling & UI", items: ["Tailwind CSS", "SCSS", "Element Plus", "PrimeVue", "RWD", "Figma"] },
+  { category: "Data Viz & Maps", items: ["D3.js", "Chart.js", "Canvas", "Google Maps API"] },
+  { category: "Tooling", items: ["Vite", "Webpack", "Gulp", "Pinia", "Vuex", "RxJS", "PWA"] },
+  { category: "Also Familiar", items: ["Node.js / Nest.js", "FastAPI", "WebSocket", "OpenAI API", "LangChain"] },
 ];
 
 export const experience: { title: string; company?: string; period?: string; desc: string; tags: string[] }[] = [
-  { title: "設備供應商合規追蹤平台", company: "緯創軟體", period: "2025.06 — 至今", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
-  { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — 至今", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
+  { title: "設備供應商合規追蹤平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制、主導 Code Review。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
+  { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
   { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
   { title: "華航地勤排班系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "複雜排班甘特圖與拖拉互動，優化大量資料渲染。", tags: ["Angular", "RxJS", "Canvas"] },

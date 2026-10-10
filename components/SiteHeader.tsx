@@ -7,11 +7,11 @@ import { BriefcaseBusiness, House, Mail, Menu, Presentation, UserRound, X } from
 
 
 const nav = [
-  { href: "/", label: "首頁", Icon: House },
-  { href: "/about", label: "關於", Icon: UserRound },
-  { href: "/experience", label: "經歷", Icon: BriefcaseBusiness },
-  { href: "/projects", label: "作品", Icon: Presentation },
-  { href: "/contact", label: "聯絡", Icon: Mail },
+  { href: "/", label: "Home", Icon: House },
+  { href: "/about", label: "About", Icon: UserRound },
+  { href: "/experience", label: "Experience", Icon: BriefcaseBusiness },
+  { href: "/projects", label: "Projects", Icon: Presentation },
+  { href: "/contact", label: "Contact", Icon: Mail },
 ];
 
 function isActive(pathname: string, href: string) {

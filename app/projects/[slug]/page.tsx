@@ -48,7 +48,7 @@ function Bullets({ items }: { items: string[] }) {
 function sections(cs: CaseStudy): { title: string; body: ReactNode }[] {
   const list: { title: string; body: ReactNode }[] = [
     {
-      title: "問題",
+      title: "Problem",
       body: (
         <>
           <p className="leading-relaxed text-muted-foreground">{cs.problem}</p>
@@ -60,12 +60,12 @@ function sections(cs: CaseStudy): { title: string; body: ReactNode }[] {
         </>
       ),
     },
-    { title: "我的角色", body: <p className="leading-relaxed text-muted-foreground">{cs.role}</p> },
+    { title: "My Role", body: <p className="leading-relaxed text-muted-foreground">{cs.role}</p> },
   ];
-  if (cs.challenges) list.push({ title: "前端挑戰", body: <Bullets items={cs.challenges} /> });
+  if (cs.challenges) list.push({ title: "Front-end Challenges", body: <Bullets items={cs.challenges} /> });
   if (cs.strategies) {
     list.push({
-      title: "核心對策",
+      title: "Key Strategies",
       body: (
         <div className="grid gap-4 sm:grid-cols-2">
           {cs.strategies.map((s) => (
@@ -87,7 +87,7 @@ function sections(cs: CaseStudy): { title: string; body: ReactNode }[] {
   }
   if (cs.solutions) {
     list.push({
-      title: "解決方案",
+      title: "Solutions",
       body: (
         <div className="grid gap-4 sm:grid-cols-2">
           {cs.solutions.map((s) => (
@@ -101,7 +101,7 @@ function sections(cs: CaseStudy): { title: string; body: ReactNode }[] {
     });
   }
   list.push({
-    title: "成果",
+    title: "Results",
     body: Array.isArray(cs.result) ? (
       <div className="rounded-xl border-l-4 border-primary bg-muted p-5">
         <ul className="space-y-2">
@@ -131,7 +131,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
     <main className="mx-auto max-w-4xl px-5 py-12">
       <Link href="/projects" className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary">
         <ArrowLeft className="size-4" />
-        返回作品
+        Back to projects
       </Link>
       <div className="animate-in fade-in slide-in-from-bottom-4 mt-6 duration-700">
         <p className="font-mono text-xs uppercase tracking-widest text-primary">{categoryLabel[p.category]}</p>
@@ -191,7 +191,7 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
       ) : (
         <div className="mt-16">
           <Reveal>
-            <Heading n="01">專案貢獻</Heading>
+            <Heading n="01">Contribution</Heading>
             <p className="rounded-xl border-l-4 border-primary bg-muted p-5 text-lg leading-relaxed">{p.info}</p>
           </Reveal>
         </div>

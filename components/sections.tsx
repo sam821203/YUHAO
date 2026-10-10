@@ -10,7 +10,7 @@ import { about, experience, site, skills } from "@/lib/content";
 export function AboutSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
-      <SectionTitle k="about">關於我</SectionTitle>
+      <SectionTitle k="about">About Me</SectionTitle>
       <div className="grid gap-12 md:grid-cols-[1fr_1.3fr]">
         <Reveal>
           <p className="text-lg leading-relaxed text-muted-foreground">{about}</p>
@@ -38,7 +38,7 @@ export function ExperienceSection() {
   return (
     <section>
       <div className="mx-auto max-w-6xl px-5 py-20 md:py-24">
-        <SectionTitle k="experience">工作經歷</SectionTitle>
+        <SectionTitle k="experience">Experience</SectionTitle>
         <ol className="relative ml-2 border-l">
           {experience.map((e, i) => (
             <li key={e.title} className="mb-10 ml-6 last:mb-0">
@@ -72,7 +72,7 @@ export function ExperienceSection() {
 export function ProjectsSection() {
   return (
     <section className="mx-auto max-w-6xl px-5 py-20 md:py-24">
-      <SectionTitle k="projects">作品集</SectionTitle>
+      <SectionTitle k="projects">Projects</SectionTitle>
       <ProjectGrid />
     </section>
   );
@@ -83,9 +83,9 @@ export function ContactSection() {
     <section>
       <div className="mx-auto grid max-w-6xl gap-12 px-5 py-20 md:grid-cols-2 md:py-24">
         <div>
-          <SectionTitle k="contact">一起合作</SectionTitle>
+          <SectionTitle k="contact">Let&apos;s Work Together</SectionTitle>
           <Reveal>
-            <p className="text-muted-foreground">有專案、職缺或想法？歡迎來信。</p>
+            <p className="text-muted-foreground">Have a project, a role or an idea? Feel free to reach out.</p>
             <a href={`mailto:${site.email}`} className="mt-6 inline-flex items-center gap-2 font-mono text-primary hover:underline">
               <Mail className="size-4" />
               {site.email}

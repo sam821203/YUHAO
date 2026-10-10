@@ -6,7 +6,7 @@ import { site } from "@/lib/content";
 import { btnPrimary } from "./styles";
 
 const fields = [
-  { name: "name", label: "姓名", type: "text" },
+  { name: "name", label: "Name", type: "text" },
   { name: "email", label: "Email", type: "email" },
 ];
 
@@ -37,7 +37,7 @@ export function ContactForm() {
         </label>
       ))}
       <label className="block text-sm">
-        <span className="text-muted-foreground">訊息</span>
+        <span className="text-muted-foreground">Message</span>
         <textarea
           name="message"
           required
@@ -48,11 +48,11 @@ export function ContactForm() {
       </label>
       <button type="submit" className={btnPrimary}>
         <Send className="size-4" />
-        送出
+        Send
       </button>
       {sent && (
         <p className="text-sm text-primary" role="status">
-          已開啟你的郵件程式，謝謝！
+          Your mail app is open. Thank you!
         </p>
       )}
     </form>

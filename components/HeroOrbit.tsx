@@ -21,7 +21,7 @@ export function HeroOrbit() {
       <div className="absolute inset-[23%] overflow-hidden rounded-full shadow-[0_0_0_4px_var(--background),0_0_0_5px_color-mix(in_oklab,var(--primary)_55%,transparent)]">
         <Image
           src="/headshot.jpg"
-          alt="黃宇浩 Yu Hao Huang"
+          alt="Yu Hao Huang"
           width={800}
           height={800}
           priority
