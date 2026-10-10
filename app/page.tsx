@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { ArrowRight, ArrowUpRight, Mail, MapPin } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
 import { ProjectGrid } from "@/components/ProjectGrid";
@@ -77,55 +76,19 @@ export default function Home() {
           <SectionTitle k="02 / experience">工作經歷</SectionTitle>
           <ol className="relative ml-2 border-l">
             {experience.map((e, i) => (
-              <li key={e.company} className="mb-14 ml-6 last:mb-0">
+              <li key={e.title} className="mb-10 ml-6 last:mb-0">
                 <Reveal delay={i * 50}>
-                  <span className="absolute -left-[5px] mt-1.5 size-2.5 rounded-full bg-primary ring-4 ring-background" />
-                  <p className="font-mono text-xs tracking-wider text-primary">{e.period}</p>
-                  <h3 className="mt-1 text-xl font-semibold">
-                    {e.title}
-                    <span className="text-muted-foreground"> · {e.company}</span>
-                  </h3>
-                  <div className="mt-5 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-                    {e.projects.map((proj) => (
-                      <div key={proj.name} className="rounded-lg border bg-card p-5">
-                        <h4 className="font-semibold">
-                          {proj.slug ? (
-                            <Link href={`/projects/${proj.slug}`} className="inline-flex items-center gap-1 hover:text-primary">
-                              {proj.name}
-                              <ArrowUpRight className="size-4 text-muted-foreground" />
-                            </Link>
-                          ) : (
-                            proj.name
-                          )}
-                        </h4>
-                        <ul className="mt-3 space-y-1.5 text-sm text-muted-foreground">
-                          {proj.points.slice(0, 3).map((point) => (
-                            <li key={point} className="flex gap-2">
-                              <span className="text-accent">▸</span>
-                              <span>{point}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {proj.points.length > 3 && (
-                          <details className="group mt-1.5 text-sm text-muted-foreground">
-                            <summary className="cursor-pointer list-none font-mono [&::-webkit-details-marker]:hidden text-xs text-primary hover:underline">
-                              <span className="group-open:hidden">+ 再看 {proj.points.length - 3} 項</span>
-                              <span className="hidden group-open:inline">− 收合</span>
-                            </summary>
-                            <ul className="mt-1.5 space-y-1.5">
-                              {proj.points.slice(3).map((point) => (
-                                <li key={point} className="flex gap-2">
-                                  <span className="text-accent">▸</span>
-                                  <span>{point}</span>
-                                </li>
-                              ))}
-                            </ul>
-                          </details>
-                        )}
-                      </div>
-                    ))}
-                  </div>
-                  <div className="mt-4 flex flex-wrap gap-x-2 gap-y-1">
+                  <span className="absolute -left-[5px] mt-1 size-2.5 rounded-full bg-primary ring-4 ring-background" />
+                  {(e.company || e.period) && (
+                    <p className="font-mono text-xs tracking-wider text-muted-foreground">
+                      {e.period}
+                      {e.company && e.period && " · "}
+                      {e.company && <span className="text-primary">{e.company}</span>}
+                    </p>
+                  )}
+                  <h3 className="mt-1 text-lg font-semibold">{e.title}</h3>
+                  <p className="mt-1 text-muted-foreground">{e.desc}</p>
+                  <div className="mt-2 flex flex-wrap gap-1.5">
                     {e.tags.map((tag) => (
                       <span key={tag} className="font-mono text-xs text-primary">
                         #{tag}
