@@ -225,8 +225,7 @@ export const experience: { title: string; company?: string; period?: string; des
   { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — 至今", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "主導前端架構與共用元件庫，統一多團隊開發規範。", tags: ["Vue 3", "TypeScript", "PrimeVue"] },
   { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "即時地圖追蹤與告警推播，處理大量感測器資料。", tags: ["Google Maps", "WebSocket", "Chart.js"] },
-  { title: "資料治理平台", desc: "資料血緣視覺化與權限管理介面。", tags: ["D3.js", "Vue 3", "Pinia"] },
-  { title: "華航地勤排班系統", desc: "複雜排班甘特圖與拖拉互動，優化大量資料渲染。", tags: ["Angular", "RxJS", "Canvas"] },
+  { title: "華航地勤排班系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "複雜排班甘特圖與拖拉互動，優化大量資料渲染。", tags: ["Angular", "RxJS", "Canvas"] },
   { title: "中華電信官網", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "響應式官網改版與無障礙優化。", tags: ["SCSS", "RWD", "Gulp"] },
   { title: "東森購物", company: "東森得易購", period: "2022.04 — 2023.10", desc: "電商活動頁與購物流程前端開發。", tags: ["Vue", "Webpack", "PWA"] },
 ];
