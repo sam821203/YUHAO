@@ -142,7 +142,7 @@ export const projects: Project[] = [
     info: "台股即時看盤：即時推送分時走勢與量能圖、五檔委買賣與內外盤比",
     category: "sh",
     image: img("pulse-cyan.jpg", 1440, 720),
-    tags: ["Vue 3", "TypeScript", "Pinia", "PrimeVue", "D3.js", "Socket.IO", "Tailwind CSS", "Vitest"],
+    tags: ["Vue 3", "TypeScript", "Pinia", "PrimeVue", "D3.js", "Tailwind CSS", "Vitest", "NestJS", "MongoDB", "Socket.IO"],
     github: "https://github.com/sam821203/Pulse-frontend",
     githubBackend: "https://github.com/sam821203/Pulse-backend",
   },
