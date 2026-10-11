@@ -155,12 +155,8 @@ export const about = [
 ];
 
 export const skills: { category: string; items: string[] }[] = [
-  { category: "Core", items: ["React", "Vue 3", "TypeScript", "JavaScript (ES6+)"] },
-  { category: "State & Data", items: ["Zustand", "Pinia", "TanStack Query", "Axios"] },
-  { category: "Styling & UI", items: ["Tailwind CSS", "SCSS", "Ant Design", "shadcn/ui", "Element Plus", "PrimeVue", "RWD", "Figma"] },
-  { category: "Data Viz & Maps", items: ["D3.js", "Recharts", "Chart.js", "AG Grid", "Google Maps API", "Canvas"] },
-  { category: "Tooling", items: ["Vite", "Webpack", "Gulp", "ESLint / Prettier", "Vitest", "PWA"] },
-  { category: "Also Familiar", items: ["Angular", "RxJS", "Node.js / Nest.js", "Hono.js", "FastAPI", "WebSocket", "LangChain / LangGraph"] },
+  { category: "Frontend", items: ["React", "Vue", "Angular", "Next.js", "TypeScript", "JavaScript", "Sass", "Tailwind CSS", "Bootstrap", "D3.js", "Chart.js", "Vite", "Webpack"] },
+  { category: "Also Working With", items: ["Node.js", "NestJS", "Hono", "Python", "LangChain", "MySQL", "MongoDB"] },
 ];
 
 export const experience: { title: string; company?: string; period?: string; desc: string; tags: string[] }[] = [
