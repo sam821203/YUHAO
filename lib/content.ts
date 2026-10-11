@@ -97,14 +97,6 @@ export const projects: Project[] = [
     tags: ["Vue 3", "TypeScript", "Google Maps", "Element Plus", "Pinia", "Tailwind CSS"],
   },
   {
-    slug: "china-airlines-scheduling",
-    title: "華航地勤排班系統",
-    info: "地勤排班系統：自製時間軸排班介面，支援拖拉指派、任務重疊偵測、右鍵複製貼上與人力配置",
-    category: "works",
-    image: img("gss.jpg", 1426, 808),
-    tags: ["JavaScript", "jQuery UI", "Bootstrap", "vis-timeline", "Thymeleaf", "Java"],
-  },
-  {
     slug: "etmall",
     title: "東森購物",
     info: "東森購物網活動頁、商品宮格模組與 EDM 模板：以設定檔驅動版位，圖片懶載入與載入效能調校",
@@ -174,7 +166,6 @@ export const experience: { title: string; company?: string; period?: string; des
   { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "規劃 Vue 3 前端架構與共用元件，封裝 Axios 錯誤處理與 XSRF / XSS 防護，實作角色權限與表單驗證。", tags: ["Vue 3", "PrimeVue", "Pinia"] },
   { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "中途加入，負責動態監控模組：以 Vue 3 + TypeScript 開發地圖監控、電子圍籬、歷史軌跡與業者、施工資訊查詢。", tags: ["Vue 3", "TypeScript", "Google Maps"] },
-  { title: "華航地勤排班系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "以 jQuery UI 打造拖拉式排班時間軸，含任務重疊偵測、右鍵複製貼上與人力配置。", tags: ["JavaScript", "jQuery UI", "vis-timeline"] },
   { title: "中華電信官網", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "依品牌設計準則獨立設計跨裝置 UI，並以 Webpack + Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 官網。", tags: ["SCSS", "Bootstrap 5", "Webpack", "Figma"] },
   { title: "東森購物", company: "東森得易購", period: "2022.04 — 2023.10", desc: "負責活動頁與商品 API 宮格模組、EDM 模板開發並調校 Core Web Vitals，也擔任內部講師教授 HTML / CSS 與 Design Sprint。", tags: ["JavaScript", "jQuery", "Webpack"] },
 ];
