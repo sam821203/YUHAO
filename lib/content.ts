@@ -155,8 +155,13 @@ export const about = [
 ];
 
 export const skills: { category: string; items: string[] }[] = [
-  { category: "Frontend", items: ["React", "Vue", "Angular", "Next.js", "TypeScript", "JavaScript", "Sass", "Tailwind CSS", "Bootstrap", "D3.js", "Chart.js", "Vite", "Webpack"] },
-  { category: "Also Working With", items: ["Node.js", "NestJS", "Hono", "Python", "LangChain", "MySQL", "MongoDB"] },
+  { category: "Frameworks", items: ["React", "Vue", "Angular", "Next.js"] },
+  { category: "Languages", items: ["TypeScript", "JavaScript", "Python"] },
+  { category: "Styling", items: ["Sass", "Tailwind CSS", "Bootstrap"] },
+  { category: "Data Viz", items: ["D3.js", "Chart.js"] },
+  { category: "Build Tools", items: ["Vite", "Webpack"] },
+  { category: "Backend & AI", items: ["Node.js", "NestJS", "Hono", "LangChain"] },
+  { category: "Database", items: ["MySQL", "MongoDB"] },
 ];
 
 export const experience: { title: string; company?: string; period?: string; desc: string; tags: string[] }[] = [
