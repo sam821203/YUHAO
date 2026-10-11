@@ -139,7 +139,7 @@ export const projects: Project[] = [
   {
     slug: "pulse",
     title: "Pulse 股票分析平台",
-    info: "台股即時看盤：即時推送分時走勢與量能圖、五檔委買賣與內外盤比",
+    info: "台股看盤：即時推送分時走勢與量能圖，定時更新五檔委買賣與內外盤比",
     category: "sh",
     image: img("pulse-cyan.jpg", 1440, 720),
     tags: ["Vue 3", "TypeScript", "Pinia", "PrimeVue", "D3.js", "Tailwind CSS", "Vitest", "NestJS", "MongoDB", "Socket.IO"],
@@ -173,6 +173,66 @@ export const experience: { title: string; company?: string; period?: string; des
 ];
 
 const caseStudies: Record<string, CaseStudy> = {
+  etmall: {
+    problem: "電商檔期活動頻繁，需要能快速替換商品與連結的活動頁與宮格版位。",
+    role: "前端工程師：負責活動頁切版、商品宮格模組切版與商品 API 串接。",
+    challenges: ["檔期多、商品與連結常更換", "同頁需兼顧網頁、手機與 App"],
+    solutions: [
+      { label: "架構", text: "活動區塊的商品、價格與連結抽成獨立資料檔，換檔期只需改資料不動版型。" },
+      { label: "資料", text: "宮格模組串接商品 API，依版位數量填入圖片、品名、價格與折扣標籤。" },
+      { label: "UX", text: "連結分別設定網頁、手機與 App 版，並提供樓層導覽與回頂部按鈕。" },
+      { label: "效能", text: "圖片先放佔位圖、進入可視範圍才載入，影片只預載中繼資料。" },
+    ],
+    result: "整理出可重複使用的宮格模組與資料檔寫法，套用在多個檔期活動頁。",
+  },
+  "ai-chatbot": {
+    problem: "一般聊天機器人答不了時事題目，對話紀錄也容易遺失。",
+    role: "個人專案：獨立完成 Vue 3 前端與 Flask + LangGraph 後端。",
+    challenges: ["判斷何時該上網搜尋", "多段對話的保存與切換"],
+    solutions: [
+      { label: "架構", text: "以 LangGraph 區分 Ask 與 Agent 模式，只有 Agent 模式可呼叫搜尋工具。" },
+      { label: "後端", text: "問題含時事關鍵字時先以 Google 搜尋，再把結果與當天日期放進提示詞。" },
+      { label: "資料", text: "多段對話存在瀏覽器本地，讀取時先檢查格式，並把舊版資料轉成新格式。" },
+      { label: "資安", text: "AI 回覆轉成 Markdown 後經 DOMPurify 過濾才顯示，避免 XSS。" },
+    ],
+    result: "完成支援雙模式、多段對話、標示是否有搜尋、可匯出 .md／.txt 的聊天應用。",
+  },
+  "pdf-query": {
+    problem: "長篇 PDF 不好找資料，使用者需要直接提問並回頭核對原文。",
+    role: "個人專案：獨立完成 Vue 3 前端與 FastAPI + LangChain 後端。",
+    challenges: ["兼顧語意與關鍵字比對", "回答要能回查原文頁面"],
+    solutions: [
+      { label: "架構", text: "向量檢索與 BM25 依權重合併，權重與取回筆數可由環境變數調整。" },
+      { label: "UX", text: "回答附上不重複的來源頁碼，點擊後 PDF 預覽直接切到該頁。" },
+      { label: "資安", text: "上傳時檢查副檔名、MIME、檔案大小與 PDF 檔頭，回答經 DOMPurify 過濾。" },
+      { label: "後端", text: "解析與建索引放到背景執行緒，關閉頁面時通知後端清除該份文件。" },
+    ],
+    result: "完成從上傳、提問到依來源頁碼回查原文的 PDF 問答流程。",
+  },
+  voiceverse: {
+    problem: "需要一個能上傳、播放並討論自己音樂作品的平台。",
+    role: "個人專案：獨立完成 Vue 3 前端，並串接 Firebase 驗證、資料庫與檔案儲存。",
+    challenges: ["多檔上傳與進度呈現", "換頁時播放不能中斷"],
+    solutions: [
+      { label: "元件", text: "支援拖放或選檔上傳多個 MP3，各自顯示進度，檔名重複時自動加上時間戳。" },
+      { label: "架構", text: "播放器狀態放在 Pinia、以 Howler.js 播放，換頁時播放不中斷。" },
+      { label: "資料", text: "首頁依上傳時間分批載入，捲到底部才載下一批，載完即停止監聽。" },
+      { label: "UX", text: "VeeValidate 驗證表單、vue-i18n 切換中英文，並以 PWA 讓網站可安裝為 App。" },
+    ],
+    result: "完成包含帳號、上傳、歌曲管理、留言與播放的音樂分享 SPA。",
+  },
+  pulse: {
+    problem: "需要在一個頁面同時看到個股的分時走勢、量能與五檔掛單。",
+    role: "個人專案：獨立完成 Vue 3 前端與 NestJS + MongoDB 後端。",
+    challenges: ["多個資料來源要同步更新", "內外盤量需自行推算"],
+    solutions: [
+      { label: "推播", text: "後端每 5 秒向證交所取得訂閱個股的成交資料，存進 MongoDB 並以 Socket.IO 推給前端。" },
+      { label: "資料", text: "報價與五檔每 3 秒輪詢、收盤後停止，並依成交價與最佳買賣價推算內外盤量。" },
+      { label: "元件", text: "以 D3.js 繪製價量雙面板分時圖，含十字游標與漲跌配色的量能柱。" },
+      { label: "後端", text: "每日排程抓取上市櫃本益比、淨值比與殖利率，並以 JWT 與 CASL 控管權限。" },
+    ],
+    result: "完成分時走勢、量能、五檔與內外盤比的個股頁，核心計算有 26 個 Vitest 測試。",
+  },
   "semiconductor-monitor": {
     problem: "平台整合五個子系統，服務跨廠區分析與維運人員，原有三個痛點：",
     problemItems: [
