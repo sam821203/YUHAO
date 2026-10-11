@@ -20,6 +20,7 @@ export type Project = {
   image: { src: string; width: number; height: number };
   tags: string[];
   github?: string;
+  githubBackend?: string;
   href?: string;
 };
 
@@ -63,7 +64,7 @@ export const projects: Project[] = [
     slug: "insightaero",
     featured: true,
     title: "InsightAero",
-    info: "React + TypeScript 無人機任務監控平台：WebSocket 多機即時遙測、自訂地圖圖層、風場修正與 AI 診斷報告",
+    info: "無人機任務監控平台：多機即時遙測、自訂地圖圖層、風場修正與 AI 診斷報告",
     category: "sp",
     image: img("insightAero.jpg", 1245, 603),
     tags: ["React", "TypeScript", "Zustand", "TanStack Query", "Google Maps", "WebSocket", "FastAPI", "PostgreSQL", "LangChain"],
@@ -72,7 +73,7 @@ export const projects: Project[] = [
   {
     slug: "cht-web",
     title: "中華官網",
-    info: "中華電信官網改版：依品牌設計準則獨立設計跨裝置 UI 與 Icon，以 Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 頁面",
+    info: "中華電信官網改版：依品牌設計準則獨立設計跨裝置 UI 與 Icon，以模組化模板與樣式建構 140+ 頁響應式頁面",
     category: "works",
     image: img("cht-web.jpg", 953, 540),
     tags: ["JavaScript", "SCSS", "Bootstrap 5", "Webpack", "Nunjucks", "Swiper", "Figma"],
@@ -82,7 +83,7 @@ export const projects: Project[] = [
     slug: "hisem",
     featured: true,
     title: "中華 HiSEM 資安管理系統",
-    info: "重建資安管理系統、追蹤垃圾簡訊門號：規劃 Vue 3 前端架構、共用元件與 API 層，實作角色權限與表單驗證",
+    info: "重建廣告信（垃圾郵件）處理系統：郵件標頭分析、通知與停權／復話流程、風險客戶標註與統計報表",
     category: "works",
     image: img("hisem.jpg", 1440, 813),
     tags: ["Vue 3", "Vite", "PrimeVue", "Pinia", "Axios", "VeeValidate"],
@@ -91,23 +92,15 @@ export const projects: Project[] = [
     slug: "radiation-cloud",
     featured: true,
     title: "輻射防護雲化服務系統",
-    info: "輻射源管理雲端平台：Google 地圖監控、電子圍籬、歷史軌跡，搭配 JWT 續期與閒置自動登出",
+    info: "輻射作業動態監控：地圖監控與叢集標記、電子圍籬設定、歷史軌跡，以及業者與施工資訊查詢",
     category: "works",
     image: img("aeclice-web.jpg", 1909, 909),
     tags: ["Vue 3", "TypeScript", "Google Maps", "Element Plus", "Pinia", "Tailwind CSS"],
   },
   {
-    slug: "china-airlines-scheduling",
-    title: "華航地勤排班系統",
-    info: "地勤排班系統：自製時間軸排班介面，支援拖拉指派、任務重疊偵測、右鍵複製貼上與人力配置",
-    category: "works",
-    image: img("gss.jpg", 1426, 808),
-    tags: ["JavaScript", "jQuery UI", "Bootstrap", "vis-timeline", "Thymeleaf", "Java"],
-  },
-  {
     slug: "etmall",
     title: "東森購物",
-    info: "東森購物網活動頁、商品 API 宮格模組與 EDM 模板：以 JSON 設定檔驅動版位，圖片懶載入與 Core Web Vitals 調校",
+    info: "東森購物網活動頁、商品宮格模組與 EDM 模板：以設定檔驅動版位，圖片懶載入與載入效能調校",
     category: "works",
     image: img("etmall-front-design.jpg", 952, 540),
     tags: ["JavaScript", "jQuery", "Webpack", "Swiper", "RWD"],
@@ -117,17 +110,17 @@ export const projects: Project[] = [
   {
     slug: "ai-chatbot",
     title: "AI ChatBot",
-    info: "以 LangGraph 編排 Ask / Agent 雙模式的 AI 聊天應用，Agent 會自動 Google 搜尋；Vue 3 前端支援多對話路由、本地保存與 Markdown 安全渲染",
+    info: "AI 聊天應用：Ask / Agent 雙模式，Agent 可自動上網搜尋，支援多對話切換、本地保存、Markdown 安全渲染與對話匯出",
     category: "sp",
     image: img("ai-chat-assisant.jpg", 1723, 876),
-    tags: ["Vue 3", "Vite", "Python", "Flask", "LangGraph", "OpenAI", "Google Search"],
+    tags: ["Vue 3", "Vite", "Python", "Flask", "LangGraph", "LangChain", "OpenAI", "DOMPurify"],
     github: "https://github.com/sam821203/chat-bot",
     href: "https://chat-bot-green-three.vercel.app/",
   },
   {
     slug: "pdf-query",
     title: "PDF-query",
-    info: "上傳 PDF 以自然語言提問的 RAG 應用：向量與 BM25 混合檢索，回答附來源頁碼，可點擊跳轉 PDF 預覽",
+    info: "PDF 智慧問答：上傳後以自然語言提問，語意與關鍵字混合檢索，回答附來源頁碼並可點擊跳頁",
     category: "sp",
     image: img("pdf-query.jpg", 1440, 810),
     tags: ["Vue 3", "Vite", "Python", "FastAPI", "LangChain", "RAG", "Chroma", "OpenAI"],
@@ -136,21 +129,22 @@ export const projects: Project[] = [
   {
     slug: "voiceverse",
     title: "VoiceVerse",
-    info: "Vue 3 + Firebase 音樂平台：註冊登入、拖放上傳（含進度條）、歌曲管理與留言，含路由守衛、Pinia 播放器、i18n 與 PWA",
+    info: "音樂分享平台：註冊登入、拖放上傳（含進度條）、歌曲管理與留言，內建播放器、無限捲動、中英雙語，並可安裝為 App",
     category: "sp",
     image: img("voice-verse.jpg", 1904, 1080),
-    tags: ["Vue 3", "Vite", "Pinia", "Firebase", "Howler.js", "vue-i18n", "PWA", "Tailwind CSS", "SCSS"],
+    tags: ["Vue 3", "Vite", "Pinia", "Firebase", "Howler.js", "VeeValidate", "vue-i18n", "PWA", "Tailwind CSS"],
     github: "https://github.com/sam821203/VoiceVerse",
     href: "https://voice-verse.vercel.app/",
   },
   {
     slug: "pulse",
     title: "Pulse 股票分析平台",
-    info: "Vue 3 + TypeScript 台股即時看盤：Socket.IO 即時報價、D3 自繪分時走勢與量能、五檔委買賣",
+    info: "台股看盤：即時推送分時走勢與量能圖，定時更新五檔委買賣與內外盤比",
     category: "sh",
-    image: img("empty.jpg", 960, 540),
-    tags: ["Vue 3", "TypeScript", "Pinia", "PrimeVue", "D3.js", "Socket.IO", "Nest.js", "MongoDB"],
+    image: img("pulse-cyan.jpg", 1440, 720),
+    tags: ["Vue 3", "TypeScript", "Pinia", "PrimeVue", "D3.js", "Tailwind CSS", "Vitest", "NestJS", "MongoDB", "Socket.IO"],
     github: "https://github.com/sam821203/Pulse-frontend",
+    githubBackend: "https://github.com/sam821203/Pulse-backend",
   },
 ];
 
@@ -161,25 +155,85 @@ export const about = [
 ];
 
 export const skills: { category: string; items: string[] }[] = [
-  { category: "Core", items: ["React", "Vue 3", "TypeScript", "JavaScript (ES6+)"] },
-  { category: "State & Data", items: ["Zustand", "Pinia", "TanStack Query", "Axios"] },
-  { category: "Styling & UI", items: ["Tailwind CSS", "SCSS", "Ant Design", "shadcn/ui", "Element Plus", "PrimeVue", "RWD", "Figma"] },
-  { category: "Data Viz & Maps", items: ["D3.js", "Recharts", "Chart.js", "AG Grid", "Google Maps API", "Canvas"] },
-  { category: "Tooling", items: ["Vite", "Webpack", "Gulp", "ESLint / Prettier", "Vitest", "PWA"] },
-  { category: "Also Familiar", items: ["Angular", "RxJS", "Node.js / Nest.js", "Hono.js", "FastAPI", "WebSocket", "LangChain / LangGraph"] },
+  { category: "Frameworks", items: ["React", "Vue", "Angular", "Next.js"] },
+  { category: "Languages", items: ["TypeScript", "JavaScript", "Python"] },
+  { category: "Styling", items: ["Sass", "Tailwind CSS", "Bootstrap"] },
+  { category: "Data Viz", items: ["D3.js", "Chart.js"] },
+  { category: "Build Tools", items: ["Vite", "Webpack"] },
+  { category: "Backend & AI", items: ["Node.js", "NestJS", "Hono", "LangChain"] },
+  { category: "Database", items: ["MySQL", "MongoDB"] },
 ];
 
 export const experience: { title: string; company?: string; period?: string; desc: string; tags: string[] }[] = [
   { title: "設備供應商合規追蹤平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制，主導 Code Review 並帶領新進工程師。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
   { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "規劃 Vue 3 前端架構與共用元件，封裝 Axios 錯誤處理與 XSRF / XSS 防護，實作角色權限與表單驗證。", tags: ["Vue 3", "PrimeVue", "Pinia"] },
-  { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "以 Vue 3 + TypeScript 開發 Google 地圖監控、電子圍籬與歷史軌跡，封裝型別化 API 層與 JWT 安全機制。", tags: ["Vue 3", "TypeScript", "Google Maps"] },
-  { title: "華航地勤排班系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "以 jQuery UI 打造拖拉式排班時間軸，含任務重疊偵測、右鍵複製貼上與人力配置。", tags: ["JavaScript", "jQuery UI", "vis-timeline"] },
+  { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "中途加入，負責動態監控模組：以 Vue 3 + TypeScript 開發地圖監控、電子圍籬、歷史軌跡與業者、施工資訊查詢。", tags: ["Vue 3", "TypeScript", "Google Maps"] },
   { title: "中華電信官網", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "依品牌設計準則獨立設計跨裝置 UI，並以 Webpack + Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 官網。", tags: ["SCSS", "Bootstrap 5", "Webpack", "Figma"] },
   { title: "東森購物", company: "東森得易購", period: "2022.04 — 2023.10", desc: "負責活動頁與商品 API 宮格模組、EDM 模板開發並調校 Core Web Vitals，也擔任內部講師教授 HTML / CSS 與 Design Sprint。", tags: ["JavaScript", "jQuery", "Webpack"] },
 ];
 
 const caseStudies: Record<string, CaseStudy> = {
+  etmall: {
+    problem: "電商檔期活動頻繁，需要能快速替換商品與連結的活動頁與宮格版位。",
+    role: "前端工程師：負責活動頁切版、商品宮格模組切版與商品 API 串接。",
+    challenges: ["檔期多、商品與連結常更換", "同頁需兼顧網頁、手機與 App"],
+    solutions: [
+      { label: "架構", text: "活動區塊的商品、價格與連結抽成獨立資料檔，換檔期只需改資料不動版型。" },
+      { label: "資料", text: "宮格模組串接商品 API，依版位數量填入圖片、品名、價格與折扣標籤。" },
+      { label: "UX", text: "連結分別設定網頁、手機與 App 版，並提供樓層導覽與回頂部按鈕。" },
+      { label: "效能", text: "圖片先放佔位圖、進入可視範圍才載入，影片只預載中繼資料。" },
+    ],
+    result: "整理出可重複使用的宮格模組與資料檔寫法，套用在多個檔期活動頁。",
+  },
+  "ai-chatbot": {
+    problem: "一般聊天機器人答不了時事題目，對話紀錄也容易遺失。",
+    role: "個人專案：獨立完成 Vue 3 前端與 Flask + LangGraph 後端。",
+    challenges: ["判斷何時該上網搜尋", "多段對話的保存與切換"],
+    solutions: [
+      { label: "架構", text: "以 LangGraph 區分 Ask 與 Agent 模式，只有 Agent 模式可呼叫搜尋工具。" },
+      { label: "後端", text: "問題含時事關鍵字時先以 Google 搜尋，再把結果與當天日期放進提示詞。" },
+      { label: "資料", text: "多段對話存在瀏覽器本地，讀取時先檢查格式，並把舊版資料轉成新格式。" },
+      { label: "資安", text: "AI 回覆轉成 Markdown 後經 DOMPurify 過濾才顯示，避免 XSS。" },
+    ],
+    result: "完成支援雙模式、多段對話、標示是否有搜尋、可匯出 .md／.txt 的聊天應用。",
+  },
+  "pdf-query": {
+    problem: "長篇 PDF 不好找資料，使用者需要直接提問並回頭核對原文。",
+    role: "個人專案：獨立完成 Vue 3 前端與 FastAPI + LangChain 後端。",
+    challenges: ["兼顧語意與關鍵字比對", "回答要能回查原文頁面"],
+    solutions: [
+      { label: "架構", text: "向量檢索與 BM25 依權重合併，權重與取回筆數可由環境變數調整。" },
+      { label: "UX", text: "回答附上不重複的來源頁碼，點擊後 PDF 預覽直接切到該頁。" },
+      { label: "資安", text: "上傳時檢查副檔名、MIME、檔案大小與 PDF 檔頭，回答經 DOMPurify 過濾。" },
+      { label: "後端", text: "解析與建索引放到背景執行緒，關閉頁面時通知後端清除該份文件。" },
+    ],
+    result: "完成從上傳、提問到依來源頁碼回查原文的 PDF 問答流程。",
+  },
+  voiceverse: {
+    problem: "需要一個能上傳、播放並討論自己音樂作品的平台。",
+    role: "個人專案：獨立完成 Vue 3 前端，並串接 Firebase 驗證、資料庫與檔案儲存。",
+    challenges: ["多檔上傳與進度呈現", "換頁時播放不能中斷"],
+    solutions: [
+      { label: "元件", text: "支援拖放或選檔上傳多個 MP3，各自顯示進度，檔名重複時自動加上時間戳。" },
+      { label: "架構", text: "播放器狀態放在 Pinia、以 Howler.js 播放，換頁時播放不中斷。" },
+      { label: "資料", text: "首頁依上傳時間分批載入，捲到底部才載下一批，載完即停止監聽。" },
+      { label: "UX", text: "VeeValidate 驗證表單、vue-i18n 切換中英文，並以 PWA 讓網站可安裝為 App。" },
+    ],
+    result: "完成包含帳號、上傳、歌曲管理、留言與播放的音樂分享 SPA。",
+  },
+  pulse: {
+    problem: "需要在一個頁面同時看到個股的分時走勢、量能與五檔掛單。",
+    role: "個人專案：獨立完成 Vue 3 前端與 NestJS + MongoDB 後端。",
+    challenges: ["多個資料來源要同步更新", "內外盤量需自行推算"],
+    solutions: [
+      { label: "推播", text: "後端每 5 秒向證交所取得訂閱個股的成交資料，存進 MongoDB 並以 Socket.IO 推給前端。" },
+      { label: "資料", text: "報價與五檔每 3 秒輪詢、收盤後停止，並依成交價與最佳買賣價推算內外盤量。" },
+      { label: "元件", text: "以 D3.js 繪製價量雙面板分時圖，含十字游標與漲跌配色的量能柱。" },
+      { label: "後端", text: "每日排程抓取上市櫃本益比、淨值比與殖利率，並以 JWT 與 CASL 控管權限。" },
+    ],
+    result: "完成分時走勢、量能、五檔與內外盤比的個股頁，核心計算有 26 個 Vitest 測試。",
+  },
   "semiconductor-monitor": {
     problem: "平台整合五個子系統，服務跨廠區分析與維運人員，原有三個痛點：",
     problemItems: [
@@ -267,36 +321,37 @@ const caseStudies: Record<string, CaseStudy> = {
     role: "個人專案，獨立完成前後端：前端架構、地圖整合、即時資料流與 UI/UX，以及 FastAPI 模擬與 AI 服務。",
     challenges: ["多架無人機遙測同時湧入時，地圖圖層的建立、更新與清除", "伺服器狀態（任務、機隊）與即時串流狀態的同步", "高資訊密度介面在深／淺色主題下的可讀性"],
     solutions: [
-      { label: "架構", text: "API 層與自訂 hooks 分層：TanStack Query 管理伺服器狀態、Zustand 管理 UI 狀態，WebSocket 事件觸發查詢失效以保持任務資料一致。" },
-      { label: "元件", text: "以 Google Maps OverlayView 自製無人機標記，搭配軌跡、起訖點與任務路線圖層，支援主題切換與選取狀態。" },
-      { label: "效能", text: "以 ref 保存各機圖層並差異更新而非重建；HUD 以 React.memo、衍生資料以 useMemo 避免多餘渲染。" },
-      { label: "UX", text: "可拖曳側欄、深淺色主題、地址輸入定位、任務暫停／續飛／取消，以及 AI 導航診斷浮窗。" },
+      { label: "架構", text: "型別化 API 層與自訂 hooks 分層：TanStack Query 管理伺服器狀態、Zustand 管理 UI 狀態，任務抵達的 WebSocket 事件觸發查詢失效，執行中任務另以條件式輪詢補強。" },
+      { label: "元件", text: "以 Google Maps 自訂覆蓋層自製無人機標記，搭配軌跡、起訖點與任務路線圖層，支援主題切換與選取狀態。" },
+      { label: "效能", text: "保留各機地圖圖層並差異更新而非重建，HUD 與衍生資料以 memo 化避免多餘渲染。" },
+      { label: "UX", text: "可拖曳側欄、深淺色主題、Places 地址自動完成、任務暫停／續飛／終止，以及 AI 導航診斷浮窗。" },
     ],
-    result: "完成從任務建立、多機即時監控到 AI 結案報告的完整流程，並以單元測試驗證風場修正與電量規劃演算法。",
+    result: "完成從任務建立、多機即時監控到 AI 結案報告的完整流程，並以 16 個 pytest 單元測試驗證風場修正與電量規劃演算法。",
   },
   hisem: {
-    problem: "舊系統架構老舊，需因應資安要求以新架構重建資安管理系統，追蹤垃圾簡訊門號並提供即時提醒與查詢。",
+    problem: "舊系統架構老舊，需以新架構重建廣告信處理系統，讓客服分析郵件標頭、寄發通知信、執行停權與復話，並查詢案件與統計報表。",
     role: "前端架構規劃與核心開發：專案架構、共用元件、API 層與權限流程，並負責頁面開發。",
-    challenges: ["多種事件列表與報表需要一致的表格與分頁行為", "兼顧資安防護（XSRF、XSS）與統一錯誤處理", "多角色登入與角色切換"],
+    challenges: ["多種案件列表與報表需要一致的分頁、排序與查詢行為", "兼顧資安防護（XSRF、XSS）與統一錯誤處理", "多角色登入與角色切換"],
     solutions: [
       { label: "架構", text: "依領域拆分 API、路由與 Store 模組，路由懶載入，並建立多環境建置設定。" },
-      { label: "元件", text: "封裝 Base 與 Modal 共用元件並以 import.meta.glob 自動註冊，附元件展示頁供團隊查閱。" },
+      { label: "元件", text: "封裝 Base 共用元件並自動全域註冊，另建 Alert／Confirm 等 Modal 元件，附元件展示頁供團隊查閱。" },
+      { label: "資安", text: "Axios 統一攜帶 XSRF Token、回應內容跳脫角括號防 XSS，並依狀態碼集中處理 401 導回登入、錯誤頁與 Toast。" },
       { label: "效能", text: "表格採 server-side 分頁排序，路由層級 code-splitting，並以 visualizer 分析 bundle。" },
-      { label: "UX", text: "統一 Toast 與錯誤頁處理、VeeValidate + Yup 表單驗證、角色切換對話框。" },
+      { label: "UX", text: "VeeValidate 全域註冊驗證規則與中文錯誤訊息，並提供角色切換對話框。" },
     ],
     result: "建立可擴充的前端基礎，後續頁面皆沿用共用元件與 API 規範開發。",
   },
   "radiation-cloud": {
-    problem: "需以地圖掌握輻射作業位置、設定電子圍籬並查詢歷史軌跡，同時符合政府系統的資安要求。",
-    role: "前端開發：地圖相關模組（監控、電子圍籬、歷史軌跡）與共用 API 層、型別定義。",
-    challenges: ["地圖上大量點位的可讀性", "圍籬範圍與地圖視野同步", "Token 失效與閒置登出"],
+    problem: "需在地圖上掌握各業者的輻射施工位置，設定電子圍籬範圍與效期，並查詢業者、施工資訊與歷史紀錄。",
+    role: "前端開發（中途加入）：負責動態監控模組的監控資訊、業者資訊、施工資訊、電子圍籬與歷史軌跡五個頁面。",
+    challenges: ["地圖上大量點位的可讀性", "圍籬範圍與地圖視野同步"],
     solutions: [
-      { label: "架構", text: "泛型 TypeScript HTTP 封裝，統一錯誤型別與狀態碼對應，並於攔截器自動續期 JWT。" },
-      { label: "元件", text: "以 vue3-google-map 封裝 Marker、Circle 與自訂標記，抽出 MapUtils 地圖工具。" },
-      { label: "效能", text: "以 MarkerCluster 叢集標記，降低大量點位的視覺與渲染負擔。" },
-      { label: "UX", text: "依圍籬半徑自動調整地圖視野、一鍵開啟 Google 地圖定位、閒置登出倒數提醒。" },
+      { label: "元件", text: "以 vue3-google-map 繪製施工點位標記與電子圍籬範圍。" },
+      { label: "工具", text: "抽出共用地圖工具：依圍籬圓心與半徑自動調整地圖視野，並提供一鍵開啟 Google 地圖定位。" },
+      { label: "效能", text: "監控地圖以叢集標記收合密集點位，降低視覺與渲染負擔。" },
+      { label: "UX", text: "電子圍籬可設定範圍與效期；查詢支援業者、通報文號、執照、車號與施工日期。" },
     ],
-    result: "完成監控、電子圍籬與歷史軌跡模組，並撰寫共用元件說明與前端開發文件供團隊沿用。",
+    result: "完成動態監控模組五個頁面，圍籬視野計算與地圖定位抽成共用工具，供電子圍籬與歷史軌跡共用。",
   },
 };
 

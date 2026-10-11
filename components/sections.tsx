@@ -19,7 +19,7 @@ export function AboutSection() {
             ))}
           </div>
         </Reveal>
-        <div className="space-y-6">
+        <div className="space-y-6 md:pl-12 lg:pl-24">
           {skills.map((s, i) => (
             <Reveal key={s.category} delay={i * 60}>
               <h3 className="mb-2 font-mono text-xs uppercase tracking-wider text-muted-foreground">{s.category}</h3>

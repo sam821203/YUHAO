@@ -1,7 +1,7 @@
 import { skills } from "@/lib/content";
 
 const items = skills
-  .filter((group) => group.category === "Core" || group.category === "Data Viz & Maps")
+  .filter((group) => ["Frameworks", "Languages", "Styling", "Data Viz"].includes(group.category))
   .flatMap((group) => group.items);
 
 const sparkle = "M12 0C13 8 16 11 24 12C16 13 13 16 12 24C11 16 8 13 0 12C8 11 11 8 12 0Z";

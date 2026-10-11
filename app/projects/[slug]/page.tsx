@@ -164,7 +164,18 @@ export default async function ProjectPage({ params }: { params: Promise<Params> 
               className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm hover:border-primary hover:text-primary"
             >
               <GithubIcon className="size-4" />
-              GitHub
+              {p.githubBackend ? "Frontend" : "GitHub"}
+            </a>
+          )}
+          {p.githubBackend && (
+            <a
+              href={p.githubBackend}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-lg border px-4 py-2 text-sm hover:border-primary hover:text-primary"
+            >
+              <GithubIcon className="size-4" />
+              Backend
             </a>
           )}
         </div>
