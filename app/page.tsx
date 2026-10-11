@@ -5,6 +5,7 @@ import { HeroOrbit } from "@/components/HeroOrbit";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Reveal } from "@/components/Reveal";
 import { SectionTitle } from "@/components/SectionTitle";
+import { SkillMarquee } from "@/components/SkillMarquee";
 import { btnGhost, btnPrimary, iconBtn } from "@/components/styles";
 import { projects, site } from "@/lib/content";
 
@@ -49,7 +50,9 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-24">
+      <SkillMarquee />
+
+      <section className="mx-auto max-w-6xl px-5 pt-12 pb-24">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <SectionTitle k="featured">Featured Projects</SectionTitle>
           <Link href="/projects" className="mb-10 inline-flex items-center gap-2 font-mono text-sm text-primary hover:underline">

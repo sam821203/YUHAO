@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BriefcaseBusiness, House, Mail, Menu, Presentation, UserRound, X } from "lucide-react";
+import { LogoMark } from "@/components/LogoMark";
 
 
 const nav = [
@@ -25,8 +26,9 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-50 border-b bg-card/65 backdrop-blur-lg">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
-        <Link href="/" aria-label="Home" className="font-[Arial,Helvetica,sans-serif] text-[28px] leading-none font-black tracking-tight text-primary">
-          Yh.
+        <Link href="/" aria-label="Home" className="flex items-center gap-2.5 text-xl font-bold tracking-tight text-foreground">
+          <LogoMark className="size-9" />
+          Yu Hao
         </Link>
         <nav className="hidden gap-7 md:flex" aria-label="Main">
           {nav.map((item) => {
