@@ -91,7 +91,7 @@ export const projects: Project[] = [
     slug: "radiation-cloud",
     featured: true,
     title: "輻射防護雲化服務系統",
-    info: "輻射源管理雲端平台：Google 地圖監控與叢集標記、電子圍籬、歷史軌跡，搭配 JWT 續期與閒置自動登出",
+    info: "輻射源管理雲端平台：Google 地圖監控、電子圍籬、歷史軌跡，搭配 JWT 續期與閒置自動登出",
     category: "works",
     image: img("aeclice-web.jpg", 1909, 909),
     tags: ["Vue 3", "TypeScript", "Google Maps", "Element Plus", "Pinia", "Tailwind CSS"],
@@ -185,7 +185,7 @@ const caseStudies: Record<string, CaseStudy> = {
     problemItems: [
       "列表資料量龐大，主管難以找到所需資料。",
       "返回列表需重設篩選，難以多筆對照。",
-      "Edge 服務配置直接在 K8s 修改，缺乏審核與回滾。",
+      "服務配置變更缺乏審核與回滾機制。",
     ],
     role: "前端工程師：專案開案後加入，參與需求釐清與架構討論，負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發，與同仁互相 Code Review。",
     strategies: [
@@ -216,7 +216,7 @@ const caseStudies: Record<string, CaseStudy> = {
       "主管可透過複合條件快速鎖定所需資料。",
       "細節可多筆並開對照，分析脈絡不中斷。",
       "配置變更可審核、可追溯、可回滾，降低誤改風險。",
-      "五個子系統整合為一致入口，維持每月穩定發版。",
+      "五個子系統整合為一致入口。",
     ],
   },
   "supplier-compliance": {
@@ -227,7 +227,7 @@ const caseStudies: Record<string, CaseStudy> = {
         label: "架構｜模組化與統一權限控管",
         items: [
           "上線前將集中於單一頁面的功能拆分並模組化，預留擴充空間，隔離新需求對既有功能的影響。",
-          "以 RBAC（15+ 權限）控管頁面與元件層級顯示；整合 Keycloak SSO 自動續期 Token，並以 Axios 攔截器與 TanStack Query 統一 JWT 注入、401/403 與錯誤重試。",
+          "以角色權限控管頁面與元件層級顯示；整合企業 SSO 自動續期 Token，並以 Axios 攔截器與 TanStack Query 統一 JWT 注入、401/403 與錯誤重試。",
         ],
       },
       {
