@@ -20,6 +20,7 @@ export type Project = {
   image: { src: string; width: number; height: number };
   tags: string[];
   github?: string;
+  githubBackend?: string;
   href?: string;
 };
 
@@ -143,6 +144,7 @@ export const projects: Project[] = [
     image: img("pulse-cyan.jpg", 1440, 720),
     tags: ["Vue 3", "TypeScript", "Pinia", "PrimeVue", "D3.js", "Socket.IO", "Tailwind CSS", "Vitest"],
     github: "https://github.com/sam821203/Pulse-frontend",
+    githubBackend: "https://github.com/sam821203/Pulse-backend",
   },
 ];
 
