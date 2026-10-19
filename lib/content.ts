@@ -45,7 +45,7 @@ export const projects: Project[] = [
   {
     slug: "supplier-compliance",
     featured: true,
-    title: "設備供應商合規追蹤平台",
+    title: "設備供應商合規管理系統",
     info: "Excel 匯入驗證、合規評分與 KPI 視覺化、明細追溯及異常自動通知",
     category: "works",
     image: img("supplier-compliance-cyan.jpg", 1440, 720),
@@ -54,7 +54,7 @@ export const projects: Project[] = [
   {
     slug: "semiconductor-monitor",
     featured: true,
-    title: "半導體廠即時監控平台",
+    title: "廠內即時資料監控平台",
     info: "整合跨廠區數據追蹤 Wafer / Lot 請求與業務流程，以 Pass / Fail 與 Duration 指標快速定位生產瓶頸",
     category: "works",
     image: img("semiconductor-monitor-cyan.jpg", 1440, 720),
@@ -165,8 +165,8 @@ export const skills: { category: string; items: string[] }[] = [
 ];
 
 export const experience: { title: string; company?: string; period?: string; desc: string; tags: string[] }[] = [
-  { title: "設備供應商合規追蹤平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制，主導 Code Review 並帶領新進工程師。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
-  { title: "半導體廠即時監控平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
+  { title: "設備供應商合規管理系統", company: "緯創軟體", period: "2025.06 — Present", desc: "前端技術負責人：從零規劃前端架構、制定開發規範與自動化品質機制，主導 Code Review 並帶領新進工程師。", tags: ["React", "TypeScript", "Zustand", "Ant Design", "AI Workflow"] },
+  { title: "廠內即時資料監控平台", company: "緯創軟體", period: "2025.06 — Present", desc: "前端工程師：負責資料查詢的介面與流程設計、複合查詢、多頁籤工作台與工單流程開發，並參與資料表設計與 API 開發。", tags: ["React", "Zustand", "AG Grid", "Hono.js", "MySQL", "PlantUML"] },
   { title: "中華 HiSEM 資安管理系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "規劃 Vue 3 前端架構與共用元件，封裝 Axios 錯誤處理與 XSRF / XSS 防護，實作角色權限與表單驗證。", tags: ["Vue 3", "PrimeVue", "Pinia"] },
   { title: "輻射防護雲化服務系統", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "中途加入，負責動態監控模組：以 Vue 3 + TypeScript 開發地圖監控、電子圍籬、歷史軌跡與業者、施工資訊查詢。", tags: ["Vue 3", "TypeScript", "Google Maps"] },
   { title: "中華電信官網", company: "資拓宏宇", period: "2023.11 — 2025.05", desc: "依品牌設計準則獨立設計跨裝置 UI，並以 Webpack + Nunjucks 模板與模組化 SCSS 建構 140+ 頁 RWD 官網。", tags: ["SCSS", "Bootstrap 5", "Webpack", "Figma"] },
